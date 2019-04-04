@@ -6,7 +6,7 @@
   <link href="/ostlo/atom.xml" rel="self"/>
   
   <link href="https://ghostlo.github.io/ostlo/"/>
-  <updated>2019-04-02T13:46:05.000Z</updated>
+  <updated>2019-04-04T12:29:05.000Z</updated>
   <id>https://ghostlo.github.io/ostlo/</id>
   
   <author>
@@ -17,23 +17,71 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="https://ghostlo.github.io/ostlo/2019/04/02/hello-world/"/>
-    <id>https://ghostlo.github.io/ostlo/2019/04/02/hello-world/</id>
-    <published>2019-04-02T13:46:05.000Z</published>
-    <updated>2019-04-02T13:46:05.000Z</updated>
+    <title>cookie 与 session 的区别</title>
+    <link href="https://ghostlo.github.io/ostlo/2019/04/04/cookie-%E4%B8%8E-session-%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+    <id>https://ghostlo.github.io/ostlo/2019/04/04/cookie-与-session-的区别/</id>
+    <published>2019-04-04T12:26:55.000Z</published>
+    <updated>2019-04-04T12:29:05.000Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<p>原文链接：<a href="https://link.juejin.im/?target=http%3A%2F%2Fmp.weixin.qq.com%2Fs%3F__biz%3DMzA4MjA0MTc4NQ%3D%3D%26mid%3D504090000%26idx%3D3%26sn%3Df57d4f194c902daadd80296d5b8ed001%23rd" target="_blank" rel="noopener">mp.weixin.qq.com</a></p><p>本文分别对Cookie与Session做一个介绍和总结，并分别对两个知识点进行对比分析，让大家对Cookie和Session有一个更深入的了解，并对自己的开发工作中灵活运用带来启示。</p><h2 id="cookie机制"><a href="#cookie机制" class="headerlink" title="cookie机制"></a><strong>cookie机制</strong></h2><p>Cookies是服务器在本地机器上存储的小段文本并随每一个请求发送至同一个服务器。IETF RFC 2965 HTTP State Management Mechanism 是通用cookie规范。网络服务器用HTTP头向客户端发送cookies，在客户终端，浏览器解析这些cookies并将它们保存为一个本地文件，它会自动将同一服务器的任何请求缚上这些cookies 。</p><p>具体来说cookie机制采用的是在客户端保持状态的方案。它是在用户端的会话状态的存贮机制，他需要用户打开客户端的cookie支持。cookie的作用就是为了解决HTTP协议无状态的缺陷所作的努力。</p><p>正统的cookie分发是通过扩展HTTP协议来实现的，服务器通过在HTTP的响应头中加上一行特殊的指示以提示浏览器按照指示生成相应的cookie。然而纯粹的客户端脚本如JavaScript也可以生成cookie。而cookie的使用是由浏览器按照一定的原则在后台自动发送给服务器的。浏览器检查所有存储的cookie，如果某个cookie所声明的作用范围大于等于将要请求的资源所在的位置，则把该cookie附在请求资源的HTTP请求头上发送给服务器。</p><p>cookie的内容主要包括：名字，值，过期时间，路径和域。路径与域一起构成cookie的作用范围。若不设置过期时间，则表示这个cookie的生命期为浏览器会话期间，关闭浏览器窗口，cookie就消失。这种生命期为浏览器会话期的cookie被称为会话cookie。会话cookie一般不存储在硬盘上而是保存在内存里，当然这种行为并不是规范规定的。若设置了过期时间，浏览器就会把cookie保存到硬盘上，关闭后再次打开浏览器，这些cookie仍然有效直到超过设定的过期时间。存储在硬盘上的cookie可以在不同的浏览器进程间共享，比如两个IE窗口。而对于保存在内存里的cookie，不同的浏览器有不同的处理方式。</p><p>而session机制采用的是一种在服务器端保持状态的解决方案。同时我们也看到，由于采用服务器端保持状态的方案在客户端也需要保存一个标识，所以session机制可能需要借助于cookie机制来达到保存标识的目的。而session提供了方便管理全局变量的方式 。</p><p>session是针对每一个用户的，变量的值保存在服务器上，用一个sessionID来区分是哪个用户session变量,这个值是通过用户的浏览器在访问的时候返回给服务器，当客户禁用cookie时，这个值也可能设置为由get来返回给服务器。</p><p>就安全性来说：当你访问一个使用session 的站点，同时在自己机子上建立一个cookie，建议在服务器端的session机制更安全些，因为它不会任意读取客户存储的信息。</p><h2 id="session机制"><a href="#session机制" class="headerlink" title="session机制"></a><strong>session机制</strong></h2><p>session机制是一种服务器端的机制，服务器使用一种类似于散列表的结构（也可能就是使用散列表）来保存信息。</p><p>当程序需要为某个客户端的请求创建一个session时，服务器首先检查这个客户端的请求里是否已包含了一个session标识（称为session id），如果已包含则说明以前已经为此客户端创建过session，服务器就按照session id把这个session检索出来使用（检索不到，会新建一个），如果客户端请求不包含session id，则为此客户端创建一个session并且生成一个与此session相关联的session id，session id的值应该是一个既不会重复，又不容易被找到规律以仿造的字符串，这个session id将被在本次响应中返回给客户端保存。</p><p>保存这个session id的方式可以采用cookie，这样在交互过程中浏览器可以自动的按照规则把这个标识发挥给服务器。一般这个cookie的名字都是类似于SEEESIONID。但cookie可以被人为的禁止，则必须有其他机制以便在cookie被禁止时仍然能够把session id传递回服务器。</p><p>经常被使用的一种技术叫做URL重写，就是把session id直接附加在URL路径的后面。还有一种技术叫做表单隐藏字段。就是服务器会自动修改表单，添加一个隐藏字段，以便在表单提交时能够把session id传递回服务器。</p><p>Cookie与Session都能够进行会话跟踪，但是完成的原理不太一样。普通状况下二者均能够满足需求，但有时分不能够运用Cookie，有时分不能够运用Session。下面经过比拟阐明二者的特性以及适用的场所。</p><h2 id="不同"><a href="#不同" class="headerlink" title="不同"></a>不同</h2><h3 id="1、存取方式的不同"><a href="#1、存取方式的不同" class="headerlink" title="1、存取方式的不同"></a><strong>1、存取方式的不同</strong></h3><p>Cookie中只能保管ASCII字符串，假如需求存取Unicode字符或者二进制数据，需求先进行编码。Cookie中也不能直接存取Java对象。若要存储略微复杂的信息，运用Cookie是比拟艰难的。</p><p>而Session中能够存取任何类型的数据，包括而不限于String、Integer、List、Map等。Session中也能够直接保管Java Bean乃至任何Java类，对象等，运用起来十分便当。能够把Session看做是一个Java容器类。</p><h3 id="2、隐私策略的不同"><a href="#2、隐私策略的不同" class="headerlink" title="2、隐私策略的不同"></a><strong>2、隐私策略的不同</strong></h3><p>Cookie存储在客户端阅读器中，对客户端是可见的，客户端的一些程序可能会窥探、复制以至修正Cookie中的内容。而Session存储在服务器上，对客户端是透明的，不存在敏感信息泄露的风险。</p><p>假如选用Cookie，比较好的方法是，敏感的信息如账号密码等尽量不要写到Cookie中。最好是像Google、Baidu那样将Cookie信息加密，提交到服务器后再进行解密，保证Cookie中的信息只要本人能读得懂。而假如选择Session就省事多了，反正是放在服务器上，Session里任何隐私都能够有效的保护。</p><h3 id="3、有效期上的不同"><a href="#3、有效期上的不同" class="headerlink" title="3、有效期上的不同"></a><strong>3、有效期上的不同</strong></h3><p>使用过Google的人都晓得，假如登录过Google，则Google的登录信息长期有效。用户不用每次访问都重新登录，Google会持久地记载该用户的登录信息。要到达这种效果，运用Cookie会是比较好的选择。只需要设置Cookie的过期时间属性为一个很大很大的数字。</p><p>由于Session依赖于名为JSESSIONID的Cookie，而Cookie JSESSIONID的过期时间默许为–1，只需关闭了阅读器该Session就会失效，因而Session不能完成信息永世有效的效果。运用URL地址重写也不能完成。而且假如设置Session的超时时间过长，服务器累计的Session就会越多，越容易招致内存溢出。</p><h3 id="4、服务器压力的不同"><a href="#4、服务器压力的不同" class="headerlink" title="4、服务器压力的不同"></a><strong>4、服务器压力的不同</strong></h3><p>Session是保管在服务器端的，每个用户都会产生一个Session。假如并发访问的用户十分多，会产生十分多的Session，耗费大量的内存。因而像Google、Baidu、Sina这样并发访问量极高的网站，是不太可能运用Session来追踪客户会话的。</p><p>而Cookie保管在客户端，不占用服务器资源。假如并发阅读的用户十分多，Cookie是很好的选择。关于Google、Baidu、Sina来说，Cookie或许是唯一的选择。</p><h3 id="5、浏览器支持的不同"><a href="#5、浏览器支持的不同" class="headerlink" title="5、浏览器支持的不同"></a><strong>5、浏览器支持的不同</strong></h3><p>Cookie是需要客户端浏览器支持的。假如客户端禁用了Cookie，或者不支持Cookie，则会话跟踪会失效。关于WAP上的应用，常规的Cookie就派不上用场了。</p><p>假如客户端浏览器不支持Cookie，需要运用Session以及URL地址重写。需要注意的是一切的用到Session程序的URL都要进行URL地址重写，否则Session会话跟踪还会失效。关于WAP应用来说，Session+URL地址重写或许是它唯一的选择。</p><p>假如客户端支持Cookie，则Cookie既能够设为本浏览器窗口以及子窗口内有效（把过期时间设为–1），也能够设为一切阅读器窗口内有效（把过期时间设为某个大于0的整数）。但Session只能在本阅读器窗口以及其子窗口内有效。假如两个浏览器窗口互不相干，它们将运用两个不同的Session。（IE8下不同窗口Session相干）</p><h3 id="6、跨域支持上的不同"><a href="#6、跨域支持上的不同" class="headerlink" title="6、跨域支持上的不同"></a><strong>6、跨域支持上的不同</strong></h3><p>Cookie支持跨域名访问，例如将domain属性设置为“.biaodianfu.com”，则以“.biaodianfu.com”为后缀的一切域名均能够访问该Cookie。跨域名Cookie如今被普遍用在网络中，例如Google、Baidu、Sina等。而Session则不会支持跨域名访问。Session仅在他所在的域名内有效。</p><p>仅运用Cookie或者仅运用Session可能完成不了理想的效果。这时应该尝试一下同时运用Cookie与Session。Cookie与Session的搭配运用在实践项目中会完成很多意想不到的效果。</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+        &lt;p&gt;原文链接：&lt;a href=&quot;https://link.juejin.im/?target=http%3A%2F%2Fmp.weixin.qq.com%2Fs%3F__biz%3DMzA4MjA0MTc4NQ%3D%3D%26mid%3D504090000%26idx%3D3
       
     
     </summary>
     
+    
+  </entry>
+  
+  <entry>
+    <title>同步异步阻塞非阻塞</title>
+    <link href="https://ghostlo.github.io/ostlo/2019/04/04/%E5%90%8C%E6%AD%A5%E5%BC%82%E6%AD%A5%E9%98%BB%E5%A1%9E%E9%9D%9E%E9%98%BB%E5%A1%9E/"/>
+    <id>https://ghostlo.github.io/ostlo/2019/04/04/同步异步阻塞非阻塞/</id>
+    <published>2019-04-04T12:26:17.000Z</published>
+    <updated>2019-04-04T12:26:41.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="同步："><a href="#同步：" class="headerlink" title="同步："></a>同步：</h3><p>所谓同步，就是在发出一个功能调用时，在没有得到结果之前，该调用就不返回。也就是必须一件一件事做,等前一件做完了才能做下一件事。</p><p>例如普通B/S模式（同步）：提交请求-&gt;等待服务器处理-&gt;处理完毕返回 这个期间客户端浏览器不能干任何事</p><h3 id="异步："><a href="#异步：" class="headerlink" title="异步："></a>异步：</h3><p>异步的概念和同步相对。当一个异步过程调用发出后，调用者不能立刻得到结果。实际处理这个调用的部件在完成后，通过状态、通知和回调来通知调用者。</p><p>例如 ajax请求（异步）: 请求通过事件触发-&gt;服务器处理（这是浏览器仍然可以作其他事情）-&gt;处理完毕</p><h3 id="阻塞："><a href="#阻塞：" class="headerlink" title="阻塞："></a>阻塞：</h3><p>阻塞调用是指调用结果返回之前，当前线程会被挂起（线程进入非可执行状态，在这个状态下，cpu不会给线程分配时间片，即线程暂停运行）。函数只有在得到结果之后才会返回。</p><p>有人也许会把阻塞调用和同步调用等同起来，实际上他是不同的。对于同步调用来说，很多时候当前线程还是激活的，只是从逻辑上当前函数没有返回,它还会抢占cpu去执行其他逻辑，也会主动检测io是否准备好。</p><h3 id="非阻塞："><a href="#非阻塞：" class="headerlink" title="非阻塞："></a>非阻塞：</h3><p>非阻塞和阻塞的概念相对应，指在不能立刻得到结果之前，该函数不会阻塞当前线程，而会立刻返回。</p><p>再简单点理解就是：</p><ol><li>同步，就是我调用一个功能，该功能没有结束前，我死等结果。</li><li>异步，就是我调用一个功能，不需要知道该功能结果，该功能有结果后通知我（回调通知）。</li><li>阻塞，就是调用我（函数），我（函数）没有接收完数据或者没有得到结果之前，我不会返回。</li><li>非阻塞，就是调用我（函数），我（函数）立即返回，通过select通知调用者</li></ol><p>同步IO和异步IO的区别就在于：数据拷贝的时候进程是否阻塞</p><p>阻塞IO和非阻塞IO的区别就在于：应用程序的调用是否立即返回</p><p>综上可知，同步和异步,阻塞和非阻塞,有些混用,其实它们完全不是一回事,而且它们修饰的对象也不相同。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;同步：&quot;&gt;&lt;a href=&quot;#同步：&quot; class=&quot;headerlink&quot; title=&quot;同步：&quot;&gt;&lt;/a&gt;同步：&lt;/h3&gt;&lt;p&gt;所谓同步，就是在发出一个功能调用时，在没有得到结果之前，该调用就不返回。也就是必须一件一件事做,等前一件做完了才能做下一件事。&lt;/p
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo 安装</title>
+    <link href="https://ghostlo.github.io/ostlo/2019/04/04/%E5%AE%89%E8%A3%85-Hexo/"/>
+    <id>https://ghostlo.github.io/ostlo/2019/04/04/安装-Hexo/</id>
+    <published>2019-04-04T11:38:48.000Z</published>
+    <updated>2019-04-04T12:23:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>首先安装如下两个包</p><ul><li><p><a href="http://nodejs.org/" target="_blank" rel="noopener">Node.js</a></p></li><li><p><a href="http://git-scm.com/" target="_blank" rel="noopener">Git</a></p></li></ul><p>安装好之后初次运行Git需要做一些配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;你的用户名&quot;</span><br><span class="line">git config --global user.email &quot;你的邮箱&quot;</span><br></pre></td></tr></table></figure></p><p><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">文档</a></p><h3 id="npm安装时改源"><a href="#npm安装时改源" class="headerlink" title="npm安装时改源"></a>npm安装时改源</h3><p>npm 安装报错 rollbackFailedOptional verb npm-session 解决办法</p><p>npm config set registry <a href="http://registry.npm.taobao.org" target="_blank" rel="noopener">http://registry.npm.taobao.org</a></p><h2 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h2><p><code>Hexo</code>安装好了之后，就开始进行建站。打开终端<code>cd</code>到桌面并使用如下命令即可建好</p><blockquote><p>hexo init <code>name</code><br>cd <code>name</code></p></blockquote><h3 id="常用参数"><a href="#常用参数" class="headerlink" title="常用参数"></a>常用参数</h3><p>  <em>clean</em>     Remove generated files and cache.</p><p>  <em>deploy</em>    Deploy your website.</p><p>  <em>generate</em>  Generate static files.</p><p>  <em>help</em>      Get help on a command.</p><p>  <em>init</em>      Create a new Hexo folder.</p><p>  <em>new</em>       Create a new post.</p><p>  <em>server</em>    Start the server.</p><h3 id="deploy注意事项"><a href="#deploy注意事项" class="headerlink" title="deploy注意事项"></a>deploy注意事项</h3><p>1:排查-&gt;是否安装一下hexo-deployer-git这个模块<br> 没有安装:<code>npm install hexo-deployer-git --save</code>使用指令安装<br>2:排查-&gt;_config.yml 这个文件的deploy写了没有;写全了没有<br> 我的就是因为_config.yml中deploy下的type等前面没有空格导致。。。。。</p><p>hexo d 提示You should configure deployment settings in _config.yml first!</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">    type:</span><br><span class="line">    repo:</span><br></pre></td></tr></table></figure><p>hexo d/deploy 时遇到问题再试一次，可能是用户名密码没有来得及输入，， </p><h3 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h3><p><a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">next主题</a></p><h3 id="deploy后github上未显示主题"><a href="#deploy后github上未显示主题" class="headerlink" title="deploy后github上未显示主题"></a>deploy后github上未显示主题</h3><p>If your site is put in a subdirectory, set url as ‘<a href="http://yoursite.com/child&#39;" target="_blank" rel="noopener">http://yoursite.com/child&#39;</a> and root as ‘/child/‘<br>url: <a href="https://ghostlo.github.io/ostlo">https://ghostlo.github.io/ostlo</a><br>root: /ostlo/</p><h2 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h2><p>后续的修改只需要重复第5步就可以了，代码如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd 本地库目录</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;版本日志&quot;</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure><p>GitHub还有很多好功能有待开发，善于利用搜索引擎，have fun~</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h2&gt;&lt;p&gt;首先安装如下两个包&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://nodejs.org/&quot; target=&quot;_blank&quot;
+      
+    
+    </summary>
+    
+      <category term="建站" scheme="https://ghostlo.github.io/ostlo/categories/%E5%BB%BA%E7%AB%99/"/>
+    
+    
+      <category term="hexo" scheme="https://ghostlo.github.io/ostlo/tags/hexo/"/>
     
   </entry>
   
