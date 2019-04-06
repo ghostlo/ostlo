@@ -101,7 +101,7 @@
 
 
   <meta name="description" content="来源 　　如果一个数据库声称支持事务的操作，那么该数据库必须要具备以下四个特性： 原子性（Atomicity）　　原子性是指事务包含的所有操作要么全部成功，要么全部失败回滚，这和前面两篇博客介绍事务的功能是一样的概念，因此事务的操作如果成功就必须要完全应用到数据库，如果操作失败则不能对数据库有任何影响。 一致性（Consistency）　　一致性是指事务必须使数据库从一个一致性状态变换到另一个一致">
-<meta name="keywords" content="数据库">
+<meta name="keywords" content="数据库,mysql">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据库事务的四大特性以及事务的隔离级别">
 <meta property="og:url" content="https://ghostlo.github.io/ostlo/2019/04/06/数据库事务的四大特性以及事务的隔离级别/index.html">
@@ -113,7 +113,7 @@
 <meta property="og:image" content="https://images2015.cnblogs.com/blog/787876/201603/787876-20160313202245210-345198166.png">
 <meta property="og:image" content="https://images2015.cnblogs.com/blog/787876/201603/787876-20160313202333460-377269897.png">
 <meta property="og:image" content="https://images2015.cnblogs.com/blog/787876/201603/787876-20160313202355694-2106931487.png">
-<meta property="og:updated_time" content="2019-04-06T08:40:02.000Z">
+<meta property="og:updated_time" content="2019-04-06T14:29:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库事务的四大特性以及事务的隔离级别">
 <meta name="twitter:description" content="来源 　　如果一个数据库声称支持事务的操作，那么该数据库必须要具备以下四个特性： 原子性（Atomicity）　　原子性是指事务包含的所有操作要么全部成功，要么全部失败回滚，这和前面两篇博客介绍事务的功能是一样的概念，因此事务的操作如果成功就必须要完全应用到数据库，如果操作失败则不能对数据库有任何影响。 一致性（Consistency）　　一致性是指事务必须使数据库从一个一致性状态变换到另一个一致">
@@ -403,7 +403,7 @@
                 
               
 
-              <time title="Created: 2019-04-06 16:38:07 / Modified: 16:40:02" itemprop="dateCreated datePublished" datetime="2019-04-06T16:38:07+08:00">2019-04-06</time>
+              <time title="Created: 2019-04-06 16:38:07 / Modified: 22:29:58" itemprop="dateCreated datePublished" datetime="2019-04-06T16:38:07+08:00">2019-04-06</time>
             
 
             
@@ -413,6 +413,24 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/ostlo/categories/数据库/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -463,11 +481,11 @@
 <p>　　在某些情况下，不可重复读并不是问题，比如我们多次查询某个数据当然以最后查询得到的结果为主。但在另一些情况下就有可能发生问题，例如对于同一个数据A和B依次查询就可能不同，A和B就可能打起来了……</p>
 <h2 id="虚读-幻读"><a href="#虚读-幻读" class="headerlink" title="虚读(幻读)"></a>虚读(幻读)</h2><p>　　幻读是事务非独立执行时发生的一种现象。例如事务T1对一个表中所有的行的某个数据项做了从“1”修改为“2”的操作，这时事务T2又对这个表中插入了一行数据项，而这个数据项的数值还是为“1”并且提交给数据库。而操作事务T1的用户如果再查看刚刚修改的数据，会发现还有一行没有修改，其实这行是从事务T2中添加的，就好像产生幻觉一样，这就是发生了幻读。</p>
 <p>　　幻读和不可重复读都是读取了另一条已经提交的事务（这点就脏读不同），所不同的是不可重复读查询的都是同一个数据项，而幻读针对的是一批数据整体（比如数据的个数）。</p>
-<p>　　现在来看看MySQL数据库为我们提供的四种隔离级别：</p>
-<p>　　① Serializable (串行化)：可避免脏读、不可重复读、幻读的发生。</p>
-<p>　　② Repeatable read (可重复读)：可避免脏读、不可重复读的发生。</p>
-<p>　　③ Read committed (读已提交)：可避免脏读的发生。</p>
-<p>　　④ Read uncommitted (读未提交)：最低级别，任何情况都无法保证。</p>
+<h2 id="隔离级别"><a href="#隔离级别" class="headerlink" title="隔离级别"></a>隔离级别</h2><p>现在来看看MySQL数据库为我们提供的四种隔离级别：</p>
+<h5 id="①-Serializable-串行化"><a href="#①-Serializable-串行化" class="headerlink" title="① Serializable (串行化)"></a>① Serializable (串行化)</h5><p>可避免脏读、不可重复读、幻读的发生。</p>
+<h5 id="②-Repeatable-read-可重复读"><a href="#②-Repeatable-read-可重复读" class="headerlink" title="② Repeatable read (可重复读)"></a>② Repeatable read (可重复读)</h5><p>可避免脏读、不可重复读的发生。</p>
+<h5 id="③-Read-committed-读已提交"><a href="#③-Read-committed-读已提交" class="headerlink" title="③ Read committed (读已提交)"></a>③ Read committed (读已提交)</h5><p>可避免脏读的发生。</p>
+<h5 id="④-Read-uncommitted-读未提交"><a href="#④-Read-uncommitted-读未提交" class="headerlink" title="④ Read uncommitted (读未提交)"></a>④ Read uncommitted (读未提交)</h5><p>最低级别，任何情况都无法保证。</p>
 <p>　　以上四种隔离级别最高的是Serializable级别，最低的是Read uncommitted级别，当然级别越高，执行效率就越低。像Serializable这样的级别，就是以锁表的方式(类似于Java多线程中的锁)使得其他的线程只能在锁外等待，所以平时选用何种隔离级别应该根据实际情况。在MySQL数据库中默认的隔离级别为Repeatable read (可重复读)。</p>
 <p>　　在MySQL数据库中，支持上面四种隔离级别，默认的为Repeatable read (可重复读)；而在Oracle数据库中，只支持Serializable (串行化)级别和Read committed (读已提交)这两种级别，其中默认的为Read committed级别。</p>
 <p>　　在MySQL数据库中查看当前事务的隔离级别：</p>
@@ -515,6 +533,8 @@
           
             <a href="/ostlo/tags/数据库/" rel="tag"># 数据库</a>
           
+            <a href="/ostlo/tags/mysql/" rel="tag"># mysql</a>
+          
         </div>
       
 
@@ -535,6 +555,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/ostlo/2019/04/06/并发/" rel="prev" title="并发">
+                并发 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -605,7 +629,7 @@
                 
                   <a href="/ostlo/archives/">
                 
-                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -624,7 +648,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">1</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -647,7 +677,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -717,7 +751,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#原子性（Atomicity）"><span class="nav-number">1.</span> <span class="nav-text">原子性（Atomicity）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一致性（Consistency）"><span class="nav-number">2.</span> <span class="nav-text">一致性（Consistency）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#隔离性（Isolation）"><span class="nav-number">3.</span> <span class="nav-text">隔离性（Isolation）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#持久性（Durability）"><span class="nav-number">4.</span> <span class="nav-text">持久性（Durability）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#脏读"><span class="nav-number">5.</span> <span class="nav-text">脏读</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不可重复读"><span class="nav-number">6.</span> <span class="nav-text">不可重复读</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚读-幻读"><span class="nav-number">7.</span> <span class="nav-text">虚读(幻读)</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#原子性（Atomicity）"><span class="nav-number">1.</span> <span class="nav-text">原子性（Atomicity）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一致性（Consistency）"><span class="nav-number">2.</span> <span class="nav-text">一致性（Consistency）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#隔离性（Isolation）"><span class="nav-number">3.</span> <span class="nav-text">隔离性（Isolation）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#持久性（Durability）"><span class="nav-number">4.</span> <span class="nav-text">持久性（Durability）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#脏读"><span class="nav-number">5.</span> <span class="nav-text">脏读</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不可重复读"><span class="nav-number">6.</span> <span class="nav-text">不可重复读</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚读-幻读"><span class="nav-number">7.</span> <span class="nav-text">虚读(幻读)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#隔离级别"><span class="nav-number">8.</span> <span class="nav-text">隔离级别</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#①-Serializable-串行化"><span class="nav-number">8.0.0.1.</span> <span class="nav-text">① Serializable (串行化)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#②-Repeatable-read-可重复读"><span class="nav-number">8.0.0.2.</span> <span class="nav-text">② Repeatable read (可重复读)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#③-Read-committed-读已提交"><span class="nav-number">8.0.0.3.</span> <span class="nav-text">③ Read committed (读已提交)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#④-Read-uncommitted-读未提交"><span class="nav-number">8.0.0.4.</span> <span class="nav-text">④ Read uncommitted (读未提交)</span></a></li></ol></li></ol></div>
             
 
           </div>
