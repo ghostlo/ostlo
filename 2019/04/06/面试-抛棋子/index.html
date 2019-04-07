@@ -100,18 +100,18 @@
 
 
 
-  <meta name="description" content="问题 有一个一百层高的大厦，从这个大厦的某一层扔下棋子恰好就会碎（称这一层为临界层）。请你用手中的两个玻璃围棋子，找出一个最优的策略来得出那个最优层。 分析：题目要求策略最优，因而要使得在最坏的情况下投掷的总次数 $$T_{max}$$ 最少。首先考虑只有一个棋子的情况，条件若为多个棋子则可转化为一个棋子的情况。  解答  一个棋子 棋子必须在临界层扔下的时候碎，所以唯一的策略是从1层往上逐层投">
+  <meta name="description" content="问题有一个一百层高的大厦，从这个大厦的某一层扔下棋子恰好就会碎（称这一层为临界层）。请你用手中的两个玻璃围棋子，找出一个最优的策略来得出那个最优层。分析：题目要求策略最优，因而要使得在最坏的情况下投掷的总次数 T_{max} 最少。首先考虑只有一个棋子的情况，条件若为多个棋子则可转化为一个棋子的情况。 解答一个棋子棋子必须在临界层扔下的时候碎，所以唯一的策略是从1层往上逐层投掷，此时T_{max}">
 <meta name="keywords" content="建模,数学">
 <meta property="og:type" content="article">
 <meta property="og:title" content="面试--抛棋子">
 <meta property="og:url" content="https://ghostlo.github.io/ostlo/2019/04/06/面试-抛棋子/index.html">
 <meta property="og:site_name" content="Ostlo&#39;s Blog">
-<meta property="og:description" content="问题 有一个一百层高的大厦，从这个大厦的某一层扔下棋子恰好就会碎（称这一层为临界层）。请你用手中的两个玻璃围棋子，找出一个最优的策略来得出那个最优层。 分析：题目要求策略最优，因而要使得在最坏的情况下投掷的总次数 $$T_{max}$$ 最少。首先考虑只有一个棋子的情况，条件若为多个棋子则可转化为一个棋子的情况。  解答  一个棋子 棋子必须在临界层扔下的时候碎，所以唯一的策略是从1层往上逐层投">
+<meta property="og:description" content="问题有一个一百层高的大厦，从这个大厦的某一层扔下棋子恰好就会碎（称这一层为临界层）。请你用手中的两个玻璃围棋子，找出一个最优的策略来得出那个最优层。分析：题目要求策略最优，因而要使得在最坏的情况下投掷的总次数 T_{max} 最少。首先考虑只有一个棋子的情况，条件若为多个棋子则可转化为一个棋子的情况。 解答一个棋子棋子必须在临界层扔下的时候碎，所以唯一的策略是从1层往上逐层投掷，此时T_{max}">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-04-07T03:38:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试--抛棋子">
-<meta name="twitter:description" content="问题 有一个一百层高的大厦，从这个大厦的某一层扔下棋子恰好就会碎（称这一层为临界层）。请你用手中的两个玻璃围棋子，找出一个最优的策略来得出那个最优层。 分析：题目要求策略最优，因而要使得在最坏的情况下投掷的总次数 $$T_{max}$$ 最少。首先考虑只有一个棋子的情况，条件若为多个棋子则可转化为一个棋子的情况。  解答  一个棋子 棋子必须在临界层扔下的时候碎，所以唯一的策略是从1层往上逐层投">
+<meta name="twitter:description" content="问题有一个一百层高的大厦，从这个大厦的某一层扔下棋子恰好就会碎（称这一层为临界层）。请你用手中的两个玻璃围棋子，找出一个最优的策略来得出那个最优层。分析：题目要求策略最优，因而要使得在最坏的情况下投掷的总次数 T_{max} 最少。首先考虑只有一个棋子的情况，条件若为多个棋子则可转化为一个棋子的情况。 解答一个棋子棋子必须在临界层扔下的时候碎，所以唯一的策略是从1层往上逐层投掷，此时T_{max}">
 
 
 
@@ -301,14 +301,6 @@
 
       
       
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
-        </li>
-      
     </ul>
   
 
@@ -317,33 +309,6 @@
 
   
 
-  
-    <div class="site-search">
-      
-  
-  <div class="algolia-popup popup search-popup">
-    <div class="algolia-search">
-      <div class="algolia-search-input-icon">
-        <i class="fa fa-search"></i>
-      </div>
-      <div class="algolia-search-input" id="algolia-search-input"></div>
-    </div>
-
-    <div class="algolia-results">
-      <div id="algolia-stats"></div>
-      <div id="algolia-hits"></div>
-      <div id="algolia-pagination" class="algolia-pagination"></div>
-    </div>
-
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-  </div>
-
-
-
-
-    </div>
   
 </nav>
 
@@ -501,29 +466,11 @@
       
 
       
-        <h2 id="问题"><a class="markdownIt-Anchor" href="#问题"></a> 问题</h2>
-<p>有一个一百层高的大厦，从这个大厦的某一层扔下棋子恰好就会碎（称这一层为临界层）。请你用手中的两个玻璃围棋子，找出一个最优的策略来得出那个最优层。<br>
-分析：题目要求策略最优，因而要使得在最坏的情况下投掷的总次数 $$T_{max}$$ 最少。首先考虑只有一个棋子的情况，条件若为多个棋子则可转化为一个棋子的情况。</p>
-<h2 id="解答"><a class="markdownIt-Anchor" href="#解答"></a> 解答</h2>
-<h3 id="一个棋子"><a class="markdownIt-Anchor" href="#一个棋子"></a> 一个棋子</h3>
-<p>棋子必须在临界层扔下的时候碎，所以唯一的策略是从1层往上逐层投掷，此时$$T_{max} =99$$，临界层为99层或100层（因为题目告诉100层肯定会碎，如果99层没碎，那表示临界层即为100）</p>
-<h3 id="两个棋子"><a class="markdownIt-Anchor" href="#两个棋子"></a> 两个棋子</h3>
-<p>利用多的这个棋子缩小查找的范围，因而把100层分成若干段：先利用一个棋子来确定临界层所在的段，再利用另一个棋子确定临界层，总的投掷次数等于确定临界段的次数$$n_{1}$$和确定临界层的次数$$n_{2}$$的和<br>
-现把100层平均分成n段（n是100的正因数），有$$T_{max}= (n-1) + \frac{100}{n-1} = n + \frac{100}{n}-2$$由均值不等式可知n=10时，$$T_{max} =18$$为最小值，此时临界段为第80~90层，临界层为第89层。如果把100层分成12段$$(100=9\times 11+1)$$：1<sub>9,10</sub>18,…91~99,100,与上述n=10的情况相比虽然每段的层数在减少（从而$$n_{1}$$在减少），但所分的段数在增加（从而$$n_{2}$$在增加），因而$$T_{max}$$并没有减少。如果把100层分成其他段（比如9段：$$100=12\times 8+4$$，情况也是如此.<br>
-根据上面的讨论，如何把100层合理地分段是关键。上述对100层所分段数的调整并没有使得$$T_{max} =18$$减少的原因在于每段包含的层数比较均匀(图1)，因而出现$$n_{1}$$和$$n_{2}$$此消彼长的情况。鉴于此我们做出以下方式的调整：<br>
-把100层分成若干段，从下往上，每段的层数逐渐少1（图2），这样就使得在最坏的情况下，$$n_{1}$$增加1的同时$$n_{2}$$减少1，因而$$n_{1}$$与$$n_{2}$$的总和不变（等于第一段的层数n）,为确定n的值，只需要解不等式$$n+(n-1)+(n-2)+…+1\geq 100$$,从而得到n=14<br>
-从第14层开始扔第一枚棋子，如果没有碎则从第14+13=27层开始扔，如果还没有碎则从14+13+12=39层开始扔，以此类推，此时$$T_{max} =14$$,临界层可为第27层，第39层，…第99层。</p>
-<h2 id="拓展"><a class="markdownIt-Anchor" href="#拓展"></a> 拓展：</h2>
-<p>对于m层楼高，k个球的扔棋子问题，又该怎么做？<br>
-答案是用动态规划的思想：如果是三个棋子，100层楼，我扔了一次棋子碎了以后，就变成2个棋子的问题了，因此可以利用上面的结果：</p>
-<p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">（</mi><mi>x</mi><mo>∗</mo><mo>(</mo><mi>x</mi><mo>−</mo><mn>1</mn><mo>)</mo><mi mathvariant="normal">/</mi><mn>2</mn><mo>+</mo><mo>(</mo><mo>(</mo><mi>x</mi><mo>−</mo><mn>1</mn><mo>)</mo><mo>∗</mo><mo>(</mo><mi>x</mi><mo>−</mo><mn>2</mn><mo>)</mo><mi mathvariant="normal">/</mi><mn>2</mn><mo>)</mo><mo>+</mo><mo>…</mo><mo>+</mo><mn>3</mn><mo>+</mo><mn>1</mn><mo>&gt;</mo><mo>=</mo><mn>100.</mn></mrow><annotation encoding="application/x-tex">（x*(x-1)/2+((x-1)*(x-2)/2)+…+3+1&gt;=100. 
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.46528em;vertical-align:0em;"></span><span class="mord cjk_fallback">（</span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mord">/</span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mclose">)</span><span class="mord">/</span><span class="mord">2</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68354em;vertical-align:-0.0391em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span></span><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">.</span></span></span></span></span></p>
-<h3 id="推广"><a class="markdownIt-Anchor" href="#推广"></a> 推广</h3>
-<p>从上面的讨论可以发现此题的关键是（高阶）等差数列：<br>
-两个棋子：1 2 3 4 5…$$\sum_{i=1}<sup>{n}{C_{i}</sup>{1} \geq }100$$!<br>
-三个棋子：1 3 6 10 15… $$\sum_{i=2}<sup>{n}{C_{i}</sup>{2} }\geq 100$$<br>
-因而我们还可以考虑大楼有m层，棋子有k个的情况 $$\sum_{ i=k}<sup>{n}{C_{i}</sup>{k} }  \geq m$$<br>
-算法证明：对 $$m$$ 层楼，k个棋子的问题，存在复杂度为 $$O(\sqrt[y]{m})$$ 的算法。</p>
+        <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>有一个一百层高的大厦，从这个大厦的某一层扔下棋子恰好就会碎（称这一层为临界层）。请你用手中的两个玻璃围棋子，找出一个最优的策略来得出那个最优层。<br>分析：题目要求策略最优，因而要使得在最坏的情况下投掷的总次数 <script type="math/tex">T_{max}</script> 最少。首先考虑只有一个棋子的情况，条件若为多个棋子则可转化为一个棋子的情况。</p>
+<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><h3 id="一个棋子"><a href="#一个棋子" class="headerlink" title="一个棋子"></a>一个棋子</h3><p>棋子必须在临界层扔下的时候碎，所以唯一的策略是从1层往上逐层投掷，此时<script type="math/tex">T_{max} =99</script>，临界层为99层或100层（因为题目告诉100层肯定会碎，如果99层没碎，那表示临界层即为100）</p>
+<h3 id="两个棋子"><a href="#两个棋子" class="headerlink" title="两个棋子"></a>两个棋子</h3><p>利用多的这个棋子缩小查找的范围，因而把100层分成若干段：先利用一个棋子来确定临界层所在的段，再利用另一个棋子确定临界层，总的投掷次数等于确定临界段的次数<script type="math/tex">n_{1}</script>和确定临界层的次数<script type="math/tex">n_{2}</script>的和<br>现把100层平均分成n段（n是100的正因数），有<script type="math/tex">T_{max}= (n-1) + \frac{100}{n-1} = n + \frac{100}{n}-2</script>由均值不等式可知n=10时，<script type="math/tex">T_{max} =18</script>为最小值，此时临界段为第80~90层，临界层为第89层。如果把100层分成12段<script type="math/tex">(100=9\times 11+1)</script>：1~9,10~18,…91~99,100,与上述n=10的情况相比虽然每段的层数在减少（从而<script type="math/tex">n_{1}</script>在减少），但所分的段数在增加（从而<script type="math/tex">n_{2}</script>在增加），因而<script type="math/tex">T_{max}</script>并没有减少。如果把100层分成其他段（比如9段：<script type="math/tex">100=12\times 8+4</script>，情况也是如此.<br>根据上面的讨论，如何把100层合理地分段是关键。上述对100层所分段数的调整并没有使得<script type="math/tex">T_{max} =18</script>减少的原因在于每段包含的层数比较均匀(图1)，因而出现<script type="math/tex">n_{1}</script>和<script type="math/tex">n_{2}</script>此消彼长的情况。鉴于此我们做出以下方式的调整：<br>把100层分成若干段，从下往上，每段的层数逐渐少1（图2），这样就使得在最坏的情况下，<script type="math/tex">n_{1}</script>增加1的同时<script type="math/tex">n_{2}</script>减少1，因而<script type="math/tex">n_{1}</script>与<script type="math/tex">n_{2}</script>的总和不变（等于第一段的层数n）,为确定n的值，只需要解不等式<script type="math/tex">n+(n-1)+(n-2)+...+1\geq 100</script>,从而得到n=14<br>从第14层开始扔第一枚棋子，如果没有碎则从第14+13=27层开始扔，如果还没有碎则从14+13+12=39层开始扔，以此类推，此时<script type="math/tex">T_{max} =14</script>,临界层可为第27层，第39层，…第99层。</p>
+<h2 id="拓展："><a href="#拓展：" class="headerlink" title="拓展："></a>拓展：</h2><p>对于m层楼高，k个球的扔棋子问题，又该怎么做？<br>答案是用动态规划的思想：如果是三个棋子，100层楼，我扔了一次棋子碎了以后，就变成2个棋子的问题了，因此可以利用上面的结果： </p>
+<script type="math/tex; mode=display">（x*(x-1)/2+((x-1)*(x-2)/2)+…+3+1>=100.</script><h3 id="推广"><a href="#推广" class="headerlink" title="推广"></a>推广</h3><p>从上面的讨论可以发现此题的关键是（高阶）等差数列：<br>两个棋子：1 2 3 4 5…<script type="math/tex">\sum_{i=1}^{n}{C_{i}^{1} \geq }100</script>!<br>三个棋子：1 3 6 10 15…. <script type="math/tex">\sum_{i=2}^{n}{C_{i}^{2} }\geq 100</script><br>因而我们还可以考虑大楼有m层，棋子有k个的情况 <script type="math/tex">\sum_{ i=k}^{n}{C_{i}^{k} }  \geq m</script><br>算法证明：对 <script type="math/tex">m</script> 层楼，k个棋子的问题，存在复杂度为 <script type="math/tex">O(\sqrt[y]{m})</script> 的算法。</p>
 <p><a href="http://stevenshi.me/2017/06/26/hexo-insert-formula/" target="_blank" rel="noopener">thanks</a></p>
 
       
@@ -675,9 +622,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -806,7 +751,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text"> 问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解答"><span class="nav-number">2.</span> <span class="nav-text"> 解答</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一个棋子"><span class="nav-number">2.1.</span> <span class="nav-text"> 一个棋子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#两个棋子"><span class="nav-number">2.2.</span> <span class="nav-text"> 两个棋子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拓展"><span class="nav-number">3.</span> <span class="nav-text"> 拓展：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#推广"><span class="nav-number">3.1.</span> <span class="nav-text"> 推广</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解答"><span class="nav-number">2.</span> <span class="nav-text">解答</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一个棋子"><span class="nav-number">2.1.</span> <span class="nav-text">一个棋子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#两个棋子"><span class="nav-number">2.2.</span> <span class="nav-text">两个棋子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拓展："><span class="nav-number">3.</span> <span class="nav-text">拓展：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#推广"><span class="nav-number">3.1.</span> <span class="nav-text">推广</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -970,340 +915,7 @@
 
 
   
-  <script>
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/ostlo/" + search_path;
-    // monitor main search box;
 
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-  
-  
-  
-  <link rel="stylesheet" href="/ostlo/lib/algolia-instant-search/instantsearch.min.css">
-
-  
-  
-  <script src="/ostlo/lib/algolia-instant-search/instantsearch.min.js"></script>
-  
-
-  <script src="/ostlo/js/algolia-search.js?v=7.1.0"></script>
 
 
 
