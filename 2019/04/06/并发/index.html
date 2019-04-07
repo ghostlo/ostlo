@@ -100,18 +100,18 @@
 
 
 
-  <meta name="description" content="什么是并发： 并发是指多个执行任务同时、在一个较长的时间段内可认为是并行被执行。什么是并行： 并行就是指多个任务同时执行什么是竞态： 字面意思是竞争，并发的执行单元对共享资源（硬件资源和软件上的全局变量，静态变量等）的访问容易发生竞态。对于一个虚拟的字符设备驱动，假设一个执行单元A对其写入300个字符‘a’，而另一个执行单元B对其写入300个字符‘b’，第三个执行单元读取所有字符。如果A、B被顺序">
+  <meta name="description" content="什么是并发： 并发是指多个执行任务同时、在一个较长的时间段内可认为是并行被执行。 什么是并行： 并行就是指多个任务同时执行 什么是竞态： 字面意思是竞争，并发的执行单元对共享资源（硬件资源和软件上的全局变量，静态变量等）的访问容易发生竞态。 对于一个虚拟的字符设备驱动，假设一个执行单元A对其写入300个字符‘a’，而另一个执行单元B对其写入300个字符‘b’，第三个执行单元读取所有字符。如果A、B">
 <meta name="keywords" content="并发">
 <meta property="og:type" content="article">
 <meta property="og:title" content="并发">
 <meta property="og:url" content="https://ghostlo.github.io/ostlo/2019/04/06/并发/index.html">
 <meta property="og:site_name" content="Ostlo&#39;s Blog">
-<meta property="og:description" content="什么是并发： 并发是指多个执行任务同时、在一个较长的时间段内可认为是并行被执行。什么是并行： 并行就是指多个任务同时执行什么是竞态： 字面意思是竞争，并发的执行单元对共享资源（硬件资源和软件上的全局变量，静态变量等）的访问容易发生竞态。对于一个虚拟的字符设备驱动，假设一个执行单元A对其写入300个字符‘a’，而另一个执行单元B对其写入300个字符‘b’，第三个执行单元读取所有字符。如果A、B被顺序">
+<meta property="og:description" content="什么是并发： 并发是指多个执行任务同时、在一个较长的时间段内可认为是并行被执行。 什么是并行： 并行就是指多个任务同时执行 什么是竞态： 字面意思是竞争，并发的执行单元对共享资源（硬件资源和软件上的全局变量，静态变量等）的访问容易发生竞态。 对于一个虚拟的字符设备驱动，假设一个执行单元A对其写入300个字符‘a’，而另一个执行单元B对其写入300个字符‘b’，第三个执行单元读取所有字符。如果A、B">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-04-06T14:03:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="并发">
-<meta name="twitter:description" content="什么是并发： 并发是指多个执行任务同时、在一个较长的时间段内可认为是并行被执行。什么是并行： 并行就是指多个任务同时执行什么是竞态： 字面意思是竞争，并发的执行单元对共享资源（硬件资源和软件上的全局变量，静态变量等）的访问容易发生竞态。对于一个虚拟的字符设备驱动，假设一个执行单元A对其写入300个字符‘a’，而另一个执行单元B对其写入300个字符‘b’，第三个执行单元读取所有字符。如果A、B被顺序">
+<meta name="twitter:description" content="什么是并发： 并发是指多个执行任务同时、在一个较长的时间段内可认为是并行被执行。 什么是并行： 并行就是指多个任务同时执行 什么是竞态： 字面意思是竞争，并发的执行单元对共享资源（硬件资源和软件上的全局变量，静态变量等）的访问容易发生竞态。 对于一个虚拟的字符设备驱动，假设一个执行单元A对其写入300个字符‘a’，而另一个执行单元B对其写入300个字符‘b’，第三个执行单元读取所有字符。如果A、B">
 
 
 
@@ -454,9 +454,24 @@
       
 
       
-        <p><strong>什么是并发：</strong> 并发是指多个执行任务同时、在一个较长的时间段内可认为是<strong>并行</strong>被执行。<br><strong>什么是并行：</strong> 并行就是指多个任务同时执行<br><strong>什么是竞态：</strong> 字面意思是竞争，并发的执行单元对共享资源（硬件资源和软件上的全局变量，静态变量等）的访问容易发生竞态。<br>对于一个虚拟的字符设备驱动，假设一个执行单元A对其写入300个字符‘a’，而另一个执行单元B对其写入300个字符‘b’，第三个执行单元读取所有字符。如果A、B被顺序串行执行那么C读出的则不会出错，但如果A、B并发执行，那结果则是我们不可料想的。<br><strong>竞态发生的情况</strong><br><strong>对称多处理器（SMP）的多个CPU：</strong> SMP是一种紧耦合、共享存储的系统模型，它的特点是多个CPU使用共同的系统总线，因此可以访问共同的外设和存储器。<br><strong>单CPU内进程与抢占它的进程：</strong> Linux 2.6的内核支持抢占调度，一个进程在内核执行的时候可能被另一高优先级进程打断。<br><strong>中断（硬中断、软中断、tasklet、低半部）与进程之间：</strong>中断可以打断正在执行的进程，处理中断的程序和被打断的进程间也可能发生竞态。<br><strong>竞态的解决办法</strong><br>解决竞态问题的途径是保证对共享资源的互斥访问。访问共享资源的代码区域称为<strong>临界区</strong>，临界区要互斥机制保护。Linux设备驱动中常见的互斥机制有以下方式：中断屏蔽、原子操作、自旋锁和信号量等。</p>
-<h3 id="临界区"><a href="#临界区" class="headerlink" title="临界区"></a>临界区</h3><p>Most readers would agree that this scenario is best avoided.<br>Therefore, the core rule that applies to spinlocks is that any code<br>must, while holding a spinlock, be atomic.It cannot sleep; in fact, it<br>cannot relinquish the processor for any reason except toservice<br>interrupts (and sometimes not even then).</p>
-<h3 id="互斥锁和自旋锁、信号量的区别"><a href="#互斥锁和自旋锁、信号量的区别" class="headerlink" title="互斥锁和自旋锁、信号量的区别"></a>互斥锁和自旋锁、信号量的区别</h3><p><strong>互斥锁和互斥量</strong> 在我的理解里没啥区别，不同叫法。广义上讲可以值所有实现互斥作用的同步机制。狭义上讲指的就是mutex这种特定的二元锁机制。互斥锁的作用就是互斥，mutual exclusive，<strong>是用来保护临界区(critical section)的</strong> 。所谓临界区就是代码的一个区间，如果两个线程同时执行就有可能出问题，所以需要互斥锁来保护。</p>
+        <p><strong>什么是并发：</strong> 并发是指多个执行任务同时、在一个较长的时间段内可认为是<strong>并行</strong>被执行。<br>
+<strong>什么是并行：</strong> 并行就是指多个任务同时执行<br>
+<strong>什么是竞态：</strong> 字面意思是竞争，并发的执行单元对共享资源（硬件资源和软件上的全局变量，静态变量等）的访问容易发生竞态。<br>
+对于一个虚拟的字符设备驱动，假设一个执行单元A对其写入300个字符‘a’，而另一个执行单元B对其写入300个字符‘b’，第三个执行单元读取所有字符。如果A、B被顺序串行执行那么C读出的则不会出错，但如果A、B并发执行，那结果则是我们不可料想的。<br>
+<strong>竞态发生的情况</strong><br>
+<strong>对称多处理器（SMP）的多个CPU：</strong> SMP是一种紧耦合、共享存储的系统模型，它的特点是多个CPU使用共同的系统总线，因此可以访问共同的外设和存储器。<br>
+<strong>单CPU内进程与抢占它的进程：</strong> Linux 2.6的内核支持抢占调度，一个进程在内核执行的时候可能被另一高优先级进程打断。<br>
+<strong>中断（硬中断、软中断、tasklet、低半部）与进程之间：<strong>中断可以打断正在执行的进程，处理中断的程序和被打断的进程间也可能发生竞态。<br>
+<strong>竞态的解决办法</strong><br>
+解决竞态问题的途径是保证对共享资源的互斥访问。访问共享资源的代码区域称为</strong>临界区</strong>，临界区要互斥机制保护。Linux设备驱动中常见的互斥机制有以下方式：中断屏蔽、原子操作、自旋锁和信号量等。</p>
+<h3 id="临界区"><a class="markdownIt-Anchor" href="#临界区"></a> 临界区</h3>
+<p>Most readers would agree that this scenario is best avoided.<br>
+Therefore, the core rule that applies to spinlocks is that any code<br>
+must, while holding a spinlock, be <a href="http://atomic.It" target="_blank" rel="noopener">atomic.It</a> cannot sleep; in fact, it<br>
+cannot relinquish the processor for any reason except toservice<br>
+interrupts (and sometimes not even then).</p>
+<h3 id="互斥锁和自旋锁-信号量的区别"><a class="markdownIt-Anchor" href="#互斥锁和自旋锁-信号量的区别"></a> 互斥锁和自旋锁、信号量的区别</h3>
+<p><strong>互斥锁和互斥量</strong> 在我的理解里没啥区别，不同叫法。广义上讲可以值所有实现互斥作用的同步机制。狭义上讲指的就是mutex这种特定的二元锁机制。互斥锁的作用就是互斥，mutual exclusive，<strong>是用来保护临界区(critical section)的</strong> 。所谓临界区就是代码的一个区间，如果两个线程同时执行就有可能出问题，所以需要互斥锁来保护。</p>
 <p><strong>信号量（semaphore）</strong> 是一种更高级的同步机制，<strong>mutex（互斥锁）</strong> 可以说是 <strong>semaphore（信号量）</strong> 在仅取值0/1时的特例。Semaphore可以有更多的取值空间，用来实现更加复杂的同步，而不单单是线程间互斥。</p>
 <p><strong>程序运行状态</strong> 开始 运行 就绪 阻塞 结束</p>
 <p>互斥锁：常用，使用后需要的程序进入就绪态，通常情况下锁操作失败会将该线程睡眠等待锁释放时被唤醒</p>
@@ -583,7 +598,7 @@
                 
                   <a href="/ostlo/archives/">
                 
-                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -612,7 +627,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">6</span>
+                      
+                    
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -645,7 +662,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">8</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -715,7 +736,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#临界区"><span class="nav-number">1.</span> <span class="nav-text">临界区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#互斥锁和自旋锁、信号量的区别"><span class="nav-number">2.</span> <span class="nav-text">互斥锁和自旋锁、信号量的区别</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#临界区"><span class="nav-number">1.</span> <span class="nav-text"> 临界区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#互斥锁和自旋锁-信号量的区别"><span class="nav-number">2.</span> <span class="nav-text"> 互斥锁和自旋锁、信号量的区别</span></a></li></ol></div>
             
 
           </div>
