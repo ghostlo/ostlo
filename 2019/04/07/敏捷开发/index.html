@@ -100,18 +100,20 @@
 
 
 
-  <meta name="description" content="问题 有一个一百层高的大厦，从这个大厦的某一层扔下棋子恰好就会碎（称这一层为临界层）。请你用手中的两个玻璃围棋子，找出一个最优的策略来得出那个最优层。 分析：题目要求策略最优，因而要使得在最坏的情况下投掷的总次数 $$T_{max}$$ 最少。首先考虑只有一个棋子的情况，条件若为多个棋子则可转化为一个棋子的情况。  解答  一个棋子 棋子必须在临界层扔下的时候碎，所以唯一的策略是从1层往上逐层投">
-<meta name="keywords" content="建模,数学">
+  <meta name="description" content="迭代开发 敏捷开发的核心是迭代开发（iterative development）。敏捷一定是采用迭代开发的方式。 那么什么是&amp;quot;迭代开发&amp;quot;呢？迭代的英文是 iterative，直译为&amp;quot;重复&amp;quot;，迭代开发其实就是&amp;quot;重复开发&amp;quot;。 对于大型软件项目，传统的开发方式是采用一个大周期（比如一年）进行开发，整个过程就是一次&amp;quot;大开发&amp;quot;">
+<meta name="keywords" content="敏捷开发">
 <meta property="og:type" content="article">
-<meta property="og:title" content="面试--抛棋子">
-<meta property="og:url" content="https://ghostlo.github.io/ostlo/2019/04/06/面试-抛棋子/index.html">
+<meta property="og:title" content="敏捷开发">
+<meta property="og:url" content="https://ghostlo.github.io/ostlo/2019/04/07/敏捷开发/index.html">
 <meta property="og:site_name" content="Ostlo&#39;s Blog">
-<meta property="og:description" content="问题 有一个一百层高的大厦，从这个大厦的某一层扔下棋子恰好就会碎（称这一层为临界层）。请你用手中的两个玻璃围棋子，找出一个最优的策略来得出那个最优层。 分析：题目要求策略最优，因而要使得在最坏的情况下投掷的总次数 $$T_{max}$$ 最少。首先考虑只有一个棋子的情况，条件若为多个棋子则可转化为一个棋子的情况。  解答  一个棋子 棋子必须在临界层扔下的时候碎，所以唯一的策略是从1层往上逐层投">
+<meta property="og:description" content="迭代开发 敏捷开发的核心是迭代开发（iterative development）。敏捷一定是采用迭代开发的方式。 那么什么是&amp;quot;迭代开发&amp;quot;呢？迭代的英文是 iterative，直译为&amp;quot;重复&amp;quot;，迭代开发其实就是&amp;quot;重复开发&amp;quot;。 对于大型软件项目，传统的开发方式是采用一个大周期（比如一年）进行开发，整个过程就是一次&amp;quot;大开发&amp;quot;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-07T03:38:10.000Z">
+<meta property="og:image" content="https://ghostlo.github.io/Users/longxiansheng/Desktop/ostlo_tl/public/images/bg2019030704.jpg">
+<meta property="og:updated_time" content="2019-04-07T02:56:31.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="面试--抛棋子">
-<meta name="twitter:description" content="问题 有一个一百层高的大厦，从这个大厦的某一层扔下棋子恰好就会碎（称这一层为临界层）。请你用手中的两个玻璃围棋子，找出一个最优的策略来得出那个最优层。 分析：题目要求策略最优，因而要使得在最坏的情况下投掷的总次数 $$T_{max}$$ 最少。首先考虑只有一个棋子的情况，条件若为多个棋子则可转化为一个棋子的情况。  解答  一个棋子 棋子必须在临界层扔下的时候碎，所以唯一的策略是从1层往上逐层投">
+<meta name="twitter:title" content="敏捷开发">
+<meta name="twitter:description" content="迭代开发 敏捷开发的核心是迭代开发（iterative development）。敏捷一定是采用迭代开发的方式。 那么什么是&amp;quot;迭代开发&amp;quot;呢？迭代的英文是 iterative，直译为&amp;quot;重复&amp;quot;，迭代开发其实就是&amp;quot;重复开发&amp;quot;。 对于大型软件项目，传统的开发方式是采用一个大周期（比如一年）进行开发，整个过程就是一次&amp;quot;大开发&amp;quot;">
+<meta name="twitter:image" content="https://ghostlo.github.io/Users/longxiansheng/Desktop/ostlo_tl/public/images/bg2019030704.jpg">
 
 
 
@@ -121,7 +123,7 @@
 
   
   
-  <link rel="canonical" href="https://ghostlo.github.io/ostlo/2019/04/06/面试-抛棋子/">
+  <link rel="canonical" href="https://ghostlo.github.io/ostlo/2019/04/07/敏捷开发/">
 
 
 
@@ -131,7 +133,7 @@
   };
 </script>
 
-  <title>面试--抛棋子 | Ostlo's Blog</title>
+  <title>敏捷开发 | Ostlo's Blog</title>
   
 
 
@@ -354,7 +356,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ghostlo.github.io/ostlo/ostlo/2019/04/06/面试-抛棋子/">
+    <link itemprop="mainEntityOfPage" href="https://ghostlo.github.io/ostlo/ostlo/2019/04/07/敏捷开发/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Ostlo_TL">
@@ -371,7 +373,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">面试--抛棋子
+          <h1 class="post-title" itemprop="name headline">敏捷开发
 
               
             
@@ -397,24 +399,12 @@
                 
               
 
-              <time title="Created: 2019-04-06 16:36:07" itemprop="dateCreated datePublished" datetime="2019-04-06T16:36:07+08:00">2019-04-06</time>
+              <time title="Created: 2019-04-07 10:51:02 / Modified: 10:56:31" itemprop="dateCreated datePublished" datetime="2019-04-07T10:51:02+08:00">2019-04-07</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-04-07 11:38:10" itemprop="dateModified" datetime="2019-04-07T11:38:10+08:00">2019-04-07</time>
               
             
           </span>
@@ -431,7 +421,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/ostlo/categories/面试/" itemprop="url" rel="index"><span itemprop="name">面试</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/ostlo/categories/软件工程/" itemprop="url" rel="index"><span itemprop="name">软件工程</span></a></span>
 
                 
                 
@@ -466,30 +456,77 @@
       
 
       
-        <h2 id="问题"><a class="markdownIt-Anchor" href="#问题"></a> 问题</h2>
-<p>有一个一百层高的大厦，从这个大厦的某一层扔下棋子恰好就会碎（称这一层为临界层）。请你用手中的两个玻璃围棋子，找出一个最优的策略来得出那个最优层。<br>
-分析：题目要求策略最优，因而要使得在最坏的情况下投掷的总次数 $$T_{max}$$ 最少。首先考虑只有一个棋子的情况，条件若为多个棋子则可转化为一个棋子的情况。</p>
-<h2 id="解答"><a class="markdownIt-Anchor" href="#解答"></a> 解答</h2>
-<h3 id="一个棋子"><a class="markdownIt-Anchor" href="#一个棋子"></a> 一个棋子</h3>
-<p>棋子必须在临界层扔下的时候碎，所以唯一的策略是从1层往上逐层投掷，此时$$T_{max} =99$$，临界层为99层或100层（因为题目告诉100层肯定会碎，如果99层没碎，那表示临界层即为100）</p>
-<h3 id="两个棋子"><a class="markdownIt-Anchor" href="#两个棋子"></a> 两个棋子</h3>
-<p>利用多的这个棋子缩小查找的范围，因而把100层分成若干段：先利用一个棋子来确定临界层所在的段，再利用另一个棋子确定临界层，总的投掷次数等于确定临界段的次数$$n_{1}$$和确定临界层的次数$$n_{2}$$的和<br>
-现把100层平均分成n段（n是100的正因数），有$$T_{max}= (n-1) + \frac{100}{n-1} = n + \frac{100}{n}-2$$由均值不等式可知n=10时，$$T_{max} =18$$为最小值，此时临界段为第80~90层，临界层为第89层。如果把100层分成12段$$(100=9\times 11+1)$$：1<sub>9,10</sub>18,…91~99,100,与上述n=10的情况相比虽然每段的层数在减少（从而$$n_{1}$$在减少），但所分的段数在增加（从而$$n_{2}$$在增加），因而$$T_{max}$$并没有减少。如果把100层分成其他段（比如9段：$$100=12\times 8+4$$，情况也是如此.<br>
-根据上面的讨论，如何把100层合理地分段是关键。上述对100层所分段数的调整并没有使得$$T_{max} =18$$减少的原因在于每段包含的层数比较均匀(图1)，因而出现$$n_{1}$$和$$n_{2}$$此消彼长的情况。鉴于此我们做出以下方式的调整：<br>
-把100层分成若干段，从下往上，每段的层数逐渐少1（图2），这样就使得在最坏的情况下，$$n_{1}$$增加1的同时$$n_{2}$$减少1，因而$$n_{1}$$与$$n_{2}$$的总和不变（等于第一段的层数n）,为确定n的值，只需要解不等式$$n+(n-1)+(n-2)+…+1\geq 100$$,从而得到n=14<br>
-从第14层开始扔第一枚棋子，如果没有碎则从第14+13=27层开始扔，如果还没有碎则从14+13+12=39层开始扔，以此类推，此时$$T_{max} =14$$,临界层可为第27层，第39层，…第99层。</p>
-<h2 id="拓展"><a class="markdownIt-Anchor" href="#拓展"></a> 拓展：</h2>
-<p>对于m层楼高，k个球的扔棋子问题，又该怎么做？<br>
-答案是用动态规划的思想：如果是三个棋子，100层楼，我扔了一次棋子碎了以后，就变成2个棋子的问题了，因此可以利用上面的结果：</p>
-<p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">（</mi><mi>x</mi><mo>∗</mo><mo>(</mo><mi>x</mi><mo>−</mo><mn>1</mn><mo>)</mo><mi mathvariant="normal">/</mi><mn>2</mn><mo>+</mo><mo>(</mo><mo>(</mo><mi>x</mi><mo>−</mo><mn>1</mn><mo>)</mo><mo>∗</mo><mo>(</mo><mi>x</mi><mo>−</mo><mn>2</mn><mo>)</mo><mi mathvariant="normal">/</mi><mn>2</mn><mo>)</mo><mo>+</mo><mo>…</mo><mo>+</mo><mn>3</mn><mo>+</mo><mn>1</mn><mo>&gt;</mo><mo>=</mo><mn>100.</mn></mrow><annotation encoding="application/x-tex">（x*(x-1)/2+((x-1)*(x-2)/2)+…+3+1&gt;=100. 
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.46528em;vertical-align:0em;"></span><span class="mord cjk_fallback">（</span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mord">/</span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mclose">)</span><span class="mord">/</span><span class="mord">2</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68354em;vertical-align:-0.0391em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span></span><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">.</span></span></span></span></span></p>
-<h3 id="推广"><a class="markdownIt-Anchor" href="#推广"></a> 推广</h3>
-<p>从上面的讨论可以发现此题的关键是（高阶）等差数列：<br>
-两个棋子：1 2 3 4 5…$$\sum_{i=1}<sup>{n}{C_{i}</sup>{1} \geq }100$$!<br>
-三个棋子：1 3 6 10 15… $$\sum_{i=2}<sup>{n}{C_{i}</sup>{2} }\geq 100$$<br>
-因而我们还可以考虑大楼有m层，棋子有k个的情况 $$\sum_{ i=k}<sup>{n}{C_{i}</sup>{k} }  \geq m$$<br>
-算法证明：对 $$m$$ 层楼，k个棋子的问题，存在复杂度为 $$O(\sqrt[y]{m})$$ 的算法。</p>
-<p><a href="http://stevenshi.me/2017/06/26/hexo-insert-formula/" target="_blank" rel="noopener">thanks</a></p>
+        <h2 id="迭代开发"><a class="markdownIt-Anchor" href="#迭代开发"></a> 迭代开发</h2>
+<p><strong>敏捷开发的核心是迭代开发（iterative development）。敏捷一定是采用迭代开发的方式。</strong></p>
+<p>那么什么是&quot;迭代开发&quot;呢？迭代的英文是 iterative，直译为&quot;重复&quot;，迭代开发其实就是&quot;重复开发&quot;。</p>
+<p>对于大型软件项目，传统的开发方式是采用一个大周期（比如一年）进行开发，整个过程就是一次&quot;大开发&quot;；迭代开发的方式则不一样，它将开发过程拆分成多个小周期，即一次&quot;大开发&quot;变成多次&quot;小开发&quot;，每次小开发都是同样的流程，所以看上去就好像重复在做同样的步骤。</p>
+<p>举例来说，SpaceX 公司想造一个大推力火箭，将人类送到火星。但是，它不是一开始就造大火箭，而是先造一个最简陋的小火箭 Falcon 1。结果，第一次发射就爆炸了，直到第四次发射，才成功进入轨道。然后，开发了中型火箭 Falcon 9，九年中发射了70次。最后，才开发 Falcon 重型火箭。如果 SpaceX 不采用迭代开发，它可能直到现在还无法上天。</p>
+<p>**迭代开发将一个大任务，分解成多次连续的开发，本质就是逐步改进。**开发者先快速发布一个有效但不完美的最简版本，然后不断迭代。每一次迭代都包含规划、设计、编码、测试、评估五个步骤，不断改进产品，添加新功能。通过频繁的发布，以及跟踪对前一次迭代的反馈，最终接近较完善的产品形态。</p>
+<h2 id="增量开发"><a class="markdownIt-Anchor" href="#增量开发"></a> 增量开发</h2>
+<p>迭代开发只是要求将开发分成多个迭代，并没有回答一个重要的问题：怎么划分迭代，哪个任务在这个迭代，哪个任务在下个迭代？这时，一般采用&quot;增量开发&quot;（incremental development）划分迭代。</p>
+<p><strong>所谓&quot;增量开发&quot;，指的是软件的每个版本，都会新增一个用户可以感知的完整功能。也就是说，按照新增功能来划分迭代。</strong></p>
+<p>举例来说，房产公司开发一个10栋楼的小区。如果采用增量开发的模式，该公司第一个迭代就是交付一号楼，第二个迭代交付二号楼…每个迭代都是完成一栋完整的楼。而不是第一个迭代挖好10栋楼的地基，第二个迭代建好每栋楼的骨架，第三个迭代架设屋顶…</p>
+<p><strong>增量开发加上迭代开发，才算真正的敏捷开发。</strong></p>
+<h2 id="敏捷开发的好处"><a class="markdownIt-Anchor" href="#敏捷开发的好处"></a> 敏捷开发的好处</h2>
+<h3 id="早期交付"><a class="markdownIt-Anchor" href="#早期交付"></a> 早期交付</h3>
+<p><strong>敏捷开发的第一个好处，就是早期交付，从而大大降低成本。</strong></p>
+<p>还是以上一节的房产公司为例，如果按照传统的&quot;瀑布开发模式&quot;，先挖10栋楼的地基、再盖骨架、然后架设屋顶，每个阶段都等到前一个阶段完成后开始，可能需要两年才能一次性交付10栋楼。也就是说，如果不考虑预售，该项目必须等到两年后才能回款。</p>
+<p>敏捷开发是六个月后交付一号楼，后面每两个月交付一栋楼。因此，半年就能回款10%，后面每个月都会有现金流，资金压力就大大减轻了。</p>
+<h3 id="降低风险"><a class="markdownIt-Anchor" href="#降低风险"></a> 降低风险</h3>
+<p><strong>敏捷开发的第二个好处是，及时了解市场需求，降低产品不适用的风险。</strong></p>
+<p>请想一想，哪一种情况损失比较小：10栋楼都造好以后，才发现卖不出去，还是造好第一栋楼，就发现卖不出去，从而改进或停建后面9栋楼？</p>
+<p>对于软件项目来说，先有一个原型产品，了解市场的接受程度，往往是项目成功的关键。有一本书叫做《梦断代码》，副标题就是&quot;20+个程序员，三年时间，4732个bug，100+万美元，最后失败的故事&quot;，这就是没有采用敏捷开发的结果。相反的，Instagram 最初是一个地理位置打卡 App，后来发现用户不怎么在乎地理位置，更喜欢上传照片，就改做照片上传软件，结果成了独角兽。</p>
+<p>由于敏捷开发可以不断试错，找出对业务最重要的功能，然后通过迭代，调整软件方向。相比传统方式，大大增加了产品成功的可能性。如果市场需求不确定，或者你对该领域不熟悉，那么敏捷开发几乎是唯一可行的应对方式。</p>
+<h2 id="如何进行每一次迭代"><a class="markdownIt-Anchor" href="#如何进行每一次迭代"></a> 如何进行每一次迭代</h2>
+<p>虽然敏捷开发将软件开发分成多个迭代，但是也要求，<strong>每次迭代都是一个完整的软件开发周期，必须按照软件工程的方法论，进行正规的流程管理。</strong><img src="/Users/longxiansheng/Desktop/ostlo_tl/public/images/bg2019030704.jpg" alt="bg2019030704"></p>
+<p>具体来说，每次迭代都必须依次完成以下五个步骤。</p>
+<blockquote>
+<ol>
+<li>
+<p>需求分析（requirements analysis）</p>
+</li>
+<li>
+<p>设计（design）</p>
+</li>
+<li>
+<p>编码（coding）</p>
+</li>
+<li>
+<p>测试（testing）</p>
+</li>
+<li>
+<p>部署和评估（deployment / evaluation）</p>
+</li>
+</ol>
+</blockquote>
+<p>每个迭代大约持续2~6周。</p>
+<h2 id="敏捷开发的价值观"><a class="markdownIt-Anchor" href="#敏捷开发的价值观"></a> 敏捷开发的价值观</h2>
+<p>《敏捷软件开发宣言》里面提到四个价值观。</p>
+<blockquote>
+<ul>
+<li>程序员的主观能动性，以及程序员之间的互动，优于既定流程和工具。</li>
+<li>软件能够运行，优于详尽的文档。</li>
+<li>跟客户的密切协作，优于合同和谈判。</li>
+<li>能够响应变化，优于遵循计划。</li>
+</ul>
+</blockquote>
+<h2 id="十二条原则"><a class="markdownIt-Anchor" href="#十二条原则"></a> 十二条原则</h2>
+<p>该宣言还提出十二条敏捷开发的原则。</p>
+<ol>
+<li>通过早期和持续交付有价值的软件，实现客户满意度。</li>
+<li>欢迎不断变化的需求，即使是在项目开发的后期。要善于利用需求变更，帮助客户获得竞争优势。</li>
+<li>不断交付可用的软件，周期通常是几周，越短越好。</li>
+<li>项目过程中，业务人员与开发人员必须在一起工作。</li>
+<li>项目必须围绕那些有内在动力的个人而建立，他们应该受到信任。</li>
+<li>面对面交谈是最好的沟通方式。</li>
+<li>可用性是衡量进度的主要指标。</li>
+<li>提倡可持续的开发，保持稳定的进展速度。</li>
+<li>不断关注技术是否优秀，设计是否良好。</li>
+<li>简单性至关重要，尽最大可能减少不必要的工作。</li>
+<li>最好的架构、要求和设计，来自团队内部自发的认识。</li>
+<li>团队要定期反思如何更有效，并相应地进行调整。</li>
+</ol>
+<p><a href="http://www.ruanyifeng.com/blog/2019/03/agile-development.html" target="_blank" rel="noopener">来源：阮一峰</a></p>
 
       
     </div>
@@ -513,9 +550,7 @@
       
         <div class="post-tags">
           
-            <a href="/ostlo/tags/建模/" rel="tag"># 建模</a>
-          
-            <a href="/ostlo/tags/数学/" rel="tag"># 数学</a>
+            <a href="/ostlo/tags/敏捷开发/" rel="tag"># 敏捷开发</a>
           
         </div>
       
@@ -528,8 +563,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/ostlo/2019/04/04/cookie-与-session-的区别/" rel="next" title="cookie 与 session 的区别">
-                <i class="fa fa-chevron-left"></i> cookie 与 session 的区别
+              <a href="/ostlo/2019/04/06/mysql/" rel="next" title="mysql-面试">
+                <i class="fa fa-chevron-left"></i> mysql-面试
               </a>
             
           </div>
@@ -537,10 +572,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/ostlo/2019/04/06/数据库事务的四大特性以及事务的隔离级别/" rel="prev" title="数据库事务的四大特性以及事务的隔离级别">
-                数据库事务的四大特性以及事务的隔离级别 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -743,7 +774,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text"> 问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解答"><span class="nav-number">2.</span> <span class="nav-text"> 解答</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一个棋子"><span class="nav-number">2.1.</span> <span class="nav-text"> 一个棋子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#两个棋子"><span class="nav-number">2.2.</span> <span class="nav-text"> 两个棋子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拓展"><span class="nav-number">3.</span> <span class="nav-text"> 拓展：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#推广"><span class="nav-number">3.1.</span> <span class="nav-text"> 推广</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#迭代开发"><span class="nav-number">1.</span> <span class="nav-text"> 迭代开发</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增量开发"><span class="nav-number">2.</span> <span class="nav-text"> 增量开发</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#敏捷开发的好处"><span class="nav-number">3.</span> <span class="nav-text"> 敏捷开发的好处</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#早期交付"><span class="nav-number">3.1.</span> <span class="nav-text"> 早期交付</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#降低风险"><span class="nav-number">3.2.</span> <span class="nav-text"> 降低风险</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何进行每一次迭代"><span class="nav-number">4.</span> <span class="nav-text"> 如何进行每一次迭代</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#敏捷开发的价值观"><span class="nav-number">5.</span> <span class="nav-text"> 敏捷开发的价值观</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十二条原则"><span class="nav-number">6.</span> <span class="nav-text"> 十二条原则</span></a></li></ol></div>
             
 
           </div>
@@ -891,7 +922,7 @@
   
 
 
-  <script src="/ostlo/js/next-boot.js?v=7.1.0"></script>
+  <script src="/ostlo/js/next-boot.js?v=7.1.0"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
   
@@ -921,46 +952,6 @@
   
   
 
-  
-    
-      <script type="text/x-mathjax-config">
-  
-
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-      
-      equationNumbers: {
-        autoNumber: 'AMS'
-      }
-    }
-  });
-  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-      if (data.display) {
-        var next = data.script.nextSibling;
-        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
-        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
-      }
-    });
-  });
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for (i = 0; i < all.length; i += 1) {
-      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
-    }
-  });
-</script>
-<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-
-    
   
 
 
