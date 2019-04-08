@@ -5,9 +5,9 @@
   
   <link href="/ostlo/atom.xml" rel="self"/>
   
-  <link href="https://ghostlo.github.io/ostlo/"/>
+  <link href="https://ghostlo.github.io/"/>
   <updated>2019-04-08T08:19:50.000Z</updated>
-  <id>https://ghostlo.github.io/ostlo/</id>
+  <id>https://ghostlo.github.io/</id>
   
   <author>
     <name>Ostlo_TL</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>守护进程</title>
-    <link href="https://ghostlo.github.io/ostlo/2019/04/08/%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B/"/>
-    <id>https://ghostlo.github.io/ostlo/2019/04/08/守护进程/</id>
+    <link href="https://ghostlo.github.io/2019/04/08/%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B/"/>
+    <id>https://ghostlo.github.io/2019/04/08/守护进程/</id>
     <published>2019-04-08T08:16:36.000Z</published>
     <updated>2019-04-08T08:19:50.000Z</updated>
     
@@ -36,17 +36,17 @@
     
     </summary>
     
-      <category term="操作系统" scheme="https://ghostlo.github.io/ostlo/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+      <category term="操作系统" scheme="https://ghostlo.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
     
-      <category term="守护进程" scheme="https://ghostlo.github.io/ostlo/tags/%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B/"/>
+      <category term="守护进程" scheme="https://ghostlo.github.io/tags/%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
     <title>C++指针</title>
-    <link href="https://ghostlo.github.io/ostlo/2019/04/07/C%E6%8C%87%E9%92%88/"/>
-    <id>https://ghostlo.github.io/ostlo/2019/04/07/C指针/</id>
+    <link href="https://ghostlo.github.io/2019/04/07/C%E6%8C%87%E9%92%88/"/>
+    <id>https://ghostlo.github.io/2019/04/07/C指针/</id>
     <published>2019-04-07T06:40:56.000Z</published>
     <updated>2019-04-07T10:58:55.000Z</updated>
     
@@ -62,19 +62,19 @@
     
     </summary>
     
-      <category term="C++" scheme="https://ghostlo.github.io/ostlo/categories/C/"/>
+      <category term="C++" scheme="https://ghostlo.github.io/categories/C/"/>
     
     
-      <category term="C++" scheme="https://ghostlo.github.io/ostlo/tags/C/"/>
+      <category term="C++" scheme="https://ghostlo.github.io/tags/C/"/>
     
-      <category term="指针" scheme="https://ghostlo.github.io/ostlo/tags/%E6%8C%87%E9%92%88/"/>
+      <category term="指针" scheme="https://ghostlo.github.io/tags/%E6%8C%87%E9%92%88/"/>
     
   </entry>
   
   <entry>
     <title>敏捷开发</title>
-    <link href="https://ghostlo.github.io/ostlo/2019/04/07/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/"/>
-    <id>https://ghostlo.github.io/ostlo/2019/04/07/敏捷开发/</id>
+    <link href="https://ghostlo.github.io/2019/04/07/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/"/>
+    <id>https://ghostlo.github.io/2019/04/07/敏捷开发/</id>
     <published>2019-04-07T02:51:02.000Z</published>
     <updated>2019-04-07T02:56:31.000Z</updated>
     
@@ -90,17 +90,17 @@
     
     </summary>
     
-      <category term="软件工程" scheme="https://ghostlo.github.io/ostlo/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/"/>
+      <category term="软件工程" scheme="https://ghostlo.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/"/>
     
     
-      <category term="敏捷开发" scheme="https://ghostlo.github.io/ostlo/tags/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/"/>
+      <category term="敏捷开发" scheme="https://ghostlo.github.io/tags/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
   <entry>
     <title>mysql-面试</title>
-    <link href="https://ghostlo.github.io/ostlo/2019/04/06/mysql/"/>
-    <id>https://ghostlo.github.io/ostlo/2019/04/06/mysql/</id>
+    <link href="https://ghostlo.github.io/2019/04/06/mysql/"/>
+    <id>https://ghostlo.github.io/2019/04/06/mysql/</id>
     <published>2019-04-06T14:19:09.000Z</published>
     <updated>2019-04-07T12:14:53.000Z</updated>
     
@@ -118,19 +118,19 @@
     
     </summary>
     
-      <category term="数据库" scheme="https://ghostlo.github.io/ostlo/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="https://ghostlo.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-      <category term="mysql" scheme="https://ghostlo.github.io/ostlo/tags/mysql/"/>
+      <category term="mysql" scheme="https://ghostlo.github.io/tags/mysql/"/>
     
-      <category term="面试" scheme="https://ghostlo.github.io/ostlo/tags/%E9%9D%A2%E8%AF%95/"/>
+      <category term="面试" scheme="https://ghostlo.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   
   <entry>
     <title>并发</title>
-    <link href="https://ghostlo.github.io/ostlo/2019/04/06/%E5%B9%B6%E5%8F%91/"/>
-    <id>https://ghostlo.github.io/ostlo/2019/04/06/并发/</id>
+    <link href="https://ghostlo.github.io/2019/04/06/%E5%B9%B6%E5%8F%91/"/>
+    <id>https://ghostlo.github.io/2019/04/06/并发/</id>
     <published>2019-04-06T13:47:29.000Z</published>
     <updated>2019-04-06T14:03:01.000Z</updated>
     
@@ -147,21 +147,21 @@
     
     </summary>
     
-      <category term="操作系统" scheme="https://ghostlo.github.io/ostlo/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+      <category term="操作系统" scheme="https://ghostlo.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
     
-      <category term="并发" scheme="https://ghostlo.github.io/ostlo/tags/%E5%B9%B6%E5%8F%91/"/>
+      <category term="并发" scheme="https://ghostlo.github.io/tags/%E5%B9%B6%E5%8F%91/"/>
     
   </entry>
   
   <entry>
     <title>数据库事务的四大特性以及事务的隔离级别</title>
-    <link href="https://ghostlo.github.io/ostlo/2019/04/06/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BA%8B%E5%8A%A1%E7%9A%84%E5%9B%9B%E5%A4%A7%E7%89%B9%E6%80%A7%E4%BB%A5%E5%8F%8A%E4%BA%8B%E5%8A%A1%E7%9A%84%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB/"/>
-    <id>https://ghostlo.github.io/ostlo/2019/04/06/数据库事务的四大特性以及事务的隔离级别/</id>
+    <link href="https://ghostlo.github.io/2019/04/06/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BA%8B%E5%8A%A1%E7%9A%84%E5%9B%9B%E5%A4%A7%E7%89%B9%E6%80%A7%E4%BB%A5%E5%8F%8A%E4%BA%8B%E5%8A%A1%E7%9A%84%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB/"/>
+    <id>https://ghostlo.github.io/2019/04/06/数据库事务的四大特性以及事务的隔离级别/</id>
     <published>2019-04-06T08:38:07.000Z</published>
     <updated>2019-04-08T08:20:56.000Z</updated>
     
-    <content type="html"><![CDATA[<p>​如果一个数据库声称支持事务的操作，那么该数据库必须要具备以下四个特性：</p><h2 id="原子性atomicity"><a class="markdownIt-Anchor" href="#原子性atomicity"></a> 原子性（Atomicity）</h2><p>原子性是指事务包含的所有操作要么全部成功，要么全部失败回滚，这和前面两篇博客介绍事务的功能是一样的概念，因此事务的操作如果成功就必须要完全应用到数据库，如果操作失败则不能对数据库有任何影响。</p><h2 id="一致性consistency"><a class="markdownIt-Anchor" href="#一致性consistency"></a> 一致性（Consistency）</h2><p>一致性是指事务必须使数据库从一个一致性状态变换到另一个一致性状态，也就是说一个事务执行之前和执行之后都必须处于一致性状态。</p><p>拿转账来说，假设用户A和用户B两者的钱加起来一共是5000，那么不管A和B之间如何转账，转几次账，事务结束后两个用户的钱相加起来应该还得是5000，这就是事务的一致性。</p><h2 id="隔离性isolation"><a class="markdownIt-Anchor" href="#隔离性isolation"></a> 隔离性（Isolation）</h2><p>隔离性是当多个用户并发访问数据库时，比如操作同一张表时，数据库为每一个用户开启的事务，不能被其他事务的操作所干扰，多个并发事务之间要相互隔离。</p><p>即要达到这么一种效果：对于任意两个并发的事务T1和T2，在事务T1看来，T2要么在T1开始之前就已经结束，要么在T1结束之后才开始，这样每个事务都感觉不到有其他事务在并发地执行。</p><p>关于事务的隔离性数据库提供了多种隔离级别，稍后会介绍到。</p><h2 id="持久性durability"><a class="markdownIt-Anchor" href="#持久性durability"></a> 持久性（Durability）</h2><p>持久性是指一个事务一旦被提交了，那么对数据库中的数据的改变就是永久性的，即便是在数据库系统遇到故障的情况下也不会丢失提交事务的操作。</p><p>例如我们在使用JDBC操作数据库时，在提交事务方法后，提示用户事务操作完成，当我们程序执行完成直到看到提示后，就可以认定事务以及正确提交，即使这时候数据库出现了问题，也必须要将我们的事务完全执行完成，否则就会造成我们看到提示事务处理完毕，但是数据库因为故障而没有执行事务的重大错误。</p><p>以上介绍完事务的四大特性(简称ACID)，现在重点来说明下事务的隔离性，当多个线程都开启事务操作数据库中的数据时，数据库系统要能进行隔离操作，以保证各个线程获取数据的准确性，在介绍数据库提供的各种隔离级别之前，我们先看看如果不考虑事务的隔离性，会发生的几种问题：</p><h2 id="脏读"><a class="markdownIt-Anchor" href="#脏读"></a> 脏读</h2><p>脏读是指在一个事务处理过程里读取了另一个未提交的事务中的数据。</p><p>当一个事务正在多次修改某个数据，而在这个事务中这多次的修改都还未提交，这时一个并发的事务来访问该数据，就会造成两个事务得到的数据不一致。例如：用户A向用户B转账100元，对应SQL命令如下</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">update account set money=money+100 where name=’B’;  (此时A通知B)</span><br><span class="line"></span><br><span class="line">update account set money=money - 100 where name=’A’;</span><br></pre></td></tr></table></figure><p>当只执行第一条SQL时，A通知B查看账户，B发现确实钱已到账（此时即发生了脏读），而之后无论第二条SQL是否执行，只要该事务不提交，则所有操作都将回滚，那么当B以后再次查看账户时就会发现钱其实并没有转。</p><h2 id="不可重复读"><a class="markdownIt-Anchor" href="#不可重复读"></a> 不可重复读</h2><p>不可重复读是指在对于数据库中的某个数据，一个事务范围内多次查询却返回了不同的数据值，这是由于在查询间隔，被另一个事务修改并提交了。</p><p>例如事务T1在读取某一数据，而事务T2立马修改了这个数据并且提交事务给数据库，事务T1再次读取该数据就得到了不同的结果，发送了不可重复读。</p><p>不可重复读和脏读的区别是，脏读是某一事务读取了另一个事务未提交的脏数据，而不可重复读则是读取了前一事务提交的数据。</p><p>在某些情况下，不可重复读并不是问题，比如我们多次查询某个数据当然以最后查询得到的结果为主。但在另一些情况下就有可能发生问题，例如对于同一个数据A和B依次查询就可能不同，A和B就可能打起来了……</p><h2 id="虚读幻读"><a class="markdownIt-Anchor" href="#虚读幻读"></a> 虚读(幻读)</h2><p>幻读是事务非独立执行时发生的一种现象。例如事务T1对一个表中所有的行的某个数据项做了从“1”修改为“2”的操作，这时事务T2又对这个表中插入了一行数据项，而这个数据项的数值还是为“1”并且提交给数据库。而操作事务T1的用户如果再查看刚刚修改的数据，会发现还有一行没有修改，其实这行是从事务T2中添加的，就好像产生幻觉一样，这就是发生了幻读。</p><p>幻读和不可重复读都是读取了另一条已经提交的事务（这点就脏读不同），所不同的是不可重复读查询的都是同一个数据项，而幻读针对的是一批数据整体（比如数据的个数）。</p><h2 id="隔离级别"><a class="markdownIt-Anchor" href="#隔离级别"></a> 隔离级别</h2><p>现在来看看MySQL数据库为我们提供的四种隔离级别：</p><h5 id="serializable-串行化"><a class="markdownIt-Anchor" href="#serializable-串行化"></a> Serializable (串行化)</h5><p>可避免脏读、不可重复读、幻读的发生。</p><h5 id="repeatable-read-可重复读"><a class="markdownIt-Anchor" href="#repeatable-read-可重复读"></a> Repeatable read (可重复读)</h5><p>可避免脏读、不可重复读的发生。</p><h5 id="read-committed-读已提交"><a class="markdownIt-Anchor" href="#read-committed-读已提交"></a> Read committed (读已提交)</h5><p>可避免脏读的发生。</p><h5 id="read-uncommitted-读未提交"><a class="markdownIt-Anchor" href="#read-uncommitted-读未提交"></a> Read uncommitted (读未提交)</h5><p>最低级别，任何情况都无法保证。</p><p>以上四种隔离级别最高的是Serializable级别，最低的是Read uncommitted级别，当然级别越高，执行效率就越低。像Serializable这样的级别，就是以锁表的方式(类似于Java多线程中的锁)使得其他的线程只能在锁外等待，所以平时选用何种隔离级别应该根据实际情况。在MySQL数据库中默认的隔离级别为Repeatable read (可重复读)。</p><p>在MySQL数据库中，支持上面四种隔离级别，默认的为Repeatable read (可重复读)；而在Oracle数据库中，只支持Serializable (串行化)级别和Read committed (读已提交)这两种级别，其中默认的为Read committed级别。</p><p>在MySQL数据库中查看当前事务的隔离级别：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select @@tx_isolation;</span><br></pre></td></tr></table></figure><p>在MySQL数据库中设置事务的隔离 级别：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">set  [glogal | session]  transaction isolation level 隔离级别名称;</span><br><span class="line"></span><br><span class="line">set tx_isolation=’隔离级别名称;’</span><br></pre></td></tr></table></figure><p>例1：查看当前事务的隔离级别：</p><p><img src="/ostlo/ostlo/2019/04/06/数据库事务的四大特性以及事务的隔离级别/787876-20160313202200007-1111796802.png" alt></p><p>例2：将事务的隔离级别设置为Read uncommitted级别：</p><p><img src="/ostlo/ostlo/2019/04/06/数据库事务的四大特性以及事务的隔离级别/787876-20160313202224241-2101542210.png" alt></p><p>或：</p><p><img src="/ostlo/ostlo/2019/04/06/数据库事务的四大特性以及事务的隔离级别/787876-20160313202245210-345198166.png" alt></p><p>记住：设置数据库的隔离级别一定要是在开启事务之前！</p><p>如果是使用JDBC对数据库的事务设置隔离级别的话，也应该是在调用Connection对象的setAutoCommit(false)方法之前。调用Connection对象的setTransactionIsolation(level)即可设置当前链接的隔离级别，至于参数level，可以使用Connection对象的字段：</p><p><img src="/ostlo/ostlo/2019/04/06/数据库事务的四大特性以及事务的隔离级别/787876-20160313202333460-377269897.png" alt></p><p>在JDBC中设置隔离级别的部分代码：</p><p><img src="/ostlo/ostlo/2019/04/06/数据库事务的四大特性以及事务的隔离级别/787876-20160313202355694-2106931487.png" alt></p><p>后记：隔离级别的设置只对当前链接有效。对于使用MySQL命令窗口而言，一个窗口就相当于一个链接，当前窗口设置的隔离级别只对当前窗口中的事务有效；对于JDBC操作数据库来说，一个Connection对象相当于一个链接，而对于Connection对象设置的隔离级别只对该Connection对象有效，与其他链接Connection对象无关。</p><p>参考博客：</p><p><a href="http://www.zhihu.com/question/23989904" target="_blank" rel="noopener">http://www.zhihu.com/question/23989904</a></p><p><a href="http://dev.mysql.com/doc/refman/5.6/en/set-transaction.html" target="_blank" rel="noopener">http://dev.mysql.com/doc/refman/5.6/en/set-transaction.html</a></p><p><a href="http://www.cnblogs.com/xdp-gacl/p/3984001.html" target="_blank" rel="noopener">http://www.cnblogs.com/xdp-gacl/p/3984001.html</a></p><p><a href="https://www.cnblogs.com/fjdingsd/p/5273008.html" target="_blank" rel="noopener">来源</a></p>]]></content>
+    <content type="html"><![CDATA[<p>​如果一个数据库声称支持事务的操作，那么该数据库必须要具备以下四个特性：</p><h2 id="原子性atomicity"><a class="markdownIt-Anchor" href="#原子性atomicity"></a> 原子性（Atomicity）</h2><p>原子性是指事务包含的所有操作要么全部成功，要么全部失败回滚，这和前面两篇博客介绍事务的功能是一样的概念，因此事务的操作如果成功就必须要完全应用到数据库，如果操作失败则不能对数据库有任何影响。</p><h2 id="一致性consistency"><a class="markdownIt-Anchor" href="#一致性consistency"></a> 一致性（Consistency）</h2><p>一致性是指事务必须使数据库从一个一致性状态变换到另一个一致性状态，也就是说一个事务执行之前和执行之后都必须处于一致性状态。</p><p>拿转账来说，假设用户A和用户B两者的钱加起来一共是5000，那么不管A和B之间如何转账，转几次账，事务结束后两个用户的钱相加起来应该还得是5000，这就是事务的一致性。</p><h2 id="隔离性isolation"><a class="markdownIt-Anchor" href="#隔离性isolation"></a> 隔离性（Isolation）</h2><p>隔离性是当多个用户并发访问数据库时，比如操作同一张表时，数据库为每一个用户开启的事务，不能被其他事务的操作所干扰，多个并发事务之间要相互隔离。</p><p>即要达到这么一种效果：对于任意两个并发的事务T1和T2，在事务T1看来，T2要么在T1开始之前就已经结束，要么在T1结束之后才开始，这样每个事务都感觉不到有其他事务在并发地执行。</p><p>关于事务的隔离性数据库提供了多种隔离级别，稍后会介绍到。</p><h2 id="持久性durability"><a class="markdownIt-Anchor" href="#持久性durability"></a> 持久性（Durability）</h2><p>持久性是指一个事务一旦被提交了，那么对数据库中的数据的改变就是永久性的，即便是在数据库系统遇到故障的情况下也不会丢失提交事务的操作。</p><p>例如我们在使用JDBC操作数据库时，在提交事务方法后，提示用户事务操作完成，当我们程序执行完成直到看到提示后，就可以认定事务以及正确提交，即使这时候数据库出现了问题，也必须要将我们的事务完全执行完成，否则就会造成我们看到提示事务处理完毕，但是数据库因为故障而没有执行事务的重大错误。</p><p>以上介绍完事务的四大特性(简称ACID)，现在重点来说明下事务的隔离性，当多个线程都开启事务操作数据库中的数据时，数据库系统要能进行隔离操作，以保证各个线程获取数据的准确性，在介绍数据库提供的各种隔离级别之前，我们先看看如果不考虑事务的隔离性，会发生的几种问题：</p><h2 id="脏读"><a class="markdownIt-Anchor" href="#脏读"></a> 脏读</h2><p>脏读是指在一个事务处理过程里读取了另一个未提交的事务中的数据。</p><p>当一个事务正在多次修改某个数据，而在这个事务中这多次的修改都还未提交，这时一个并发的事务来访问该数据，就会造成两个事务得到的数据不一致。例如：用户A向用户B转账100元，对应SQL命令如下</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">update account set money=money+100 where name=’B’;  (此时A通知B)</span><br><span class="line"></span><br><span class="line">update account set money=money - 100 where name=’A’;</span><br></pre></td></tr></table></figure><p>当只执行第一条SQL时，A通知B查看账户，B发现确实钱已到账（此时即发生了脏读），而之后无论第二条SQL是否执行，只要该事务不提交，则所有操作都将回滚，那么当B以后再次查看账户时就会发现钱其实并没有转。</p><h2 id="不可重复读"><a class="markdownIt-Anchor" href="#不可重复读"></a> 不可重复读</h2><p>不可重复读是指在对于数据库中的某个数据，一个事务范围内多次查询却返回了不同的数据值，这是由于在查询间隔，被另一个事务修改并提交了。</p><p>例如事务T1在读取某一数据，而事务T2立马修改了这个数据并且提交事务给数据库，事务T1再次读取该数据就得到了不同的结果，发送了不可重复读。</p><p>不可重复读和脏读的区别是，脏读是某一事务读取了另一个事务未提交的脏数据，而不可重复读则是读取了前一事务提交的数据。</p><p>在某些情况下，不可重复读并不是问题，比如我们多次查询某个数据当然以最后查询得到的结果为主。但在另一些情况下就有可能发生问题，例如对于同一个数据A和B依次查询就可能不同，A和B就可能打起来了……</p><h2 id="虚读幻读"><a class="markdownIt-Anchor" href="#虚读幻读"></a> 虚读(幻读)</h2><p>幻读是事务非独立执行时发生的一种现象。例如事务T1对一个表中所有的行的某个数据项做了从“1”修改为“2”的操作，这时事务T2又对这个表中插入了一行数据项，而这个数据项的数值还是为“1”并且提交给数据库。而操作事务T1的用户如果再查看刚刚修改的数据，会发现还有一行没有修改，其实这行是从事务T2中添加的，就好像产生幻觉一样，这就是发生了幻读。</p><p>幻读和不可重复读都是读取了另一条已经提交的事务（这点就脏读不同），所不同的是不可重复读查询的都是同一个数据项，而幻读针对的是一批数据整体（比如数据的个数）。</p><h2 id="隔离级别"><a class="markdownIt-Anchor" href="#隔离级别"></a> 隔离级别</h2><p>现在来看看MySQL数据库为我们提供的四种隔离级别：</p><h5 id="serializable-串行化"><a class="markdownIt-Anchor" href="#serializable-串行化"></a> Serializable (串行化)</h5><p>可避免脏读、不可重复读、幻读的发生。</p><h5 id="repeatable-read-可重复读"><a class="markdownIt-Anchor" href="#repeatable-read-可重复读"></a> Repeatable read (可重复读)</h5><p>可避免脏读、不可重复读的发生。</p><h5 id="read-committed-读已提交"><a class="markdownIt-Anchor" href="#read-committed-读已提交"></a> Read committed (读已提交)</h5><p>可避免脏读的发生。</p><h5 id="read-uncommitted-读未提交"><a class="markdownIt-Anchor" href="#read-uncommitted-读未提交"></a> Read uncommitted (读未提交)</h5><p>最低级别，任何情况都无法保证。</p><p>以上四种隔离级别最高的是Serializable级别，最低的是Read uncommitted级别，当然级别越高，执行效率就越低。像Serializable这样的级别，就是以锁表的方式(类似于Java多线程中的锁)使得其他的线程只能在锁外等待，所以平时选用何种隔离级别应该根据实际情况。在MySQL数据库中默认的隔离级别为Repeatable read (可重复读)。</p><p>在MySQL数据库中，支持上面四种隔离级别，默认的为Repeatable read (可重复读)；而在Oracle数据库中，只支持Serializable (串行化)级别和Read committed (读已提交)这两种级别，其中默认的为Read committed级别。</p><p>在MySQL数据库中查看当前事务的隔离级别：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select @@tx_isolation;</span><br></pre></td></tr></table></figure><p>在MySQL数据库中设置事务的隔离 级别：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">set  [glogal | session]  transaction isolation level 隔离级别名称;</span><br><span class="line"></span><br><span class="line">set tx_isolation=’隔离级别名称;’</span><br></pre></td></tr></table></figure><p>例1：查看当前事务的隔离级别：</p><p><img src="/ostlo/2019/04/06/数据库事务的四大特性以及事务的隔离级别/787876-20160313202200007-1111796802.png" alt></p><p>例2：将事务的隔离级别设置为Read uncommitted级别：</p><p><img src="/ostlo/2019/04/06/数据库事务的四大特性以及事务的隔离级别/787876-20160313202224241-2101542210.png" alt></p><p>或：</p><p><img src="/ostlo/2019/04/06/数据库事务的四大特性以及事务的隔离级别/787876-20160313202245210-345198166.png" alt></p><p>记住：设置数据库的隔离级别一定要是在开启事务之前！</p><p>如果是使用JDBC对数据库的事务设置隔离级别的话，也应该是在调用Connection对象的setAutoCommit(false)方法之前。调用Connection对象的setTransactionIsolation(level)即可设置当前链接的隔离级别，至于参数level，可以使用Connection对象的字段：</p><p><img src="/ostlo/2019/04/06/数据库事务的四大特性以及事务的隔离级别/787876-20160313202333460-377269897.png" alt></p><p>在JDBC中设置隔离级别的部分代码：</p><p><img src="/ostlo/2019/04/06/数据库事务的四大特性以及事务的隔离级别/787876-20160313202355694-2106931487.png" alt></p><p>后记：隔离级别的设置只对当前链接有效。对于使用MySQL命令窗口而言，一个窗口就相当于一个链接，当前窗口设置的隔离级别只对当前窗口中的事务有效；对于JDBC操作数据库来说，一个Connection对象相当于一个链接，而对于Connection对象设置的隔离级别只对该Connection对象有效，与其他链接Connection对象无关。</p><p>参考博客：</p><p><a href="http://www.zhihu.com/question/23989904" target="_blank" rel="noopener">http://www.zhihu.com/question/23989904</a></p><p><a href="http://dev.mysql.com/doc/refman/5.6/en/set-transaction.html" target="_blank" rel="noopener">http://dev.mysql.com/doc/refman/5.6/en/set-transaction.html</a></p><p><a href="http://www.cnblogs.com/xdp-gacl/p/3984001.html" target="_blank" rel="noopener">http://www.cnblogs.com/xdp-gacl/p/3984001.html</a></p><p><a href="https://www.cnblogs.com/fjdingsd/p/5273008.html" target="_blank" rel="noopener">来源</a></p>]]></content>
     
     <summary type="html">
     
@@ -173,19 +173,19 @@
     
     </summary>
     
-      <category term="数据库" scheme="https://ghostlo.github.io/ostlo/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="https://ghostlo.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-      <category term="数据库" scheme="https://ghostlo.github.io/ostlo/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="https://ghostlo.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
-      <category term="mysql" scheme="https://ghostlo.github.io/ostlo/tags/mysql/"/>
+      <category term="mysql" scheme="https://ghostlo.github.io/tags/mysql/"/>
     
   </entry>
   
   <entry>
     <title>面试--抛棋子</title>
-    <link href="https://ghostlo.github.io/ostlo/2019/04/06/%E9%9D%A2%E8%AF%95-%E6%8A%9B%E6%A3%8B%E5%AD%90/"/>
-    <id>https://ghostlo.github.io/ostlo/2019/04/06/面试-抛棋子/</id>
+    <link href="https://ghostlo.github.io/2019/04/06/%E9%9D%A2%E8%AF%95-%E6%8A%9B%E6%A3%8B%E5%AD%90/"/>
+    <id>https://ghostlo.github.io/2019/04/06/面试-抛棋子/</id>
     <published>2019-04-06T08:36:07.000Z</published>
     <updated>2019-04-07T03:38:10.000Z</updated>
     
@@ -201,19 +201,19 @@
     
     </summary>
     
-      <category term="面试" scheme="https://ghostlo.github.io/ostlo/categories/%E9%9D%A2%E8%AF%95/"/>
+      <category term="面试" scheme="https://ghostlo.github.io/categories/%E9%9D%A2%E8%AF%95/"/>
     
     
-      <category term="建模" scheme="https://ghostlo.github.io/ostlo/tags/%E5%BB%BA%E6%A8%A1/"/>
+      <category term="建模" scheme="https://ghostlo.github.io/tags/%E5%BB%BA%E6%A8%A1/"/>
     
-      <category term="数学" scheme="https://ghostlo.github.io/ostlo/tags/%E6%95%B0%E5%AD%A6/"/>
+      <category term="数学" scheme="https://ghostlo.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
     
   </entry>
   
   <entry>
     <title>cookie 与 session 的区别</title>
-    <link href="https://ghostlo.github.io/ostlo/2019/04/04/cookie-%E4%B8%8E-session-%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
-    <id>https://ghostlo.github.io/ostlo/2019/04/04/cookie-与-session-的区别/</id>
+    <link href="https://ghostlo.github.io/2019/04/04/cookie-%E4%B8%8E-session-%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+    <id>https://ghostlo.github.io/2019/04/04/cookie-与-session-的区别/</id>
     <published>2019-04-04T12:26:55.000Z</published>
     <updated>2019-04-04T12:29:05.000Z</updated>
     
@@ -233,8 +233,8 @@
   
   <entry>
     <title>同步异步阻塞非阻塞</title>
-    <link href="https://ghostlo.github.io/ostlo/2019/04/04/%E5%90%8C%E6%AD%A5%E5%BC%82%E6%AD%A5%E9%98%BB%E5%A1%9E%E9%9D%9E%E9%98%BB%E5%A1%9E/"/>
-    <id>https://ghostlo.github.io/ostlo/2019/04/04/同步异步阻塞非阻塞/</id>
+    <link href="https://ghostlo.github.io/2019/04/04/%E5%90%8C%E6%AD%A5%E5%BC%82%E6%AD%A5%E9%98%BB%E5%A1%9E%E9%9D%9E%E9%98%BB%E5%A1%9E/"/>
+    <id>https://ghostlo.github.io/2019/04/04/同步异步阻塞非阻塞/</id>
     <published>2019-04-04T12:26:17.000Z</published>
     <updated>2019-04-04T12:26:41.000Z</updated>
     
@@ -256,8 +256,8 @@
   
   <entry>
     <title>Hexo 安装</title>
-    <link href="https://ghostlo.github.io/ostlo/2019/04/04/%E5%AE%89%E8%A3%85-Hexo/"/>
-    <id>https://ghostlo.github.io/ostlo/2019/04/04/安装-Hexo/</id>
+    <link href="https://ghostlo.github.io/2019/04/04/%E5%AE%89%E8%A3%85-Hexo/"/>
+    <id>https://ghostlo.github.io/2019/04/04/安装-Hexo/</id>
     <published>2019-04-04T11:38:48.000Z</published>
     <updated>2019-04-07T11:57:54.000Z</updated>
     
@@ -276,10 +276,10 @@
     
     </summary>
     
-      <category term="建站" scheme="https://ghostlo.github.io/ostlo/categories/%E5%BB%BA%E7%AB%99/"/>
+      <category term="建站" scheme="https://ghostlo.github.io/categories/%E5%BB%BA%E7%AB%99/"/>
     
     
-      <category term="hexo" scheme="https://ghostlo.github.io/ostlo/tags/hexo/"/>
+      <category term="hexo" scheme="https://ghostlo.github.io/tags/hexo/"/>
     
   </entry>
   

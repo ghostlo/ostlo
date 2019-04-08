@@ -104,20 +104,20 @@
 <meta name="keywords" content="数据库,mysql">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据库事务的四大特性以及事务的隔离级别">
-<meta property="og:url" content="https://ghostlo.github.io/ostlo/2019/04/06/数据库事务的四大特性以及事务的隔离级别/index.html">
+<meta property="og:url" content="https://ghostlo.github.io/2019/04/06/数据库事务的四大特性以及事务的隔离级别/index.html">
 <meta property="og:site_name" content="Ostlo&#39;s Blog">
 <meta property="og:description" content="​	如果一个数据库声称支持事务的操作，那么该数据库必须要具备以下四个特性：  原子性（Atomicity） 原子性是指事务包含的所有操作要么全部成功，要么全部失败回滚，这和前面两篇博客介绍事务的功能是一样的概念，因此事务的操作如果成功就必须要完全应用到数据库，如果操作失败则不能对数据库有任何影响。  一致性（Consistency） 一致性是指事务必须使数据库从一个一致性状态变换到另一个一致性状态">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://ghostlo.github.io/ostlo/ostlo/2019/04/06/数据库事务的四大特性以及事务的隔离级别/787876-20160313202200007-1111796802.png">
-<meta property="og:image" content="https://ghostlo.github.io/ostlo/ostlo/2019/04/06/数据库事务的四大特性以及事务的隔离级别/787876-20160313202224241-2101542210.png">
-<meta property="og:image" content="https://ghostlo.github.io/ostlo/ostlo/2019/04/06/数据库事务的四大特性以及事务的隔离级别/787876-20160313202245210-345198166.png">
-<meta property="og:image" content="https://ghostlo.github.io/ostlo/ostlo/2019/04/06/数据库事务的四大特性以及事务的隔离级别/787876-20160313202333460-377269897.png">
-<meta property="og:image" content="https://ghostlo.github.io/ostlo/ostlo/2019/04/06/数据库事务的四大特性以及事务的隔离级别/787876-20160313202355694-2106931487.png">
+<meta property="og:image" content="https://ghostlo.github.io/ostlo/2019/04/06/数据库事务的四大特性以及事务的隔离级别/787876-20160313202200007-1111796802.png">
+<meta property="og:image" content="https://ghostlo.github.io/ostlo/2019/04/06/数据库事务的四大特性以及事务的隔离级别/787876-20160313202224241-2101542210.png">
+<meta property="og:image" content="https://ghostlo.github.io/ostlo/2019/04/06/数据库事务的四大特性以及事务的隔离级别/787876-20160313202245210-345198166.png">
+<meta property="og:image" content="https://ghostlo.github.io/ostlo/2019/04/06/数据库事务的四大特性以及事务的隔离级别/787876-20160313202333460-377269897.png">
+<meta property="og:image" content="https://ghostlo.github.io/ostlo/2019/04/06/数据库事务的四大特性以及事务的隔离级别/787876-20160313202355694-2106931487.png">
 <meta property="og:updated_time" content="2019-04-08T08:20:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库事务的四大特性以及事务的隔离级别">
 <meta name="twitter:description" content="​	如果一个数据库声称支持事务的操作，那么该数据库必须要具备以下四个特性：  原子性（Atomicity） 原子性是指事务包含的所有操作要么全部成功，要么全部失败回滚，这和前面两篇博客介绍事务的功能是一样的概念，因此事务的操作如果成功就必须要完全应用到数据库，如果操作失败则不能对数据库有任何影响。  一致性（Consistency） 一致性是指事务必须使数据库从一个一致性状态变换到另一个一致性状态">
-<meta name="twitter:image" content="https://ghostlo.github.io/ostlo/ostlo/2019/04/06/数据库事务的四大特性以及事务的隔离级别/787876-20160313202200007-1111796802.png">
+<meta name="twitter:image" content="https://ghostlo.github.io/ostlo/2019/04/06/数据库事务的四大特性以及事务的隔离级别/787876-20160313202200007-1111796802.png">
 
 
 
@@ -127,7 +127,7 @@
 
   
   
-  <link rel="canonical" href="https://ghostlo.github.io/ostlo/2019/04/06/数据库事务的四大特性以及事务的隔离级别/">
+  <link rel="canonical" href="https://ghostlo.github.io/2019/04/06/数据库事务的四大特性以及事务的隔离级别/">
 
 
 
@@ -360,7 +360,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ghostlo.github.io/ostlo/ostlo/2019/04/06/数据库事务的四大特性以及事务的隔离级别/">
+    <link itemprop="mainEntityOfPage" href="https://ghostlo.github.io/ostlo/2019/04/06/数据库事务的四大特性以及事务的隔离级别/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Ostlo_TL">
@@ -516,16 +516,16 @@
 <p>在MySQL数据库中设置事务的隔离 级别：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">set  [glogal | session]  transaction isolation level 隔离级别名称;</span><br><span class="line"></span><br><span class="line">set tx_isolation=’隔离级别名称;’</span><br></pre></td></tr></table></figure>
 <p>例1：查看当前事务的隔离级别：</p>
-<p><img src="/ostlo/ostlo/2019/04/06/数据库事务的四大特性以及事务的隔离级别/787876-20160313202200007-1111796802.png" alt></p>
+<p><img src="/ostlo/2019/04/06/数据库事务的四大特性以及事务的隔离级别/787876-20160313202200007-1111796802.png" alt></p>
 <p>例2：将事务的隔离级别设置为Read uncommitted级别：</p>
-<p><img src="/ostlo/ostlo/2019/04/06/数据库事务的四大特性以及事务的隔离级别/787876-20160313202224241-2101542210.png" alt></p>
+<p><img src="/ostlo/2019/04/06/数据库事务的四大特性以及事务的隔离级别/787876-20160313202224241-2101542210.png" alt></p>
 <p>或：</p>
-<p><img src="/ostlo/ostlo/2019/04/06/数据库事务的四大特性以及事务的隔离级别/787876-20160313202245210-345198166.png" alt></p>
+<p><img src="/ostlo/2019/04/06/数据库事务的四大特性以及事务的隔离级别/787876-20160313202245210-345198166.png" alt></p>
 <p>记住：设置数据库的隔离级别一定要是在开启事务之前！</p>
 <p>如果是使用JDBC对数据库的事务设置隔离级别的话，也应该是在调用Connection对象的setAutoCommit(false)方法之前。调用Connection对象的setTransactionIsolation(level)即可设置当前链接的隔离级别，至于参数level，可以使用Connection对象的字段：</p>
-<p><img src="/ostlo/ostlo/2019/04/06/数据库事务的四大特性以及事务的隔离级别/787876-20160313202333460-377269897.png" alt></p>
+<p><img src="/ostlo/2019/04/06/数据库事务的四大特性以及事务的隔离级别/787876-20160313202333460-377269897.png" alt></p>
 <p>在JDBC中设置隔离级别的部分代码：</p>
-<p><img src="/ostlo/ostlo/2019/04/06/数据库事务的四大特性以及事务的隔离级别/787876-20160313202355694-2106931487.png" alt></p>
+<p><img src="/ostlo/2019/04/06/数据库事务的四大特性以及事务的隔离级别/787876-20160313202355694-2106931487.png" alt></p>
 <p>后记：隔离级别的设置只对当前链接有效。对于使用MySQL命令窗口而言，一个窗口就相当于一个链接，当前窗口设置的隔离级别只对当前窗口中的事务有效；对于JDBC操作数据库来说，一个Connection对象相当于一个链接，而对于Connection对象设置的隔离级别只对该Connection对象有效，与其他链接Connection对象无关。</p>
 <p>参考博客：</p>
 <p><a href="http://www.zhihu.com/question/23989904" target="_blank" rel="noopener">http://www.zhihu.com/question/23989904</a></p>
