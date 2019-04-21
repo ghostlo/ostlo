@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/ostlo/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/ostlo/css/main.css?v=7.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/ostlo/images/apple-touch-icon-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/ostlo/images/favicon-32x32-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/ostlo/images/favicon-16x16-next.png?v=7.1.0">
+
+
+  <link rel="mask-icon" href="/ostlo/images/logo.svg?v=7.1.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/ostlo/',
+    scheme: 'Muse',
+    version: '7.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="安装  下载安装包 地址： https://golang.org/dl/ 安装包的位置一般是默认在usr/local/go  配置环境变量 1、打开终端输入cd ~进入用户主目录; 2、输入ls -all命令查看是否存在.bash_profile; 3、存在既使用vim .bash_profile 打开文件; 4、输入 i 进入vim编辑模式； 5、输入下面代码， 其中 GOPATH: 日常开发">
+<meta name="keywords" content="语言学习,go">
+<meta property="og:type" content="article">
+<meta property="og:title" content="go学习（一）">
+<meta property="og:url" content="https://ghostlo.github.io/2019/04/21/Go学习/index.html">
+<meta property="og:site_name" content="Ostlo&#39;s Blog">
+<meta property="og:description" content="安装  下载安装包 地址： https://golang.org/dl/ 安装包的位置一般是默认在usr/local/go  配置环境变量 1、打开终端输入cd ~进入用户主目录; 2、输入ls -all命令查看是否存在.bash_profile; 3、存在既使用vim .bash_profile 打开文件; 4、输入 i 进入vim编辑模式； 5、输入下面代码， 其中 GOPATH: 日常开发">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-04-21T09:08:54.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="go学习（一）">
+<meta name="twitter:description" content="安装  下载安装包 地址： https://golang.org/dl/ 安装包的位置一般是默认在usr/local/go  配置环境变量 1、打开终端输入cd ~进入用户主目录; 2、输入ls -all命令查看是否存在.bash_profile; 3、存在既使用vim .bash_profile 打开文件; 4、输入 i 进入vim编辑模式； 5、输入下面代码， 其中 GOPATH: 日常开发">
+
+
+
+  <link rel="alternate" href="/ostlo/atom.xml" title="Ostlo's Blog" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="https://ghostlo.github.io/2019/04/21/Go学习/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>go学习（一） | Ostlo's Blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/ostlo/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Ostlo's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/ostlo/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/ostlo/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/ostlo/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/ostlo/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/ostlo/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ghostlo.github.io/ostlo/2019/04/21/Go学习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ostlo_TL">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/ostlo/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ostlo's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">go学习（一）
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-04-21 16:36:07 / Modified: 17:08:54" itemprop="dateCreated datePublished" datetime="2019-04-21T16:36:07+08:00">2019-04-21</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/ostlo/categories/Go/" itemprop="url" rel="index"><span itemprop="name">Go</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h2>
+<h3 id="下载安装包"><a class="markdownIt-Anchor" href="#下载安装包"></a> 下载安装包</h3>
+<p>地址： <a href="https://golang.org/dl/" target="_blank" rel="noopener">https://golang.org/dl/</a></p>
+<p>安装包的位置一般是默认在usr/local/go</p>
+<h3 id="配置环境变量"><a class="markdownIt-Anchor" href="#配置环境变量"></a> 配置环境变量</h3>
+<p>1、打开终端输入cd ~进入用户主目录;</p>
+<p>2、输入ls -all命令查看是否存在.bash_profile;</p>
+<p>3、存在既使用vim .bash_profile 打开文件;</p>
+<p>4、输入 i 进入vim编辑模式；</p>
+<p>5、输入下面代码， 其中 GOPATH: 日常开发的根目录。GOBIN:是GOPATH下的bin目录。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">export GOPATH=/Users/longxiansheng/go</span><br><span class="line"></span><br><span class="line">export GOBIN=$GOPATH/bin</span><br><span class="line"></span><br><span class="line">PATH=\$PATH:\$GOBIN</span><br></pre></td></tr></table></figure>
+<p>这里列举几个最为重要的环境变量：</p>
+<ul>
+<li><strong>$GOROOT</strong> 表示 Go 在你的电脑上的安装位置，它的值一般都是 $HOME/go，当然，你也可以安装在别的地方。</li>
+<li><strong>$GOARCH</strong> 表示目标机器的处理器架构，它的值可以是 386、amd64 或 arm。</li>
+<li><strong>$GOOS</strong> 表示目标机器的操作系统，它的值可以是 darwin、freebsd、linux 或 windows。</li>
+<li><strong>$GOBIN</strong> 表示编译器和链接器的安装位置，默认是 $GOROOT/bin，如果你使用的是 Go 1.0.3 及以后的版本，一般情况下你可以将它的值设置为空，Go 将会使用前面提到的默认值。</li>
+</ul>
+<p>为了区分本地机器和目标机器，你可以使用 GOHOSTOS 和 GOHOSTARCH 设置本地机器的操作系统名称和编译体系结构，这两个变量只有在进行交叉编译的时候才会用到，如果你不进行显示设置，他们的值会和本地机器（GOOS 和 GOARCH）一样。</p>
+<ul>
+<li><strong>$GOPATH</strong> 默认采用和 $GOROOT 一样的值，但从 Go 1.1 版本开始，你必须修改为其它路径。它可以包含多个 Go 语言源码文件、包文件和可执行文件的路径，而这些路径下又必须分别包含三个规定的目录：src、pkg 和 bin，这三个目录分别用于存放源码文件、包文件和可执行文件。</li>
+<li><strong>$GOARM</strong> 专门针对基于 arm 架构的处理器，它的值可以是 5 或 6，默认为 6。</li>
+<li><strong>$GOMAXPROCS</strong> 用于设置应用程序可使用的处理器个数与核数，详见第 14.1.3 节。</li>
+</ul>
+<h3 id="安装intellij-golang"><a class="markdownIt-Anchor" href="#安装intellij-golang"></a> 安装Intellij golang</h3>
+<p>设置SDK路径为usr/local/go</p>
+<p><strong>go run/ go install/ go build / go get的区别</strong></p>
+<ul>
+<li>go run 运行当个.go文件</li>
+<li>go install 在编译源代码之后还安装到指定的目录</li>
+<li>go build 加上可编译的go源文件可以得到一个可执行文件</li>
+<li>go get = git clone + go install 从指定源上面下载或者更新指定的代码和依赖，并对他们进行编译和安装</li>
+</ul>
+<h2 id="调试"><a class="markdownIt-Anchor" href="#调试"></a> 调试</h2>
+<p>如果你不想使用调试器，你可以按照下面的一些有用的方法来达到基本调试的目的：</p>
+<ol>
+<li>在合适的位置使用打印语句输出相关变量的值（<code>print</code>/<code>println</code> 和 <code>fmt.Print</code>/<code>fmt.Println</code>/<code>fmt.Printf</code>）。</li>
+<li>在 <code>fmt.Printf</code> 中使用下面的说明符来打印有关变量的相关信息：
+<ul>
+<li><code>%+v</code> 打印包括字段在内的实例的完整信息</li>
+<li><code>%#v</code> 打印包括字段和限定类型名称在内的实例的完整信息</li>
+<li><code>%T</code> 打印某个类型的完整说明</li>
+</ul>
+</li>
+<li>使用 panic 语句（第 13.2 节）来获取栈跟踪信息（直到 panic 时所有被调用函数的列表）。</li>
+<li>使用关键字 defer 来跟踪代码执行过程（第 6.4 节）。</li>
+</ol>
+<h2 id="编写程序"><a class="markdownIt-Anchor" href="#编写程序"></a> 编写程序</h2>
+<h3 id="格式化"><a class="markdownIt-Anchor" href="#格式化"></a> 格式化</h3>
+<p>Go 开发团队不想要 Go 语言像许多其它语言那样总是在为代码风格而引发无休止的争论，浪费大量宝贵的开发时间，因此他们制作了一个工具：<code>go fmt</code>（<code>gofmt</code>）。这个工具可以将你的源代码格式化成符合官方统一标准的风格，属于语法风格层面上的小型重构。遵循统一的代码风格是 Go 开发中无可撼动的铁律，因此你必须在编译或提交版本管理系统之前使用 <code>gofmt</code> 来格式化你的代码。</p>
+<p>在格式化输出时，你可以使用 <code>%t</code> 来表示你要输出的值为布尔型。</p>
+<p>[格式化代码-gitbook][<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/03.5.md" target="_blank" rel="noopener">https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/03.5.md</a>]</p>
+<p>[与c,c++交互][<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/03.9.md" target="_blank" rel="noopener">https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/03.9.md</a>]</p>
+<p>下面列举了 Go 代码中会使用到的 25 个关键字或保留字：</p>
+<table>
+<thead>
+<tr>
+<th>break</th>
+<th>default</th>
+<th>func</th>
+<th>interface</th>
+<th>select</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>case</td>
+<td>defer</td>
+<td>go</td>
+<td>map</td>
+<td>struct</td>
+</tr>
+<tr>
+<td>chan</td>
+<td>else</td>
+<td>goto</td>
+<td>package</td>
+<td>switch</td>
+</tr>
+<tr>
+<td>const</td>
+<td>fallthrough</td>
+<td>if</td>
+<td>range</td>
+<td>type</td>
+</tr>
+<tr>
+<td>continue</td>
+<td>for</td>
+<td>import</td>
+<td>return</td>
+<td>var</td>
+</tr>
+</tbody>
+</table>
+<p>Go 语言还有 36 个预定义标识符</p>
+<table>
+<thead>
+<tr>
+<th>append</th>
+<th>bool</th>
+<th>byte</th>
+<th>cap</th>
+<th>close</th>
+<th>complex</th>
+<th>complex64</th>
+<th>complex128</th>
+<th>uint16</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>copy</td>
+<td>false</td>
+<td>float32</td>
+<td>float64</td>
+<td>imag</td>
+<td>int</td>
+<td>int8</td>
+<td>int16</td>
+<td>uint32</td>
+</tr>
+<tr>
+<td>int32</td>
+<td>int64</td>
+<td>iota</td>
+<td>len</td>
+<td>make</td>
+<td>new</td>
+<td>nil</td>
+<td>panic</td>
+<td>uint64</td>
+</tr>
+<tr>
+<td>print</td>
+<td>println</td>
+<td>real</td>
+<td>recover</td>
+<td>string</td>
+<td>true</td>
+<td>uint</td>
+<td>uint8</td>
+<td>uintptr</td>
+</tr>
+</tbody>
+</table>
+<h3 id="可见性规则"><a class="markdownIt-Anchor" href="#可见性规则"></a> <strong>可见性规则</strong></h3>
+<p>当标识符（包括常量、变量、类型、函数名、结构字段等等）以一个大写字母开头，如：Group1，那么使用这种形式的标识符的对象就可以被外部包的代码所使用（客户端程序需要先导入这个包），这被称为导出（像面向对象语言中的 public）；标识符如果以小写字母开头，则对包外是不可见的，但是他们在整个包的内部是可见并且可用的（像面向对象语言中的 private ）。</p>
+<p>你可以通过使用包的别名来解决包名之间的名称冲突</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> fm <span class="string">"fmt"</span> <span class="comment">// alias3</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">   fm.Println(<span class="string">"hello, world"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当一个变量被声明之后，系统自动赋予它该类型的零值：int 为 0，float 为 0.0，bool 为 false，string 为空字符串，指针为 nil。记住，所有的内存在 Go 中都是经过初始化的。</p>
+<p>变量的命名规则遵循骆驼命名法，即首个单词小写，每个新单词的首字母大写，例如：numShips 和 startDate。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">fmt.Println（<span class="string">"hello, world"</span>）</span><br><span class="line"><span class="comment">//以下函数只可以用于调试阶段，在部署程序的时候务必将它们替换成 fmt 中的相关函数。</span></span><br><span class="line"><span class="built_in">print</span></span><br><span class="line"><span class="built_in">println</span>：<span class="built_in">print</span>(<span class="string">"ABC"</span>)</span><br><span class="line"><span class="built_in">println</span>(<span class="string">"ABC"</span>)</span><br><span class="line"><span class="built_in">println</span>(i)</span><br></pre></td></tr></table></figure>
+<h3 id="类型转换"><a class="markdownIt-Anchor" href="#类型转换"></a> 类型转换</h3>
+<p>在必要以及可行的情况下，一个类型的值可以被转换成另一种类型的值。由于 Go 语言不存在隐式类型转换，因此所有的转换都必须显式说明，就像调用一个函数一样（类型在这里的作用可以看作是一种函数）：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">valueOfTypeB = typeB(valueOfTypeA)</span><br></pre></td></tr></table></figure>
+<p>存储在常量中的数据类型只可以是布尔型、数字型（整数型、浮点型和复数）和字符串型。</p>
+<p>常量的定义格式：<code>const identifier [type] = value</code>，例如：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Pi = <span class="number">3.14159</span></span><br></pre></td></tr></table></figure>
+<p>在 Go 语言中，你可以省略类型说明符 <code>[type]</code>，因为编译器可以根据变量的值来推断其类型。</p>
+<ul>
+<li>显式类型定义： <code>const b string = &quot;abc&quot;</code></li>
+<li>隐式类型定义： <code>const b = &quot;abc&quot;</code></li>
+</ul>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> n <span class="keyword">int</span></span><br><span class="line">f(n + <span class="number">5</span>) <span class="comment">// 无类型的数字型常量 “5” 它的类型在这里变成了 int</span></span><br></pre></td></tr></table></figure>
+<p>常量的值必须是能够在编译时就能够确定的；你可以在其赋值表达式中涉及计算过程，但是所有用于计算的值必须在编译期间就能获得。</p>
+<ul>
+<li>正确的做法：<code>const c1 = 2/3</code></li>
+<li>错误的做法：<code>const c2 = getNumber()</code> // 引发构建错误: <code>getNumber() used as value</code></li>
+</ul>
+<p><strong>因为在编译期间自定义函数均属于未知，因此无法用于常量的赋值，但内置函数可以使用，如：len()。</strong></p>
+<p>数字型的常量是没有大小和符号的，并且可以使用任何精度而不会导致溢出</p>
+<p>声明变量的一般形式是使用 <code>var</code> 关键字：<code>var identifier type</code>。</p>
+<p>Go 编译器的智商已经高到可以根据变量的值来自动推断其类型，这有点像 Ruby 和 Python 这类动态语言，只不过它们是在运行时进行推断，而 Go 是在编译时就已经完成推断过程。因此，你还可以使用下面的这些形式来声明及初始化变量：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">15</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="literal">false</span></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">"Go says hello to the world!"</span></span><br></pre></td></tr></table></figure>
+<p>或：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> (</span><br><span class="line">	a = <span class="number">15</span></span><br><span class="line">	b = <span class="literal">false</span></span><br><span class="line">	str = <span class="string">"Go says hello to the world!"</span></span><br><span class="line">	numShips = <span class="number">50</span></span><br><span class="line">	city <span class="keyword">string</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>你可以通过 &amp;i 来获取变量 i 的内存地址（第 4.9 节），例如：0xf840000040（每次的地址都可能不一样）。值类型的变量的值存储在栈中。</p>
+<p>在 Go 语言中，指针（第 4.9 节）属于引用类型，其它的引用类型还包括 slices（第 7 章），maps（第 8 章）和 channel（第 13 章）。被引用的变量会存储在堆中，以便进行垃圾回收，且比栈拥有更大的内存空间。</p>
+<p>变量的类型也可以在运行时实现自动推断，例如：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> (</span><br><span class="line">	HOME = os.Getenv(<span class="string">"HOME"</span>)</span><br><span class="line">	USER = os.Getenv(<span class="string">"USER"</span>)</span><br><span class="line">	GOROOT = os.Getenv(<span class="string">"GOROOT"</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>这种写法主要用于声明包级别的全局变量，当你在函数体内声明 <strong>局部变量</strong> 时，应使用简短声明语法 <code>:=</code>，例如：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a := <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<h3 id="打印"><a class="markdownIt-Anchor" href="#打印"></a> 打印</h3>
+<p>函数 <code>Printf</code> 可以在 fmt 包外部使用，这是因为它以大写字母 P 开头，该函数主要用于打印输出到控制台。通常使用的格式化字符串作为第一个参数：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Printf</span><span class="params">(format <span class="keyword">string</span>, list of variables to be printed)</span></span></span><br></pre></td></tr></table></figure>
+<p>这个格式化字符串可以含有一个或多个的格式化标识符，例如：<code>%..</code>，其中 <code>..</code> 可以被不同类型所对应的标识符替换，如 <code>%s</code> 代表字符串标识符、<code>%v</code> 代表使用类型的默认输出格式的标识符。这些标识符所对应的值从格式化字符串后的第一个逗号开始按照相同顺序添加，如果参数超过 1 个则同样需要使用逗号分隔。使用这些占位符可以很好地控制格式化输出的文本。</p>
+<p>函数 <code>fmt.Print</code> 和 <code>fmt.Println</code> 会自动使用格式化标识符 <code>%v</code> 对字符串进行格式化，两者都会在每个参数之间自动增加空格，而后者还会在字符串的最后加上一个换行符。例如：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fmt.Print(<span class="string">"Hello:"</span>, <span class="number">23</span>)</span><br></pre></td></tr></table></figure>
+<p>将输出：<code>Hello: 23</code>。</p>
+<p>如果你声明了一个局部变量却没有在相同的代码块中使用它，同样会得到编译错误，例如下面这个例子当中的变量 a：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">   <span class="keyword">var</span> a <span class="keyword">string</span> = <span class="string">"abc"</span></span><br><span class="line">   fmt.Println(<span class="string">"hello, world"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>尝试编译这段代码将得到错误 <code>a declared and not used</code>。</p>
+<p>此外，单纯地给 a 赋值也是不够的，这个值必须被使用，所以使用 <code>fmt.Println(&quot;hello, world&quot;, a)</code> 会移除错误。</p>
+<p>同一类型的多个变量可以声明在同一行，如：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a, b, c <span class="keyword">int</span></span><br></pre></td></tr></table></figure>
+<p>(这是将类型写在标识符后面的一个重要原因)</p>
+<p>多变量可以在同一行进行赋值，如：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a, b, c = <span class="number">5</span>, <span class="number">7</span>, <span class="string">"abc"</span></span><br></pre></td></tr></table></figure>
+<p>上面这行假设了变量 a，b 和 c 都已经被声明，否则的话应该这样使用：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a, b, c := <span class="number">5</span>, <span class="number">7</span>, <span class="string">"abc"</span></span><br></pre></td></tr></table></figure>
+<p>右边的这些值以相同的顺序赋值给左边的变量，所以 a 的值是 <code>5</code>， b 的值是 <code>7</code>，c 的值是 <code>&quot;abc&quot;</code>。</p>
+<p>这被称为 <strong>并行</strong> 或 <strong>同时</strong> 赋值。</p>
+<p>如果你想要交换两个变量的值，则可以简单地使用 <code>a, b = b, a</code>。</p>
+<p>(在 Go 语言中，这样省去了使用交换函数的必要)</p>
+<p>空白标识符 <code>_</code> 也被用于抛弃值，如值 <code>5</code> 在：<code>_, b = 5, 7</code> 中被抛弃。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/ostlo/tags/语言学习/" rel="tag"># 语言学习</a>
+          
+            <a href="/ostlo/tags/go/" rel="tag"># go</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/ostlo/2019/04/15/C-学习/" rel="next" title="C++学习">
+                <i class="fa fa-chevron-left"></i> C++学习
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/ostlo/avatar.png" alt="Ostlo_TL">
+            
+              <p class="site-author-name" itemprop="name">Ostlo_TL</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/ostlo/archives/">
+                
+                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/ostlo/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/ostlo/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">17</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/ostlo/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/ghostlo" title="GitHub &rarr; https://github.com/ghostlo" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="/ostlo/ostlo.im@gmail.com" title="E-Mail &rarr; ostlo.im@gmail.com"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text"> 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载安装包"><span class="nav-number">1.1.</span> <span class="nav-text"> 下载安装包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置环境变量"><span class="nav-number">1.2.</span> <span class="nav-text"> 配置环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装intellij-golang"><span class="nav-number">1.3.</span> <span class="nav-text"> 安装Intellij golang</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调试"><span class="nav-number">2.</span> <span class="nav-text"> 调试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编写程序"><span class="nav-number">3.</span> <span class="nav-text"> 编写程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#格式化"><span class="nav-number">3.1.</span> <span class="nav-text"> 格式化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可见性规则"><span class="nav-number">3.2.</span> <span class="nav-text"> 可见性规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类型转换"><span class="nav-number">3.3.</span> <span class="nav-text"> 类型转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#打印"><span class="nav-number">3.4.</span> <span class="nav-text"> 打印</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ostlo_TL</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/ostlo/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/ostlo/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/ostlo/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/ostlo/js/utils.js?v=7.1.0"></script>
+
+  <script src="/ostlo/js/motion.js?v=7.1.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/ostlo/js/schemes/muse.js?v=7.1.0"></script>
+
+
+
+  
+  <script src="/ostlo/js/scrollspy.js?v=7.1.0"></script>
+<script src="/ostlo/js/post-details.js?v=7.1.0"></script>
+
+
+
+  
+
+
+  <script src="/ostlo/js/next-boot.js?v=7.1.0"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
