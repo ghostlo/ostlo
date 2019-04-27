@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="封装驼峰命名法首字母大写：public首字母小写：private 包每个目录一个包main包包含可执行入口为结构定义的包必须放在一个文件内，可以是不同文件扩充系统类型：  定义别名 使用组合  duck typing python解释型语言  123def download(retriever):return retriever.get()#运行时才知道有没有get方法  c++编译型语言 123">
+  <meta name="description" content="封装 驼峰命名法 首字母大写：public 首字母小写：private  包 每个目录一个包 main包包含可执行入口 为结构定义的包必须放在一个文件内，可以是不同文件 扩充系统类型：  定义别名 使用组合   duck typing  python 解释型语言  123def download(retriever):return retriever.get()#运行时才知道有没有get方法">
 <meta name="keywords" content="go,语言学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="go学习（四）">
 <meta property="og:url" content="https://ghostlo.github.io/2019/04/25/Go学习4/index.html">
 <meta property="og:site_name" content="Ostlo&#39;s Blog">
-<meta property="og:description" content="封装驼峰命名法首字母大写：public首字母小写：private 包每个目录一个包main包包含可执行入口为结构定义的包必须放在一个文件内，可以是不同文件扩充系统类型：  定义别名 使用组合  duck typing python解释型语言  123def download(retriever):return retriever.get()#运行时才知道有没有get方法  c++编译型语言 123">
+<meta property="og:description" content="封装 驼峰命名法 首字母大写：public 首字母小写：private  包 每个目录一个包 main包包含可执行入口 为结构定义的包必须放在一个文件内，可以是不同文件 扩充系统类型：  定义别名 使用组合   duck typing  python 解释型语言  123def download(retriever):return retriever.get()#运行时才知道有没有get方法">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-04-26T12:42:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="go学习（四）">
-<meta name="twitter:description" content="封装驼峰命名法首字母大写：public首字母小写：private 包每个目录一个包main包包含可执行入口为结构定义的包必须放在一个文件内，可以是不同文件扩充系统类型：  定义别名 使用组合  duck typing python解释型语言  123def download(retriever):return retriever.get()#运行时才知道有没有get方法  c++编译型语言 123">
+<meta name="twitter:description" content="封装 驼峰命名法 首字母大写：public 首字母小写：private  包 每个目录一个包 main包包含可执行入口 为结构定义的包必须放在一个文件内，可以是不同文件 扩充系统类型：  定义别名 使用组合   duck typing  python 解释型语言  123def download(retriever):return retriever.get()#运行时才知道有没有get方法">
 
 
 
@@ -455,35 +455,49 @@
       
 
       
-        <h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><p>驼峰命名法<br>首字母大写：public<br>首字母小写：private</p>
-<h3 id="包"><a href="#包" class="headerlink" title="包"></a>包</h3><p>每个目录一个包<br>main包包含可执行入口<br>为结构定义的包必须放在一个文件内，可以是不同文件<br>扩充系统类型：</p>
+        <h3 id="封装"><a class="markdownIt-Anchor" href="#封装"></a> 封装</h3>
+<p>驼峰命名法<br>
+首字母大写：public<br>
+首字母小写：private</p>
+<h3 id="包"><a class="markdownIt-Anchor" href="#包"></a> 包</h3>
+<p>每个目录一个包<br>
+main包包含可执行入口<br>
+为结构定义的包必须放在一个文件内，可以是不同文件<br>
+扩充系统类型：</p>
 <ol>
 <li>定义别名</li>
 <li>使用组合</li>
 </ol>
-<h3 id="duck-typing"><a href="#duck-typing" class="headerlink" title="duck typing"></a>duck typing</h3><ol>
-<li>python<br>解释型语言</li>
+<h3 id="duck-typing"><a class="markdownIt-Anchor" href="#duck-typing"></a> duck typing</h3>
+<ol>
+<li>python<br>
+解释型语言</li>
 </ol>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">download</span><span class="params">(retriever)</span>:</span></span><br><span class="line"><span class="keyword">return</span> retriever.get()</span><br><span class="line"><span class="comment">#运行时才知道有没有get方法</span></span><br></pre></td></tr></table></figure>
-<ol>
-<li><p>c++<br>编译型语言</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">string</span> <span class="title">download</span>(<span class="title">const</span> <span class="title">T</span>&amp; <span class="title">retriever</span>)&#123;</span></span><br><span class="line"><span class="keyword">return</span> retriever.get();</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//编译时才知道有没有get方法</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>java</p>
+<ol start="2">
+<li>c++<br>
+编译型语言</li>
+</ol>
+  <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">string</span> <span class="title">download</span>(<span class="title">const</span> <span class="title">T</span>&amp; <span class="title">retriever</span>)&#123;</span></span><br><span class="line"><span class="keyword">return</span> retriever.get();</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//编译时才知道有没有get方法</span></span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>
+<p>java</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">  &lt;T extends Retriever&gt;</span><br><span class="line">  <span class="function">String <span class="title">download</span><span class="params">(T r)</span></span>&#123;</span><br><span class="line"><span class="keyword">return</span> r.get();</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 </li>
-</ol>
-<ol>
-<li><p>go</p>
+<li>
+<p>go</p>
 <p>apache polygene</p>
 </li>
 </ol>
-<h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><p>只规定实现接口的方法，由使用者再来定义方法</p>
+<h3 id="接口"><a class="markdownIt-Anchor" href="#接口"></a> 接口</h3>
+<p>只规定实现接口的方法，由使用者再来定义方法</p>
 <p>采用值传递，几乎不用接口的指针</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Retriever <span class="keyword">interface</span>&#123;</span><br><span class="line">  Get(source <span class="keyword">string</span>) <span class="keyword">string</span></span><br><span class="line">&#125;<span class="comment">//接口变量 实现者类型 实现者的值 自带指针</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">download</span><span class="params">(retriever Retriever)</span> <span class="title">string</span></span>&#123;</span><br><span class="line">  <span class="keyword">return</span> retriever.Get()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><p>有些运算符拥有较高的优先级，二元运算符的运算方向均是从左至右。下表列出了所有运算符以及它们的优先级，由上至下代表优先级由高到低：</p>
+<h3 id="运算符"><a class="markdownIt-Anchor" href="#运算符"></a> 运算符</h3>
+<p>有些运算符拥有较高的优先级，二元运算符的运算方向均是从左至右。下表列出了所有运算符以及它们的优先级，由上至下代表优先级由高到低：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">优先级 	运算符</span><br><span class="line"> 7 		^ !</span><br><span class="line"> 6 		* / % &lt;&lt; &gt;&gt; &amp; &amp;^</span><br><span class="line"> 5 		+ - | ^</span><br><span class="line"> 4 		== != &lt; &lt;= &gt;= &gt;</span><br><span class="line"> 3 		&lt;-</span><br><span class="line"> 2 		&amp;&amp;</span><br><span class="line"> 1 		||</span><br></pre></td></tr></table></figure>
-<h2 id><a href="#" class="headerlink" title=" "></a> </h2>
+<h2 id><a class="markdownIt-Anchor" href="#"></a> </h2>
+
       
     </div>
 
@@ -521,8 +535,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/ostlo/2019/04/23/Go学习3/" rel="next" title="go学习（三）">
-                <i class="fa fa-chevron-left"></i> go学习（三）
+              <a href="/ostlo/2019/04/25/Go学习5/" rel="next" title="go学习(五)">
+                <i class="fa fa-chevron-left"></i> go学习(五)
               </a>
             
           </div>
@@ -530,10 +544,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/ostlo/2019/04/25/Go学习5/" rel="prev" title="go学习(五)">
-                go学习(五) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -759,7 +769,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#封装"><span class="nav-number">1.</span> <span class="nav-text">封装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#包"><span class="nav-number">2.</span> <span class="nav-text">包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#duck-typing"><span class="nav-number">3.</span> <span class="nav-text">duck typing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接口"><span class="nav-number">4.</span> <span class="nav-text">接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运算符"><span class="nav-number">5.</span> <span class="nav-text">运算符</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number"></span> <span class="nav-text"> </span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#封装"><span class="nav-number">1.</span> <span class="nav-text"> 封装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#包"><span class="nav-number">2.</span> <span class="nav-text"> 包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#duck-typing"><span class="nav-number">3.</span> <span class="nav-text"> duck typing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接口"><span class="nav-number">4.</span> <span class="nav-text"> 接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运算符"><span class="nav-number">5.</span> <span class="nav-text"> 运算符</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number"></span> <span class="nav-text"> </span></a></li></div>
             
 
           </div>
