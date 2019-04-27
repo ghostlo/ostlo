@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/ostlo/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/ostlo/css/main.css?v=7.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/ostlo/images/apple-touch-icon-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/ostlo/images/favicon-32x32-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/ostlo/images/favicon-16x16-next.png?v=7.1.0">
+
+
+  <link rel="mask-icon" href="/ostlo/images/logo.svg?v=7.1.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/ostlo/',
+    scheme: 'Muse',
+    version: '7.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="阿里面试主要及经常问到技术点：数据结构，多线程，jvm，优化，消息框架，分布式，缓存等以及你使用过的框架且第一轮的基础很重要，通过会后录取可能性就相对高了！ 金三银四已经到来，在这也免费分享一些Java程序员面试常问架构面试专题和答案以及架构视频资料（文末领取），希望那些有需要朋友能在今年第一波招聘潮找到一个自己满意顺心的工作！ 面试题如下一面（主要是jvm，并发，锁，数据结构等基础）  自我介绍">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ostlo&#39;s Blog">
+<meta property="og:url" content="https://ghostlo.github.io/wait/阿里天猫团队Java研发岗技术四面-数据结构+MySQL+缓存雪崩+高并发等.html">
+<meta property="og:site_name" content="Ostlo&#39;s Blog">
+<meta property="og:description" content="阿里面试主要及经常问到技术点：数据结构，多线程，jvm，优化，消息框架，分布式，缓存等以及你使用过的框架且第一轮的基础很重要，通过会后录取可能性就相对高了！ 金三银四已经到来，在这也免费分享一些Java程序员面试常问架构面试专题和答案以及架构视频资料（文末领取），希望那些有需要朋友能在今年第一波招聘潮找到一个自己满意顺心的工作！ 面试题如下一面（主要是jvm，并发，锁，数据结构等基础）  自我介绍">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://uploader.shimo.im/f/MU8DB6wJuJUpzxuL.png!thumbnail">
+<meta property="og:updated_time" content="2019-04-16T02:23:38.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ostlo&#39;s Blog">
+<meta name="twitter:description" content="阿里面试主要及经常问到技术点：数据结构，多线程，jvm，优化，消息框架，分布式，缓存等以及你使用过的框架且第一轮的基础很重要，通过会后录取可能性就相对高了！ 金三银四已经到来，在这也免费分享一些Java程序员面试常问架构面试专题和答案以及架构视频资料（文末领取），希望那些有需要朋友能在今年第一波招聘潮找到一个自己满意顺心的工作！ 面试题如下一面（主要是jvm，并发，锁，数据结构等基础）  自我介绍">
+<meta name="twitter:image" content="https://uploader.shimo.im/f/MU8DB6wJuJUpzxuL.png!thumbnail">
+
+
+
+  <link rel="alternate" href="/ostlo/atom.xml" title="Ostlo's Blog" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="https://ghostlo.github.io/wait/阿里天猫团队Java研发岗技术四面-数据结构+MySQL+缓存雪崩+高并发等">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title> | Ostlo's Blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/ostlo/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Ostlo's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/ostlo/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/ostlo/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/ostlo/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/ostlo/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/ostlo/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+    
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+    
+
+  
+
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+    
+    
+    <div class="post-block page">
+      <header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">
+
+</h1>
+
+<div class="post-meta">
+  
+  
+
+
+
+</div>
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+        
+        
+          <h2 id="阿里面试主要及经常问到技术点："><a href="#阿里面试主要及经常问到技术点：" class="headerlink" title="阿里面试主要及经常问到技术点："></a><strong>阿里面试主要及经常问到技术点：</strong></h2><p>数据结构，多线程，jvm，优化，消息框架，分布式，缓存等以及你使用过的框架且第一轮的基础很重要，通过会后录取可能性就相对高了！</p>
+<p><strong>金三银四已经到来，在这也免费分享一些Java程序员面试常问架构面试专题和答案以及架构视频资料（文末领取），希望那些有需要朋友能在今年第一波招聘潮找到一个自己满意顺心的工作！</strong></p>
+<h2 id="面试题如下"><a href="#面试题如下" class="headerlink" title="面试题如下"></a><strong>面试题如下</strong></h2><p><strong>一面（主要是jvm，并发，锁，数据结构等基础）</strong></p>
+<ol>
+<li>自我介绍（说说自己的擅长及拿手的技术）</li>
+<li>说说treemap和HashMap的区别？HashMap和ConcurrentHashMap的区别？</li>
+<li>HashMap底层如何实现(JDK1.8有所改动)？</li>
+<li>说说Hash的一致算法？</li>
+<li>你知道的GC算法和回收策略有哪些？GC的机制是什么？</li>
+<li>垃圾回收器的基本原理？是否可以立即回收内存？怎么样主动的通知JVM进行垃圾回收？</li>
+<li>双亲委派模型机制</li>
+<li>线程池创建的几个核心构造参数是什么？</li>
+<li>乐观锁和悲观锁？可重入锁和Synchronized？</li>
+<li>他们都是可重入锁吗？哪个效率更高？</li>
+<li>CountDownLaunch和Cylicbarrior的区别以及分别是在哪样场景下使用的？</li>
+<li>Http和Https的区别以及Https加密的方式？</li>
+<li>以后的职业规划和想法</li>
+</ol>
+<p><strong>二面（主要是数据库，协议，Spring等）</strong></p>
+<ol>
+<li>自我介绍，聊下自己认为做得很好的项目！</li>
+<li>InnoDB支持的四种事务隔离级别名称是什么？ 之间的区别是什么？MySQL隔离级别是什么？</li>
+<li>说说事务的特性？讲讲对慢查询的分析？</li>
+<li>你理解的BTree机制？</li>
+<li>有哪些MySQL常用的优化方法？</li>
+<li>Http请求过程，DNS解析的过程？</li>
+<li>三次握手和四次握手的过程？</li>
+<li>B+树索引和Hash索引之间的区别？</li>
+<li>Spring IOC如何管理Bean之间的依赖关系，怎么样避免循环依赖？</li>
+<li>SpringBean创建过程中的设计模式？</li>
+<li>说说AOP的实现原理？</li>
+<li>Tomcat的基本架构是什么？</li>
+</ol>
+<p><strong>三面（主要是缓存，高并发，分布式）</strong></p>
+<ol>
+<li>自己项目中的总结的并发经验</li>
+<li>说说MySQL的锁并发？加锁的机制是什么？</li>
+<li>高并发场景下如何防止死锁，保证数据的一致性？</li>
+<li>集群和负载均衡的算法与实现？</li>
+<li>说说分库与分表设计？</li>
+<li>分库分表带来的分布式困境与对应之策有哪些？</li>
+<li>Redis和Setnx命令使如何实现分布式锁的？使用Redis怎么进行异步队列？会有什么缺点？</li>
+<li>缓存击穿的概念和解决方案?</li>
+<li>Redis的数据结构？ 线程模型？ Redis的数据淘汰机制？</li>
+<li>Redis的数据一致性问题</li>
+<li>MQ底层原理的实现？</li>
+<li>阻塞队列不用Java提供的该怎么实现？</li>
+<li>讲讲负载均衡的原理？</li>
+<li>如何实现高并发环境下的削峰、限流？</li>
+</ol>
+<p><strong>四面（主要项目入手）</strong></p>
+<ol>
+<li>讲讲项目中用到的中间件(Dubbo/MQ/Zookeeper/Redis/Kafka)？</li>
+<li>什么情况下会造成雪崩？该怎么避免这种情况？</li>
+<li>高并发架构的设计思路？</li>
+<li>以前的项目中遇到的问题和解决策略？</li>
+<li>生活中遇到过哪些挫折？最后怎么解决的?</li>
+</ol>
+<h2 id="BAT面试Java岗常问题锦集"><a href="#BAT面试Java岗常问题锦集" class="headerlink" title="BAT面试Java岗常问题锦集"></a><strong>BAT面试Java岗常问题锦集</strong></h2><p><a href="https://zhuanlan.zhihu.com/p/57629603" target="_blank" rel="noopener">BAT2019最全Java面试168题汇总：并发编程+JVM+Spring+分布式+数据库+缓存等！</a></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a><strong>总结</strong></h2><p>一线互联网公司都比较注重实际的项目中解决问题的能力，另外面试点主要围绕JVM、多线程相关、基础知识的底层原理、处理高并发的能力。这里也不扯什么面试技巧了，轻松发挥就好，祝大家金三银四季能有个高薪满意的工作！</p>
+<p><strong>最后针对于上面的面试问到的知识点我总结出了适合于工作2-5年以上开发经验的java程序员在面试中涉及到的绝大部分架构面试题及答案做成了文档和架构视频资料免费分享给大家（包括Dubbo、Redis、Netty、zookeeper、Spring cloud、分布式、高并发等架构技术资料），希望能帮助到您面试前的复习且找到一个好的工作，也节省大家在网上搜索资料的时间来学习，也可以关注我一下以后会有更多干货分享。</strong></p>
+<h2 id="领取方式"><a href="#领取方式" class="headerlink" title="领取方式"></a>领取方式</h2><p><strong>关注我的公众号**</strong>Java架构技术栈<strong> </strong>后台回复关键“<strong><strong>架构</strong></strong>”，即可免费获取上述所有资源。你可以通过名字:”<strong><strong>Java架构技术栈</strong></strong>“搜索到或者直接扫描下方二维码。**</p>
+<p>​                                        <img src="https://uploader.shimo.im/f/MU8DB6wJuJUpzxuL.png!thumbnail" alt="img"></p>
+
+        
+      </div>
+      
+      
+      
+    </div>
+    
+
+
+
+    
+    
+    
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/ostlo/avatar.png" alt="Ostlo_TL">
+            
+              <p class="site-author-name" itemprop="name">Ostlo_TL</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/ostlo/archives/">
+                
+                    <span class="site-state-item-count">18</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/ostlo/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/ostlo/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">17</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/ostlo/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/ghostlo" title="GitHub &rarr; https://github.com/ghostlo" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="/ostlo/ostlo.im@gmail.com" title="E-Mail &rarr; ostlo.im@gmail.com"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#阿里面试主要及经常问到技术点："><span class="nav-number">1.</span> <span class="nav-text">阿里面试主要及经常问到技术点：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#面试题如下"><span class="nav-number">2.</span> <span class="nav-text">面试题如下</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BAT面试Java岗常问题锦集"><span class="nav-number">3.</span> <span class="nav-text">BAT面试Java岗常问题锦集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#领取方式"><span class="nav-number">5.</span> <span class="nav-text">领取方式</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ostlo_TL</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/ostlo/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/ostlo/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/ostlo/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/ostlo/js/utils.js?v=7.1.0"></script>
+
+  <script src="/ostlo/js/motion.js?v=7.1.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/ostlo/js/schemes/muse.js?v=7.1.0"></script>
+
+
+
+  
+  <script src="/ostlo/js/scrollspy.js?v=7.1.0"></script>
+<script src="/ostlo/js/post-details.js?v=7.1.0"></script>
+
+
+
+  
+
+
+  <script src="/ostlo/js/next-boot.js?v=7.1.0"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

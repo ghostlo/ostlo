@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/ostlo/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/ostlo/css/main.css?v=7.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/ostlo/images/apple-touch-icon-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/ostlo/images/favicon-32x32-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/ostlo/images/favicon-16x16-next.png?v=7.1.0">
+
+
+  <link rel="mask-icon" href="/ostlo/images/logo.svg?v=7.1.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/ostlo/',
+    scheme: 'Muse',
+    version: '7.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="租房去了…真累 rune123456789101112131415161718192021222324252627282930313233343536373839package mainimport (	&quot;fmt&quot;	&quot;unicode/utf8&quot;)func main()  &amp;#123;	s:= &quot;ostlo 测试！&quot;	fmt.Println(s)	for _,b:=range []byte(s)&amp;#">
+<meta name="keywords" content="go,语言学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="go学习（三）">
+<meta property="og:url" content="https://ghostlo.github.io/2019/04/23/Go学习3/index.html">
+<meta property="og:site_name" content="Ostlo&#39;s Blog">
+<meta property="og:description" content="租房去了…真累 rune123456789101112131415161718192021222324252627282930313233343536373839package mainimport (	&quot;fmt&quot;	&quot;unicode/utf8&quot;)func main()  &amp;#123;	s:= &quot;ostlo 测试！&quot;	fmt.Println(s)	for _,b:=range []byte(s)&amp;#">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-04-24T00:34:09.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="go学习（三）">
+<meta name="twitter:description" content="租房去了…真累 rune123456789101112131415161718192021222324252627282930313233343536373839package mainimport (	&quot;fmt&quot;	&quot;unicode/utf8&quot;)func main()  &amp;#123;	s:= &quot;ostlo 测试！&quot;	fmt.Println(s)	for _,b:=range []byte(s)&amp;#">
+
+
+
+  <link rel="alternate" href="/ostlo/atom.xml" title="Ostlo's Blog" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="https://ghostlo.github.io/2019/04/23/Go学习3/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>go学习（三） | Ostlo's Blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/ostlo/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Ostlo's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/ostlo/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/ostlo/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/ostlo/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/ostlo/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/ostlo/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ghostlo.github.io/ostlo/2019/04/23/Go学习3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ostlo_TL">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/ostlo/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ostlo's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">go学习（三）
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-04-23 09:32:28" itemprop="dateCreated datePublished" datetime="2019-04-23T09:32:28+08:00">2019-04-23</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-04-24 08:34:09" itemprop="dateModified" datetime="2019-04-24T08:34:09+08:00">2019-04-24</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/ostlo/categories/Go/" itemprop="url" rel="index"><span itemprop="name">Go</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>租房去了…真累</p>
+<h3 id="rune"><a href="#rune" class="headerlink" title="rune"></a>rune</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">"fmt"</span></span><br><span class="line">	<span class="string">"unicode/utf8"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>  &#123;</span><br><span class="line">	s:= <span class="string">"ostlo 测试！"</span></span><br><span class="line">	fmt.Println(s)</span><br><span class="line">	<span class="keyword">for</span> _,b:=<span class="keyword">range</span> []<span class="keyword">byte</span>(s)&#123;</span><br><span class="line">		fmt.Printf(<span class="string">"%x\t"</span>,b)</span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Println()</span><br><span class="line">	<span class="keyword">for</span> i,ch :=<span class="keyword">range</span> s&#123;<span class="comment">// ch is a rune</span></span><br><span class="line">		fmt.Printf(<span class="string">"(%d %X)"</span>,i,ch)<span class="comment">//utf-8解码-&gt;unicode</span></span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Println()</span><br><span class="line">	fmt.Println(<span class="string">"Rune count:"</span>,utf8.RuneCountInString(s))</span><br><span class="line">	bytes:=[]<span class="keyword">byte</span>(s)</span><br><span class="line">	<span class="keyword">for</span> <span class="built_in">len</span>(bytes)&gt;<span class="number">0</span>&#123;</span><br><span class="line">		ch, size :=utf8.DecodeRune(bytes)</span><br><span class="line">		bytes=bytes[size:]</span><br><span class="line">		fmt.Printf(<span class="string">"%c"</span>,ch)</span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Println()</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> i,ch :=<span class="keyword">range</span> []<span class="keyword">rune</span>(s)&#123;</span><br><span class="line">		fmt.Printf(<span class="string">"(%d %c)"</span>, i, ch)</span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Println()</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">6f	73	74	6c	6f	20	e6	b5	8b	e8	af	95	ef	bc	81	</span></span><br><span class="line"><span class="comment">(0 6F)(1 73)(2 74)(3 6C)(4 6F)(5 20)(6 6D4B)(9 8BD5)(12 FF01)</span></span><br><span class="line"><span class="comment">Rune count: 9</span></span><br><span class="line"><span class="comment">ostlo 测试！</span></span><br><span class="line"><span class="comment">(0 o)(1 s)(2 t)(3 l)(4 o)(5  )(6 测)(7 试)(8 ！)</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<p>rune相当于go的char</p>
+<p>range遍历pos rune对</p>
+<p>len字节长度</p>
+<p>[]byte字节</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">lengthofNonRepeatingSubStr1</span><span class="params">(s <span class="keyword">string</span>)</span> <span class="title">int</span></span>&#123;</span><br><span class="line">	lastOccured:=<span class="built_in">make</span>(<span class="keyword">map</span>[<span class="keyword">rune</span>] <span class="keyword">int</span>)</span><br><span class="line">	start:=<span class="number">0</span></span><br><span class="line">	maxLength:=<span class="number">0</span></span><br><span class="line">	<span class="keyword">for</span> i,ch := <span class="keyword">range</span> []<span class="keyword">rune</span>(s)&#123;<span class="comment">//range s每个中文算3个长</span></span><br><span class="line">		<span class="keyword">if</span> lastI, ok :=lastOccured[ch];ok &amp;&amp;lastI&gt;=start&#123;</span><br><span class="line">			start=lastI+<span class="number">1</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> i-start+<span class="number">1</span>&gt;maxLength&#123;</span><br><span class="line">			maxLength=i-start+<span class="number">1</span></span><br><span class="line">		&#125;</span><br><span class="line">		lastOccured[ch]=i</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> maxLength</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	fmt.Println(lengthofNonRepeatingSubStr1(<span class="string">"abcba"</span>))</span><br><span class="line">	fmt.Println(lengthofNonRepeatingSubStr1(<span class="string">""</span>))</span><br><span class="line">	fmt.Println(lengthofNonRepeatingSubStr1(<span class="string">"abcv3a"</span>))</span><br><span class="line">	fmt.Println(lengthofNonRepeatingSubStr1(<span class="string">"中文测试"</span>))</span><br><span class="line">	fmt.Println(lengthofNonRepeatingSubStr1(<span class="string">"中文中文测试测试"</span>))</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">3</span></span><br><span class="line"><span class="comment">0</span></span><br><span class="line"><span class="comment">5</span></span><br><span class="line"><span class="comment">4</span></span><br><span class="line"><span class="comment">4</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<h3 id="struct"><a href="#struct" class="headerlink" title="struct"></a>struct</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> treeNode <span class="keyword">struct</span>&#123;</span><br><span class="line">	value <span class="keyword">int</span></span><br><span class="line">	left,right *treeNode<span class="comment">//没有构造函数</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//工程函数</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">creatNode</span><span class="params">(value <span class="keyword">int</span>)</span> *<span class="title">treeNode</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> &amp;treeNode&#123;value: value&#125;<span class="comment">//可以直接返回局部变量的地址</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(node treeNode)</span> <span class="title">print</span><span class="params">()</span></span>&#123;<span class="comment">//node treeNode 相当于*this指针</span></span><br><span class="line">	fmt.Println(node.value)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(node treeNode)</span> <span class="title">setvalue</span><span class="params">(value <span class="keyword">int</span>)</span></span>&#123;<span class="comment">//拷贝</span></span><br><span class="line">	node.value=value</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(node *treeNode)</span> <span class="title">setvalue_p</span><span class="params">(value <span class="keyword">int</span>)</span></span>&#123;<span class="comment">//使用指针才能改变结构的内容</span></span><br><span class="line">	<span class="keyword">if</span> node==<span class="literal">nil</span> &#123;</span><br><span class="line">		fmt.Println(<span class="string">"set value to nil node"</span>)</span><br><span class="line">		<span class="keyword">return</span></span><br><span class="line">	&#125;</span><br><span class="line">	node.value=value</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(node *treeNode)</span> <span class="title">traverse</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> node==<span class="literal">nil</span>&#123;</span><br><span class="line">		<span class="keyword">return</span></span><br><span class="line">	&#125;</span><br><span class="line">	node.left.traverse()</span><br><span class="line">	node.<span class="built_in">print</span>()</span><br><span class="line">	node.right.traverse()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> root treeNode</span><br><span class="line">	root=treeNode&#123;value:<span class="number">3</span>&#125;</span><br><span class="line">	root.left = &amp;treeNode&#123;&#125;</span><br><span class="line">	root.right = &amp;treeNode&#123;<span class="number">5</span>,<span class="literal">nil</span>,<span class="literal">nil</span>&#125;</span><br><span class="line">	root.right.left = <span class="built_in">new</span>(treeNode)</span><br><span class="line">	nodes := []treeNode&#123;</span><br><span class="line">		&#123;value:<span class="number">3</span>&#125;,</span><br><span class="line">		&#123;&#125;,</span><br><span class="line">		&#123;<span class="number">6</span>,<span class="literal">nil</span>,&amp;root&#125;,</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	fmt.Println(nodes)</span><br><span class="line">	root.right.left=creatNode(<span class="number">2</span>)</span><br><span class="line">	root.<span class="built_in">print</span>()</span><br><span class="line">	root.right.left.setvalue(<span class="number">4</span>)</span><br><span class="line">	root.right.left.<span class="built_in">print</span>()</span><br><span class="line">	root.right.left.setvalue_p(<span class="number">4</span>)</span><br><span class="line">	root.right.left.<span class="built_in">print</span>()</span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> pRoot *treeNode</span><br><span class="line">	pRoot.setvalue_p(<span class="number">10</span>)</span><br><span class="line">	<span class="comment">//pRoot.print()</span></span><br><span class="line">	pRoot = &amp;root</span><br><span class="line">	pRoot.setvalue_p(<span class="number">20</span>)</span><br><span class="line">	pRoot.<span class="built_in">print</span>()</span><br><span class="line">	fmt.Print(<span class="string">"开始遍历\n"</span>)</span><br><span class="line">	root.traverse()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">[&#123;3 &lt;nil&gt; &lt;nil&gt;&#125; &#123;0 &lt;nil&gt; &lt;nil&gt;&#125; &#123;6 &lt;nil&gt; 0xc000086000&#125;]</span></span><br><span class="line"><span class="comment">3</span></span><br><span class="line"><span class="comment">2</span></span><br><span class="line"><span class="comment">4</span></span><br><span class="line"><span class="comment">set value to nil node</span></span><br><span class="line"><span class="comment">20</span></span><br><span class="line"><span class="comment">开始遍历</span></span><br><span class="line"><span class="comment">0</span></span><br><span class="line"><span class="comment">20</span></span><br><span class="line"><span class="comment">4</span></span><br><span class="line"><span class="comment">5</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<p>自定义工厂函数</p>
+<p>返回局部变量的地址</p>
+<p>那么在堆上还是栈上呢，不需要知道，有编译器设置，如果发现了地址的引用之类的就在堆上，没有返回此引用的话就在栈上</p>
+<p>值与指针传递</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/ostlo/tags/go/" rel="tag"># go</a>
+          
+            <a href="/ostlo/tags/语言学习/" rel="tag"># 语言学习</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/ostlo/2019/04/22/Go学习2/" rel="next" title="go学习（二）">
+                <i class="fa fa-chevron-left"></i> go学习（二）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/ostlo/2019/04/25/Go学习4/" rel="prev" title="go学习（四）">
+                go学习（四） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/ostlo/avatar.png" alt="Ostlo_TL">
+            
+              <p class="site-author-name" itemprop="name">Ostlo_TL</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/ostlo/archives/">
+                
+                    <span class="site-state-item-count">18</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/ostlo/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/ostlo/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">17</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/ostlo/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/ghostlo" title="GitHub &rarr; https://github.com/ghostlo" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="/ostlo/ostlo.im@gmail.com" title="E-Mail &rarr; ostlo.im@gmail.com"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#rune"><span class="nav-number">1.</span> <span class="nav-text">rune</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#struct"><span class="nav-number">2.</span> <span class="nav-text">struct</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ostlo_TL</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/ostlo/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/ostlo/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/ostlo/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/ostlo/js/utils.js?v=7.1.0"></script>
+
+  <script src="/ostlo/js/motion.js?v=7.1.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/ostlo/js/schemes/muse.js?v=7.1.0"></script>
+
+
+
+  
+  <script src="/ostlo/js/scrollspy.js?v=7.1.0"></script>
+<script src="/ostlo/js/post-details.js?v=7.1.0"></script>
+
+
+
+  
+
+
+  <script src="/ostlo/js/next-boot.js?v=7.1.0"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

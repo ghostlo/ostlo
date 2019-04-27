@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="安装  下载安装包 地址： https://golang.org/dl/ 安装包的位置一般是默认在usr/local/go  配置环境变量 1、打开终端输入cd ~进入用户主目录; 2、输入ls -all命令查看是否存在.bash_profile; 3、存在既使用vim .bash_profile 打开文件; 4、输入 i 进入vim编辑模式； 5、输入下面代码， 其中 GOPATH: 日常开发">
+  <meta name="description" content="安装下载安装包地址： https://golang.org/dl/ 安装包的位置一般是默认在usr/local/go 配置环境变量1、打开终端输入cd ~进入用户主目录;  2、输入ls -all命令查看是否存在.bash_profile;  3、存在既使用vim .bash_profile 打开文件;  4、输入 i 进入vim编辑模式；  5、输入下面代码， 其中 GOPATH: 日常开发的根">
 <meta name="keywords" content="go,语言学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="go学习（一）">
 <meta property="og:url" content="https://ghostlo.github.io/2019/04/21/Go学习1/index.html">
 <meta property="og:site_name" content="Ostlo&#39;s Blog">
-<meta property="og:description" content="安装  下载安装包 地址： https://golang.org/dl/ 安装包的位置一般是默认在usr/local/go  配置环境变量 1、打开终端输入cd ~进入用户主目录; 2、输入ls -all命令查看是否存在.bash_profile; 3、存在既使用vim .bash_profile 打开文件; 4、输入 i 进入vim编辑模式； 5、输入下面代码， 其中 GOPATH: 日常开发">
+<meta property="og:description" content="安装下载安装包地址： https://golang.org/dl/ 安装包的位置一般是默认在usr/local/go 配置环境变量1、打开终端输入cd ~进入用户主目录;  2、输入ls -all命令查看是否存在.bash_profile;  3、存在既使用vim .bash_profile 打开文件;  4、输入 i 进入vim编辑模式；  5、输入下面代码， 其中 GOPATH: 日常开发的根">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-04-22T14:01:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="go学习（一）">
-<meta name="twitter:description" content="安装  下载安装包 地址： https://golang.org/dl/ 安装包的位置一般是默认在usr/local/go  配置环境变量 1、打开终端输入cd ~进入用户主目录; 2、输入ls -all命令查看是否存在.bash_profile; 3、存在既使用vim .bash_profile 打开文件; 4、输入 i 进入vim编辑模式； 5、输入下面代码， 其中 GOPATH: 日常开发">
+<meta name="twitter:description" content="安装下载安装包地址： https://golang.org/dl/ 安装包的位置一般是默认在usr/local/go 配置环境变量1、打开终端输入cd ~进入用户主目录;  2、输入ls -all命令查看是否存在.bash_profile;  3、存在既使用vim .bash_profile 打开文件;  4、输入 i 进入vim编辑模式；  5、输入下面代码， 其中 GOPATH: 日常开发的根">
 
 
 
@@ -455,15 +455,12 @@
       
 
       
-        <h2 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h2>
-<h3 id="下载安装包"><a class="markdownIt-Anchor" href="#下载安装包"></a> 下载安装包</h3>
-<p>地址： <a href="https://golang.org/dl/" target="_blank" rel="noopener">https://golang.org/dl/</a></p>
+        <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="下载安装包"><a href="#下载安装包" class="headerlink" title="下载安装包"></a>下载安装包</h3><p>地址： <a href="https://golang.org/dl/" target="_blank" rel="noopener">https://golang.org/dl/</a></p>
 <p>安装包的位置一般是默认在usr/local/go</p>
-<h3 id="配置环境变量"><a class="markdownIt-Anchor" href="#配置环境变量"></a> 配置环境变量</h3>
-<p>1、打开终端输入cd ~进入用户主目录;</p>
-<p>2、输入ls -all命令查看是否存在.bash_profile;</p>
-<p>3、存在既使用vim .bash_profile 打开文件;</p>
-<p>4、输入 i 进入vim编辑模式；</p>
+<h3 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h3><p>1、打开终端输入cd ~进入用户主目录; </p>
+<p>2、输入ls -all命令查看是否存在.bash_profile; </p>
+<p>3、存在既使用vim .bash_profile 打开文件; </p>
+<p>4、输入 i 进入vim编辑模式； </p>
 <p>5、输入下面代码， 其中 GOPATH: 日常开发的根目录。GOBIN:是GOPATH下的bin目录。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">export GOPATH=/Users/longxiansheng/go</span><br><span class="line"></span><br><span class="line">export GOBIN=$GOPATH/bin</span><br><span class="line"></span><br><span class="line">PATH=\$PATH:\$GOBIN</span><br></pre></td></tr></table></figure>
 <p>这里列举几个最为重要的环境变量：</p>
@@ -479,8 +476,7 @@
 <li><strong>$GOARM</strong> 专门针对基于 arm 架构的处理器，它的值可以是 5 或 6，默认为 6。</li>
 <li><strong>$GOMAXPROCS</strong> 用于设置应用程序可使用的处理器个数与核数，详见第 14.1.3 节。</li>
 </ul>
-<h3 id="安装intellij-golang"><a class="markdownIt-Anchor" href="#安装intellij-golang"></a> 安装Intellij golang</h3>
-<p>设置SDK路径为usr/local/go</p>
+<h3 id="安装Intellij-golang"><a href="#安装Intellij-golang" class="headerlink" title="安装Intellij golang"></a>安装Intellij golang</h3><p>设置SDK路径为usr/local/go</p>
 <p><strong>go run/ go install/ go build / go get的区别</strong></p>
 <ul>
 <li>go run 运行当个.go文件</li>
@@ -488,12 +484,10 @@
 <li>go build 加上可编译的go源文件可以得到一个可执行文件</li>
 <li>go get = git clone + go install 从指定源上面下载或者更新指定的代码和依赖，并对他们进行编译和安装</li>
 </ul>
-<h2 id="调试"><a class="markdownIt-Anchor" href="#调试"></a> 调试</h2>
-<p>如果你不想使用调试器，你可以按照下面的一些有用的方法来达到基本调试的目的：</p>
+<h2 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h2><p>如果你不想使用调试器，你可以按照下面的一些有用的方法来达到基本调试的目的：</p>
 <ol>
 <li>在合适的位置使用打印语句输出相关变量的值（<code>print</code>/<code>println</code> 和 <code>fmt.Print</code>/<code>fmt.Println</code>/<code>fmt.Printf</code>）。</li>
-<li>在 <code>fmt.Printf</code> 中使用下面的说明符来打印有关变量的相关信息：
-<ul>
+<li>在 <code>fmt.Printf</code> 中使用下面的说明符来打印有关变量的相关信息：<ul>
 <li><code>%+v</code> 打印包括字段在内的实例的完整信息</li>
 <li><code>%#v</code> 打印包括字段和限定类型名称在内的实例的完整信息</li>
 <li><code>%T</code> 打印某个类型的完整说明</li>
@@ -502,9 +496,7 @@
 <li>使用 panic 语句（第 13.2 节）来获取栈跟踪信息（直到 panic 时所有被调用函数的列表）。</li>
 <li>使用关键字 defer 来跟踪代码执行过程（第 6.4 节）。</li>
 </ol>
-<h2 id="编写程序"><a class="markdownIt-Anchor" href="#编写程序"></a> 编写程序</h2>
-<h3 id="特性"><a class="markdownIt-Anchor" href="#特性"></a> 特性</h3>
-<p><a href="http://en.wikipedia.org/wiki/LALR_parser" target="_blank" rel="noopener">LALR</a> 是 Go 语言的语法标准，你也可以在 <a href="https://github.com/golang/go/blob/master/src%2Fcmd%2Finternal%2Fgc%2Fgo.y" target="_blank" rel="noopener"><code>src/cmd/internal/gc/go.y</code></a> 中查看到，这种语法标准在编译时不需要符号表来协助解析。</p>
+<h2 id="编写程序"><a href="#编写程序" class="headerlink" title="编写程序"></a>编写程序</h2><h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><p><a href="http://en.wikipedia.org/wiki/LALR_parser" target="_blank" rel="noopener">LALR</a> 是 Go 语言的语法标准，你也可以在 <a href="https://github.com/golang/go/blob/master/src%2Fcmd%2Finternal%2Fgc%2Fgo.y" target="_blank" rel="noopener"><code>src/cmd/internal/gc/go.y</code></a> 中查看到，这种语法标准在编译时不需要符号表来协助解析。</p>
 <p>许多能够在大多数面向对象语言中使用的特性 Go 语言都没有支持，但其中的一部分可能会在未来被支持。</p>
 <ul>
 <li>为了简化设计，不支持函数重载和操作符重载</li>
@@ -518,14 +510,14 @@
 <li>不支持静态变量</li>
 </ul>
 <p>关于 Go 语言开发团队对于这些方面的讨论，你可以通过 <a href="http://golang.org/doc/go_faq.html" target="_blank" rel="noopener">Go 常见问题</a> 页面查看。</p>
-<h3 id="格式化"><a class="markdownIt-Anchor" href="#格式化"></a> 格式化</h3>
-<p>Go 开发团队不想要 Go 语言像许多其它语言那样总是在为代码风格而引发无休止的争论，浪费大量宝贵的开发时间，因此他们制作了一个工具：<code>go fmt</code>（<code>gofmt</code>）。这个工具可以将你的源代码格式化成符合官方统一标准的风格，属于语法风格层面上的小型重构。遵循统一的代码风格是 Go 开发中无可撼动的铁律，因此你必须在编译或提交版本管理系统之前使用 <code>gofmt</code> 来格式化你的代码。</p>
-<p>在格式化输出时，你可以使用 <code>%t</code> 来表示你要输出的值为布尔型。</p>
+<h3 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h3><p>Go 开发团队不想要 Go 语言像许多其它语言那样总是在为代码风格而引发无休止的争论，浪费大量宝贵的开发时间，因此他们制作了一个工具：<code>go fmt</code>（<code>gofmt</code>）。这个工具可以将你的源代码格式化成符合官方统一标准的风格，属于语法风格层面上的小型重构。遵循统一的代码风格是 Go 开发中无可撼动的铁律，因此你必须在编译或提交版本管理系统之前使用 <code>gofmt</code> 来格式化你的代码。</p>
+<p>在格式化输出时，你可以使用 <code>%t</code> 来表示你要输出的值为布尔型。</p>
 <p>在格式化字符串里，<code>%d</code> 用于格式化整数（<code>%x</code> 和 <code>%X</code> 用于格式化 16 进制表示的数字），<code>%g</code> 用于格式化浮点型（<code>%f</code> 输出浮点数，<code>%e</code> 输出科学计数表示法），<code>%0d</code> 用于规定输出定长的整数，其中开头的数字 0 是必须的。</p>
 <p><code>%n.mg</code> 用于表示数字 n 并精确到小数点后 m 位，除了使用 g 之外，还可以使用 e 或者 f</p>
 <p>[格式化代码-gitbook][<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/03.5.md" target="_blank" rel="noopener">https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/03.5.md</a>]</p>
 <p>[与c,c++交互][<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/03.9.md" target="_blank" rel="noopener">https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/03.9.md</a>]</p>
 <p>下面列举了 Go 代码中会使用到的 25 个关键字或保留字：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -567,7 +559,9 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>Go 语言还有 36 个预定义标识符</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -618,16 +612,15 @@
 </tr>
 </tbody>
 </table>
-<h3 id="可见性规则"><a class="markdownIt-Anchor" href="#可见性规则"></a> <strong>可见性规则</strong></h3>
-<p>当标识符（包括常量、变量、类型、函数名、结构字段等等）以一个大写字母开头，如：Group1，那么使用这种形式的标识符的对象就可以被外部包的代码所使用（客户端程序需要先导入这个包），这被称为导出（像面向对象语言中的 public）；标识符如果以小写字母开头，则对包外是不可见的，但是他们在整个包的内部是可见并且可用的（像面向对象语言中的 private ）。</p>
+</div>
+<h3 id="可见性规则"><a href="#可见性规则" class="headerlink" title="可见性规则"></a><strong>可见性规则</strong></h3><p>当标识符（包括常量、变量、类型、函数名、结构字段等等）以一个大写字母开头，如：Group1，那么使用这种形式的标识符的对象就可以被外部包的代码所使用（客户端程序需要先导入这个包），这被称为导出（像面向对象语言中的 public）；标识符如果以小写字母开头，则对包外是不可见的，但是他们在整个包的内部是可见并且可用的（像面向对象语言中的 private ）。</p>
 <p>你可以通过使用包的别名来解决包名之间的名称冲突</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> fm <span class="string">"fmt"</span> <span class="comment">// alias3</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">   fm.Println(<span class="string">"hello, world"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>当一个变量被声明之后(var)，系统自动赋予它该类型的零值：int 为 0，float 为 0.0，bool 为 false，string 为空字符串，指针为 nil。记住，所有的内存在 Go 中都是经过初始化的。</p>
 <p>变量的命名规则遵循骆驼命名法，即首个单词小写，每个新单词的首字母大写，例如：numShips 和 startDate。</p>
 <p>首字母大写表示全局的。</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">fmt.Println（<span class="string">"hello, world"</span>）</span><br><span class="line"><span class="comment">//以下函数只可以用于调试阶段，在部署程序的时候务必将它们替换成 fmt 中的相关函数。</span></span><br><span class="line"><span class="built_in">print</span></span><br><span class="line"><span class="built_in">println</span>：<span class="built_in">print</span>(<span class="string">"ABC"</span>)</span><br><span class="line"><span class="built_in">println</span>(<span class="string">"ABC"</span>)</span><br><span class="line"><span class="built_in">println</span>(i)</span><br></pre></td></tr></table></figure>
-<h3 id="类型转换"><a class="markdownIt-Anchor" href="#类型转换"></a> 类型转换</h3>
-<p>在必要以及可行的情况下，一个类型的值可以被转换成另一种类型的值。由于 Go 语言不存在隐式类型转换，因此所有的转换都必须显式说明，就像调用一个函数一样（类型在这里的作用可以看作是一种函数）：</p>
+<h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h3><p>在必要以及可行的情况下，一个类型的值可以被转换成另一种类型的值。由于 Go 语言不存在隐式类型转换，因此所有的转换都必须显式说明，就像调用一个函数一样（类型在这里的作用可以看作是一种函数）：</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">valueOfTypeB = typeB(valueOfTypeA)</span><br></pre></td></tr></table></figure>
 <p>存储在常量中的数据类型只可以是布尔型、数字型（整数型、浮点型和复数）和字符串型。</p>
 <p>常量的定义格式：<code>const identifier [type] = value</code>，例如：</p>
@@ -645,8 +638,8 @@
 </ul>
 <p><strong>因为在编译期间自定义函数均属于未知，因此无法用于常量的赋值，但内置函数可以使用，如：len()。</strong></p>
 <p>数字型的常量是没有大小和符号的，并且可以使用任何精度而不会导致溢出</p>
-<p>声明变量的一般形式是使用 <code>var</code> 关键字：<code>var identifier type</code>。</p>
-<p>Go 编译器的智商已经高到可以根据变量的值来自动推断其类型，这有点像 Ruby 和 Python 这类动态语言，只不过它们是在运行时进行推断，而 Go 是在编译时就已经完成推断过程。因此，你还可以使用下面的这些形式来声明及初始化变量：</p>
+<p>声明变量的一般形式是使用 <code>var</code> 关键字：<code>var identifier type</code>。</p>
+<p> Go 编译器的智商已经高到可以根据变量的值来自动推断其类型，这有点像 Ruby 和 Python 这类动态语言，只不过它们是在运行时进行推断，而 Go 是在编译时就已经完成推断过程。因此，你还可以使用下面的这些形式来声明及初始化变量：</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">15</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="literal">false</span></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">"Go says hello to the world!"</span></span><br></pre></td></tr></table></figure>
 <p>或：</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> (</span><br><span class="line">	a = <span class="number">15</span></span><br><span class="line">	b = <span class="literal">false</span></span><br><span class="line">	str = <span class="string">"Go says hello to the world!"</span></span><br><span class="line">	numShips = <span class="number">50</span></span><br><span class="line">	city <span class="keyword">string</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
@@ -656,11 +649,10 @@
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> (</span><br><span class="line">	HOME = os.Getenv(<span class="string">"HOME"</span>)</span><br><span class="line">	USER = os.Getenv(<span class="string">"USER"</span>)</span><br><span class="line">	GOROOT = os.Getenv(<span class="string">"GOROOT"</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 <p>这种写法主要用于声明 <strong>包级别</strong> 的全局变量，当你在函数体内声明 <strong>局部变量</strong> 时，应使用简短声明语法 <code>:=</code>(即只能在函数体内用)，例如：</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a := <span class="number">1</span></span><br></pre></td></tr></table></figure>
-<h3 id="打印"><a class="markdownIt-Anchor" href="#打印"></a> 打印</h3>
-<p>函数 <code>Printf</code> 可以在 fmt 包外部使用，这是因为它以大写字母 P 开头，该函数主要用于打印输出到控制台。通常使用的格式化字符串作为第一个参数：</p>
+<h3 id="打印"><a href="#打印" class="headerlink" title="打印"></a>打印</h3><p>函数 <code>Printf</code> 可以在 fmt 包外部使用，这是因为它以大写字母 P 开头，该函数主要用于打印输出到控制台。通常使用的格式化字符串作为第一个参数：</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Printf</span><span class="params">(format <span class="keyword">string</span>, list of variables to be printed)</span></span></span><br></pre></td></tr></table></figure>
-<p>这个格式化字符串可以含有一个或多个的格式化标识符，例如：<code>%..</code>，其中 <code>..</code> 可以被不同类型所对应的标识符替换，如 <code>%s</code> 代表字符串标识符、<code>%v</code> 代表使用类型的默认输出格式的标识符。这些标识符所对应的值从格式化字符串后的第一个逗号开始按照相同顺序添加，如果参数超过 1 个则同样需要使用逗号分隔。使用这些占位符可以很好地控制格式化输出的文本。</p>
-<p>函数 <code>fmt.Print</code> 和 <code>fmt.Println</code> 会自动使用格式化标识符 <code>%v</code> 对字符串进行格式化，两者都会在每个参数之间自动增加空格，而后者还会在字符串的最后加上一个换行符。例如：</p>
+<p>这个格式化字符串可以含有一个或多个的格式化标识符，例如：<code>%..</code>，其中 <code>..</code> 可以被不同类型所对应的标识符替换，如 <code>%s</code> 代表字符串标识符、<code>%v</code> 代表使用类型的默认输出格式的标识符。这些标识符所对应的值从格式化字符串后的第一个逗号开始按照相同顺序添加，如果参数超过 1 个则同样需要使用逗号分隔。使用这些占位符可以很好地控制格式化输出的文本。</p>
+<p>函数 <code>fmt.Print</code> 和 <code>fmt.Println</code> 会自动使用格式化标识符 <code>%v</code> 对字符串进行格式化，两者都会在每个参数之间自动增加空格，而后者还会在字符串的最后加上一个换行符。例如：</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fmt.Print(<span class="string">"Hello:"</span>, <span class="number">23</span>)</span><br></pre></td></tr></table></figure>
 <p>将输出：<code>Hello: 23</code>。</p>
 <p>如果你声明了一个局部变量却没有在相同的代码块中使用它，同样会得到编译错误，例如下面这个例子当中的变量 a：</p>
@@ -800,7 +792,7 @@
                 
                   <a href="/ostlo/archives/">
                 
-                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-count">18</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -955,7 +947,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text"> 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载安装包"><span class="nav-number">1.1.</span> <span class="nav-text"> 下载安装包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置环境变量"><span class="nav-number">1.2.</span> <span class="nav-text"> 配置环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装intellij-golang"><span class="nav-number">1.3.</span> <span class="nav-text"> 安装Intellij golang</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调试"><span class="nav-number">2.</span> <span class="nav-text"> 调试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编写程序"><span class="nav-number">3.</span> <span class="nav-text"> 编写程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特性"><span class="nav-number">3.1.</span> <span class="nav-text"> 特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#格式化"><span class="nav-number">3.2.</span> <span class="nav-text"> 格式化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可见性规则"><span class="nav-number">3.3.</span> <span class="nav-text"> 可见性规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类型转换"><span class="nav-number">3.4.</span> <span class="nav-text"> 类型转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#打印"><span class="nav-number">3.5.</span> <span class="nav-text"> 打印</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载安装包"><span class="nav-number">1.1.</span> <span class="nav-text">下载安装包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置环境变量"><span class="nav-number">1.2.</span> <span class="nav-text">配置环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Intellij-golang"><span class="nav-number">1.3.</span> <span class="nav-text">安装Intellij golang</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调试"><span class="nav-number">2.</span> <span class="nav-text">调试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编写程序"><span class="nav-number">3.</span> <span class="nav-text">编写程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特性"><span class="nav-number">3.1.</span> <span class="nav-text">特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#格式化"><span class="nav-number">3.2.</span> <span class="nav-text">格式化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可见性规则"><span class="nav-number">3.3.</span> <span class="nav-text">可见性规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类型转换"><span class="nav-number">3.4.</span> <span class="nav-text">类型转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#打印"><span class="nav-number">3.5.</span> <span class="nav-text">打印</span></a></li></ol></li></ol></div>
             
 
           </div>

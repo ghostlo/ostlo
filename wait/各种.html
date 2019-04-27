@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/ostlo/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/ostlo/css/main.css?v=7.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/ostlo/images/apple-touch-icon-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/ostlo/images/favicon-32x32-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/ostlo/images/favicon-16x16-next.png?v=7.1.0">
+
+
+  <link rel="mask-icon" href="/ostlo/images/logo.svg?v=7.1.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/ostlo/',
+    scheme: 'Muse',
+    version: '7.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="作者：jkgeekjack 链接：https://www.nowcoder.com/discuss/80156 来源：牛客网 个人简介本人是双非末流一本，大三，CS专业，有百度实习经历 过程先解释一下十面阿里，总共分为阿里云四面，蚂蚁两面，菜鸟四面；七面头条分为金融三面，抖音一面，效率工程三面；六个Offer分别是阿里、腾讯、头条、华为、蘑菇街、三七互娱。 从二月份在牛客网看到阿里云的招聘贴就投了">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ostlo&#39;s Blog">
+<meta property="og:url" content="https://ghostlo.github.io/wait/各种.html">
+<meta property="og:site_name" content="Ostlo&#39;s Blog">
+<meta property="og:description" content="作者：jkgeekjack 链接：https://www.nowcoder.com/discuss/80156 来源：牛客网 个人简介本人是双非末流一本，大三，CS专业，有百度实习经历 过程先解释一下十面阿里，总共分为阿里云四面，蚂蚁两面，菜鸟四面；七面头条分为金融三面，抖音一面，效率工程三面；六个Offer分别是阿里、腾讯、头条、华为、蘑菇街、三七互娱。 从二月份在牛客网看到阿里云的招聘贴就投了">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-531db7e74288f2450c6a48861ebdbfa8_hd.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/80/v2-0f5be48a0499f8f752a747b6298ecb91_hd.jpg">
+<meta property="og:updated_time" content="2019-04-16T02:14:12.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ostlo&#39;s Blog">
+<meta name="twitter:description" content="作者：jkgeekjack 链接：https://www.nowcoder.com/discuss/80156 来源：牛客网 个人简介本人是双非末流一本，大三，CS专业，有百度实习经历 过程先解释一下十面阿里，总共分为阿里云四面，蚂蚁两面，菜鸟四面；七面头条分为金融三面，抖音一面，效率工程三面；六个Offer分别是阿里、腾讯、头条、华为、蘑菇街、三七互娱。 从二月份在牛客网看到阿里云的招聘贴就投了">
+<meta name="twitter:image" content="https://pic1.zhimg.com/80/v2-531db7e74288f2450c6a48861ebdbfa8_hd.jpg">
+
+
+
+  <link rel="alternate" href="/ostlo/atom.xml" title="Ostlo's Blog" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="https://ghostlo.github.io/wait/各种">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title> | Ostlo's Blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/ostlo/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Ostlo's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/ostlo/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/ostlo/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/ostlo/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/ostlo/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/ostlo/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+    
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+    
+
+  
+
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+    
+    
+    <div class="post-block page">
+      <header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">
+
+</h1>
+
+<div class="post-meta">
+  
+  
+
+
+
+</div>
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+        
+        
+          <p>作者：jkgeekjack</p>
+<p>链接：<a href="https://link.zhihu.com/?target=https%3A//www.nowcoder.com/discuss/80156" target="_blank" rel="noopener">https://www.nowcoder.com/discuss/80156</a></p>
+<p>来源：牛客网</p>
+<h2 id="个人简介"><a href="#个人简介" class="headerlink" title="个人简介"></a>个人简介</h2><p>本人是双非末流一本，大三，CS专业，有百度实习经历</p>
+<h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><p>先解释一下十面阿里，总共分为阿里云四面，蚂蚁两面，菜鸟四面；七面头条分为金融三面，抖音一面，效率工程三面；六个Offer分别是阿里、腾讯、头条、华为、蘑菇街、三七互娱。</p>
+<p>从二月份在牛客网看到阿里云的招聘贴就投了，那是我最早投递的公司，当时也没什么经验，导致表现得很糟糕，最后四面跪，当时伤心到谷底，幸好跪得比较早，跪了之后简历被释放掉，还可以继续内推。整个春招持续了4个月，对自己意志也是一个很大的挑战。我也有幸能与那么多优秀的人一起并肩作战，让我坚持到最后一刻，感谢有你们。</p>
+<p>这个春招也遇到了很多奇怪的公司，比如说美团不知为何不给内推，CVTE笔试刷掉有实习经历的，吉比特挂得莫名其妙，网易玄学招人，京东20分钟面试，华为聊天招人</p>
+<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><p><img src="https://pic1.zhimg.com/80/v2-531db7e74288f2450c6a48861ebdbfa8_hd.jpg" alt="img"></p>
+<p><img src="https://pic2.zhimg.com/80/v2-0f5be48a0499f8f752a747b6298ecb91_hd.jpg" alt="img"></p>
+<h2 id="面经"><a href="#面经" class="headerlink" title="面经"></a><strong>面经</strong></h2><h2 id="阿里巴巴"><a href="#阿里巴巴" class="headerlink" title="阿里巴巴"></a>阿里巴巴</h2><p>一面（36分钟）芝麻信用<br>1.hashmap和hashtable区别<br>2.为什么产生死锁<br>3.jvm类加载<br>4.java反射获取私有属性，改变值<br>5.反射用途<br>6.所用数据库<br>7.项目难点，问题<br>8.如何解决项目中遇到的问题<br>9.项目中遇到最自豪的地方<br>10.会什么算法</p>
+<p>二面（44分钟）支付宝创新<br>1.讲项目<br>2.数据库乐观锁使用<br>3.状态机<br>4.如何解决状态机不对问题<br>5.如何分库分表<br>6.MySQL极限<br>7.HashMap源码<br>8.设计一个线程安全的HashMap<br>9.快排的实现，时间复杂度和空间复杂度<br>10.会什么算法<br>11.如何把项目变成SOA架构<br>12.Spring源码，最深刻的模块，aop用途<br>13.JVM内存模型<br>14.垃圾回收机制<br>15.项目中查看垃圾回收</p>
+<p>三面(33分钟)菜鸟国际<br>1.项目中的权限管理<br>2.登录状态如何储存<br>3.session和cookie的区别,session如何管理<br>4.HashMap底层结构<br>5.synchronized关键字的用法<br>6.synchronized修饰类方法和普通方法的锁区别,获取类锁之后还能获取对象锁吗<br>7.类加载器的双亲委派模型的作用,能重复加载某个类吗<br>8.类加载器的类的缓存,key是什么<br>9.介绍Redis<br>10.如何将数据分布在不同的Redis<br>11.有了解过取余算法?<br>12.spring的apo实现<br>13.字节码结构<br>14.浏览器输入网址过程,结合springmvc</p>
+<p>四面(36分钟)菜鸟国际供应链<br>1.HashMap在大量哈希冲突该怎么处理<br>2.红黑树比BST优点<br>3.MySQL为什么使用B+树<br>4.多个索引会有多份数据吗<br>5.数据库的隔离级别和解决的问题<br>6.数据库默认隔离级别,一定会产生幻读吗,怎么解决<br>7.输入网址到展示的整个过程,结合springmvc来讲<br>8.负载均衡的算法<br>9.哈弗曼编码,如何解决译码问题<br>10.实习会对工作有影响吗<br>11.用英文介绍一个项目<br>12.如何查看系统负载<br>13.描述一个解决问题的过程<br>14.如何把文件从服务器复制到本地,用什么命令</p>
+<p>五面（27分钟）菜鸟技术部<br>1.当时怎么找到百度这个机会的<br>2.项目中用的哪些技术<br>3.项目如何设计流程流转，如果是你的话该怎么设计<br>4.MySQL使用的索引结构，查找效率<br>5.MySQL查询优化<br>6.MySQL慢查询开启，语句分析<br>7.HashMap查找效率<br>8.JVM内存模型<br>9.设计模式，策略模式的使用场景<br>10.如何确保单例线程安全<br>11.Spring的bean的默认范围<br>12.对Netty的了解<br>13.未来发展规划<br>14.如何让代码可读性更加复杂</p>
+<p>六面（22分钟）HR面<br>1.说一下发展方向<br>2.说一下经验不足导致的问题<br>3.说一下挑战杯的工作内容<br>4.说一下你给挑战杯项目的主要贡献<br>5.实习时间<br>6.拿到了哪些offer，你是怎么考虑的<br>7.为什么不选择腾讯<br>8.腾讯技术栈和阿里技术栈的区别</p>
+<h2 id="腾讯"><a href="#腾讯" class="headerlink" title="腾讯"></a>腾讯</h2><p>一面（支付）<br>1.jqc的介绍<br>2.如何确保多台机器不会重复消费<br>3.如何确保消费了反馈失效问题（用事务管理，先储存再消费，失败就回滚）<br>4.如何防止数据库单点问题<br>8.paxos算法<br>9.raft算法<br>10.spring的aop实现<br>11.三种操作,a:++,b:—,c:/2(只能偶数)，求i变1的最少次数<br>12.人才培养（轮流尝试，提出任务，鼓励实现）<br>13.没有深度的广度没有意义，由广变宅，由浅入深<br>14.设计时需要经验但堤防经验主义<br>15.百度技术氛围比腾讯好</p>
+<p>二面<br>1.手写多线程买票代码<br>2.手写ServerSocket使用代码<br>3.java有多少种线程池，固定线程池是怎样的<br>4.Collection的子接口<br>5.Map的接口，HashMap应用场景<br>6.Queue的父接口，使用场景<br>7.数据库主从复制配置<br>8.Spring的IOC优点，解决了什么问题（解耦）<br>9.Bean的生命周期<br>10.Bean的范围，gobal session的作用<br>11.手写SpringMVC流程<br>12.如何平衡生活和工作<br>13.职业发展规划<br>14.为何不考研<br>15.redirect和forward区别<br>16.大学中最大的挑战<br>17.加密算法</p>
+<p>HR面<br>1.喜欢做什么<br>2.喜欢看什么电影,带着什么心态去看<br>3.会再回百度吗<br>4.还有什么面试<br>5.腾讯阿里选什么,为什么选腾讯<br>6.是否独生<br>7.家里人希望做什么</p>
+<h2 id="今日头条"><a href="#今日头条" class="headerlink" title="今日头条"></a>今日头条</h2><p>抖音一面<br>1.手撕LFU，要求get和put都为O(1)<br>2.在一个环状的城市，小偷可以选择偷或者不偷任意一家，但被偷的房子不能相连，求最大价值</p>
+<p>效率工程一面<br>1.储水题<br>2.如何找项目性能瓶颈<br>3.有多少种类型的缓存,从客户端到服务端<br>4.如何查看系统性能,性能指标<br>5.redis数据类型<br>6.redis的aof太大如何优化<br>7.mysql的主从复制<br>8.mysql的引擎,区别<br>9.https的建立链接过程<br>10.https的传输数据是否是对称加密<br>11.tcp拥塞控制<br>12.epoll和select<br>13.nginx如何处理连接<br>14.nginx如何做性能优化<br>15.apache和nginx区别<br>16.两支不均匀香,测出15分钟</p>
+<p>效率工程二面<br>1.手写LRU<br>2.查看系统负载<br>3.进程通信方法<br>4.管道如何使用<br>5.socket建立过程<br>6.如何高效处理socket<br>7.NIO的原理和,连接切换方式<br>8.使用什么命令查看系统负载,第一行是什么<br>9.一个表user_id,order_date,要查用户订单,某一天订单,某个用户某天订单,如何建索引<br>10.复合索引的结构<br>11.redis的常用数据结构<br>12.zset的底层数据结构,跳跃表如何实现<br>13.redis如何持久化RDB</p>
+<p>效率工程HR面<br>1.怎么找到百度实习和第一份实习<br>2.如何处理学业和实习<br>3.讲一下项目中沟通协作的过程<br>4.如何你是owner你是怎么设计这个项目<br>5.拿到了什么offer，如何考虑</p>
+<h2 id="蘑菇街"><a href="#蘑菇街" class="headerlink" title="蘑菇街"></a>蘑菇街</h2><p>一面<br>1.凤聆的权限管理如何设计<br>2.如何将9s提升到0.3s<br>3.用没有了解过其他搜索框架例如solr<br>4.有了解过协程吗？轻在哪<br>5.jvm查看gc命令<br>6.如何解决jvm的问题<br>7.mysql in，not in,like走不走索引<br>8.开发环境，开发IDE<br>9.使用什么命令查看cpu和内存情况<br>10.如何查看进程的线程情况top -H -p<br>11.秒杀场景设计<br>12.秒杀时如果机器资源有限怎么办<br>13.可以保证实习时间<br>14.对自己未来的规划</p>
+<p>二面(小程序部门)<br>1.父母对来杭州有没有意见<br>2.会考虑转正吗<br>3.老师或者同学会怎么评价,如何体现技术比较强<br>4.大学中最自豪的一件事<br>5.项目中解决的一个问题<br>6.Nginx超时怎么办<br>7.mysql索引相关<br>8.%匹配实现原理<br>9.获取<a href="https://link.zhihu.com/?target=http%3A//www.baidu.com/" target="_blank" rel="noopener">www.baidu.com</a>最后一个点的内容”com”最优方法,为何,时间复杂度,如何实现</p>
+<p>HR面<br>1.深层介绍自己<br>2.对你影响比较深的一个人<br>3.想成为怎样的人<br>4.最有成就感的事<br>5.最近的挫折<br>6.怎么发现瓶颈<br>7.学校和工作环境有什么不同<br>8.周围同学比较,有什么优势</p>
+<h2 id="京东"><a href="#京东" class="headerlink" title="京东"></a>京东</h2><p>一面<br>1.快排原理<br>2.HashMap底层结构<br>3.ConcurrentHashMap线程安全原理<br>4.类加载机制<br>5.左连接和右连接区别<br>6.tcp建立连接的方式<br>7.close wait和time wait在什么情况下出现<br>8.http组成<br>9.http头部，keepalive的意义<br>10.https流程<br>11.如何确保密钥安全，是否非对称加密<br>12.线程池的实现原理</p>
+<p>二面<br>1.在百度学习到什么<br>2.对java的了解哪些方面<br>3.还了解过其他语言吗，不同语言只是不同偏好<br>4.aqs的具体实现<br>5.并发包用到那些</p>
+<p>HR面<br>1.在百度学习到什么<br>2.为什么从百度离职<br>3.有什么优点和缺点<br>4.遇到问题是偏向解决问题，还是抱怨问题<br>5.能实习多久</p>
+<h2 id="网易邮箱"><a href="#网易邮箱" class="headerlink" title="网易邮箱"></a>网易邮箱</h2><p>一面<br>1.java公司<br>2.dfs和bfs实现原理和应用场景<br>3.ArrayList的底层实现<br>4.Elastisearch的索引如何储存<br>5.JVM内存模型<br>6.java堆分代，对象分配<br>7.在项目中遇到什么问题，如和解决<br>8.对自己这个项目打几分，为何转项目<br>9.HashMao底层实现,介绍红黑树<br>10.String a=”abc” String b=”a”+”bc” a==b?<br>11.遇到紧急的需求该如何完成<br>12.手写ArrayList添加11个元素<br>13.n个0~9的数，找和为7的数对<br>14.MySQL的引擎，所使用索引的结构<br>15.B树和B+树的区别<br>16.代码优化地方<br>17.平时看什么论坛<br>18.自研JQC的实现原理，和kafka的区别<br>19.抢红包实现<br>20.如何传输密码（非对称加密，https）<br>21.https的证书在哪颁发</p>
+<p>终面（HR+主管）<br>1.如何找到两个实习<br>2.学校允许实习吗<br>3.项目中的挑战<br>4.通过学习解决的最大一个困难<br>5.如何处理项目，学习，实习的时间<br>6.为什么离职百度<br>7.为什么得不到上司的信任，当时有更好的选择吗</p>
+<h2 id="网易游戏"><a href="#网易游戏" class="headerlink" title="网易游戏"></a>网易游戏</h2><p>1.如何保证项目扩展性,依赖问题<br>2.消息队列同时消费问题<br>3.进程的通讯方式？哪种最高效<br>4.本机socket需要经过协议栈解包吗<br>5.linux文件管理，文件类型<br>6.一致性哈希实现<br>7.统计海量词频最高10个单词，所用的数据结构<br>8.强类型/弱类型和静态类型/动态类型<br>9.JVM类加载器<br>10.查看机器性能<br>11.查看cpu负载，一般为多少，过高怎么解决<br>12.机器性能是如何读取的</p>
+<h2 id="三七互娱"><a href="#三七互娱" class="headerlink" title="三七互娱"></a>三七互娱</h2><p>一面<br>1.Bean的生命周期<br>2.Atom类实现原理<br>3.多线程实现<br>4.Thread和Runnable区别<br>5.volatile特性<br>6.happens-bofore原则<br>7.消息队列，kafka<br>8.如何确保形成安全<br>9.HashMap初始大小，红黑树何时退化为链表<br>10.Actor，Akka和RingBuffer<br>11.冒泡排序<br>12.JVM内存模型<br>13.垃圾回收机制</p>
+<p>HR面<br>1.有没有面其他公司<br>2.薪资待遇期待<br>3.上一份工作为何离职</p>
+<h2 id="商汤"><a href="#商汤" class="headerlink" title="商汤"></a>商汤</h2><p>一面<br>1.看过JDK源码吗<br>2.HashMap增删查和数据结构<br>3.MySQL慢SQL查询和优化，如何排查问题<br>4.MySQL引擎和区别，引用场景<br>5.redis集群，如何拓展<br>6.mongodb和redis区别<br>7.单例模式的实现，是否只拥有一个实例<br>8.SpringCloud生态<br>9.介绍一下Elastisearch，原理和用途，分布式实时日志才需使用ELK<br>10.有用过线程池吗<br>11.介绍JVM垃圾回收机制</p>
+<h2 id="吉比特"><a href="#吉比特" class="headerlink" title="吉比特"></a>吉比特</h2><p>一面（游戏运营开发，账号安全）<br>1.有参加acm吗<br>2.怎么去百度的<br>3.mysql用什么锁，行级锁有什么缺点<br>4.mysql优化<br>5.比较两个数相同位数<br>6.如何体现对技术的热爱<br>7.ArrayList和数组区别，调用add方法会调用哪些其他方法</p>
+<h2 id="个人感受"><a href="#个人感受" class="headerlink" title="个人感受"></a>个人感受</h2><p>春招是一个很刺激且很折磨人的过程，你可能会遇到各种奇奇怪怪的公司，但只有不断提升自己的实力，才有更大可能拿到Offer，拿不到Offer的小伙伴也不要气馁，毕竟秋招才是重头戏，还有那么长的时间可以准备，我相信你春招过后也知道自己哪方面比较薄弱。我自己也是很幸运，在春招的过程中不仅收获到了Offer，而且在我最紧张，最低落的时候遇到了我的现女友，一个可爱的妹子，感觉是她带给我幸运。最后祝大家收获更多的Offer，也能遇到对的人。</p>
+<p><strong>更多笔经面经：</strong><a href="https://link.zhihu.com/?target=https%3A//www.nowcoder.com/discuss%3Ftype%3D2%26order%3D3" target="_blank" rel="noopener">https://www.nowcoder.com/discuss?type=2&amp;order=3</a></p>
+<p><strong>与作者交流：</strong>[<a href="https://www.nowcoder.com/discuss/80156](https://link.zhihu.com/?target=https%3A//www.nowcoder.com/discuss/80156" target="_blank" rel="noopener">https://www.nowcoder.com/discuss/80156](https://link.zhihu.com/?target=https%3A//www.nowcoder.com/discuss/80156</a></p>
+
+        
+      </div>
+      
+      
+      
+    </div>
+    
+
+
+
+    
+    
+    
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/ostlo/avatar.png" alt="Ostlo_TL">
+            
+              <p class="site-author-name" itemprop="name">Ostlo_TL</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/ostlo/archives/">
+                
+                    <span class="site-state-item-count">18</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/ostlo/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/ostlo/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">17</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/ostlo/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/ghostlo" title="GitHub &rarr; https://github.com/ghostlo" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="/ostlo/ostlo.im@gmail.com" title="E-Mail &rarr; ostlo.im@gmail.com"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#个人简介"><span class="nav-number">1.</span> <span class="nav-text">个人简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过程"><span class="nav-number">2.</span> <span class="nav-text">过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结果"><span class="nav-number">3.</span> <span class="nav-text">结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#面经"><span class="nav-number">4.</span> <span class="nav-text">面经</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#阿里巴巴"><span class="nav-number">5.</span> <span class="nav-text">阿里巴巴</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#腾讯"><span class="nav-number">6.</span> <span class="nav-text">腾讯</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#今日头条"><span class="nav-number">7.</span> <span class="nav-text">今日头条</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#蘑菇街"><span class="nav-number">8.</span> <span class="nav-text">蘑菇街</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#京东"><span class="nav-number">9.</span> <span class="nav-text">京东</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网易邮箱"><span class="nav-number">10.</span> <span class="nav-text">网易邮箱</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网易游戏"><span class="nav-number">11.</span> <span class="nav-text">网易游戏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三七互娱"><span class="nav-number">12.</span> <span class="nav-text">三七互娱</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#商汤"><span class="nav-number">13.</span> <span class="nav-text">商汤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#吉比特"><span class="nav-number">14.</span> <span class="nav-text">吉比特</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#个人感受"><span class="nav-number">15.</span> <span class="nav-text">个人感受</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ostlo_TL</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/ostlo/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/ostlo/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/ostlo/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/ostlo/js/utils.js?v=7.1.0"></script>
+
+  <script src="/ostlo/js/motion.js?v=7.1.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/ostlo/js/schemes/muse.js?v=7.1.0"></script>
+
+
+
+  
+  <script src="/ostlo/js/scrollspy.js?v=7.1.0"></script>
+<script src="/ostlo/js/post-details.js?v=7.1.0"></script>
+
+
+
+  
+
+
+  <script src="/ostlo/js/next-boot.js?v=7.1.0"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

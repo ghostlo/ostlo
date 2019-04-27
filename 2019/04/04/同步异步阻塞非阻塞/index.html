@@ -96,17 +96,17 @@
 
 
 
-  <meta name="description" content="同步： 所谓同步，就是在发出一个功能调用时，在没有得到结果之前，该调用就不返回。也就是必须一件一件事做,等前一件做完了才能做下一件事。 例如普通B/S模式（同步）：提交请求-&amp;gt;等待服务器处理-&amp;gt;处理完毕返回 这个期间客户端浏览器不能干任何事  异步： 异步的概念和同步相对。当一个异步过程调用发出后，调用者不能立刻得到结果。实际处理这个调用的部件在完成后，通过状态、通知和回调来通知调用">
+  <meta name="description" content="同步：所谓同步，就是在发出一个功能调用时，在没有得到结果之前，该调用就不返回。也就是必须一件一件事做,等前一件做完了才能做下一件事。 例如普通B/S模式（同步）：提交请求-&amp;gt;等待服务器处理-&amp;gt;处理完毕返回 这个期间客户端浏览器不能干任何事 异步：异步的概念和同步相对。当一个异步过程调用发出后，调用者不能立刻得到结果。实际处理这个调用的部件在完成后，通过状态、通知和回调来通知调用者。 例">
 <meta property="og:type" content="article">
 <meta property="og:title" content="同步异步阻塞非阻塞">
 <meta property="og:url" content="https://ghostlo.github.io/2019/04/04/同步异步阻塞非阻塞/index.html">
 <meta property="og:site_name" content="Ostlo&#39;s Blog">
-<meta property="og:description" content="同步： 所谓同步，就是在发出一个功能调用时，在没有得到结果之前，该调用就不返回。也就是必须一件一件事做,等前一件做完了才能做下一件事。 例如普通B/S模式（同步）：提交请求-&amp;gt;等待服务器处理-&amp;gt;处理完毕返回 这个期间客户端浏览器不能干任何事  异步： 异步的概念和同步相对。当一个异步过程调用发出后，调用者不能立刻得到结果。实际处理这个调用的部件在完成后，通过状态、通知和回调来通知调用">
+<meta property="og:description" content="同步：所谓同步，就是在发出一个功能调用时，在没有得到结果之前，该调用就不返回。也就是必须一件一件事做,等前一件做完了才能做下一件事。 例如普通B/S模式（同步）：提交请求-&amp;gt;等待服务器处理-&amp;gt;处理完毕返回 这个期间客户端浏览器不能干任何事 异步：异步的概念和同步相对。当一个异步过程调用发出后，调用者不能立刻得到结果。实际处理这个调用的部件在完成后，通过状态、通知和回调来通知调用者。 例">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-04-04T12:26:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="同步异步阻塞非阻塞">
-<meta name="twitter:description" content="同步： 所谓同步，就是在发出一个功能调用时，在没有得到结果之前，该调用就不返回。也就是必须一件一件事做,等前一件做完了才能做下一件事。 例如普通B/S模式（同步）：提交请求-&amp;gt;等待服务器处理-&amp;gt;处理完毕返回 这个期间客户端浏览器不能干任何事  异步： 异步的概念和同步相对。当一个异步过程调用发出后，调用者不能立刻得到结果。实际处理这个调用的部件在完成后，通过状态、通知和回调来通知调用">
+<meta name="twitter:description" content="同步：所谓同步，就是在发出一个功能调用时，在没有得到结果之前，该调用就不返回。也就是必须一件一件事做,等前一件做完了才能做下一件事。 例如普通B/S模式（同步）：提交请求-&amp;gt;等待服务器处理-&amp;gt;处理完毕返回 这个期间客户端浏览器不能干任何事 异步：异步的概念和同步相对。当一个异步过程调用发出后，调用者不能立刻得到结果。实际处理这个调用的部件在完成后，通过状态、通知和回调来通知调用者。 例">
 
 
 
@@ -424,17 +424,13 @@
       
 
       
-        <h3 id="同步"><a class="markdownIt-Anchor" href="#同步"></a> 同步：</h3>
-<p>所谓同步，就是在发出一个功能调用时，在没有得到结果之前，该调用就不返回。也就是必须一件一件事做,等前一件做完了才能做下一件事。</p>
+        <h3 id="同步："><a href="#同步：" class="headerlink" title="同步："></a>同步：</h3><p>所谓同步，就是在发出一个功能调用时，在没有得到结果之前，该调用就不返回。也就是必须一件一件事做,等前一件做完了才能做下一件事。</p>
 <p>例如普通B/S模式（同步）：提交请求-&gt;等待服务器处理-&gt;处理完毕返回 这个期间客户端浏览器不能干任何事</p>
-<h3 id="异步"><a class="markdownIt-Anchor" href="#异步"></a> 异步：</h3>
-<p>异步的概念和同步相对。当一个异步过程调用发出后，调用者不能立刻得到结果。实际处理这个调用的部件在完成后，通过状态、通知和回调来通知调用者。</p>
+<h3 id="异步："><a href="#异步：" class="headerlink" title="异步："></a>异步：</h3><p>异步的概念和同步相对。当一个异步过程调用发出后，调用者不能立刻得到结果。实际处理这个调用的部件在完成后，通过状态、通知和回调来通知调用者。</p>
 <p>例如 ajax请求（异步）: 请求通过事件触发-&gt;服务器处理（这是浏览器仍然可以作其他事情）-&gt;处理完毕</p>
-<h3 id="阻塞"><a class="markdownIt-Anchor" href="#阻塞"></a> 阻塞：</h3>
-<p>阻塞调用是指调用结果返回之前，当前线程会被挂起（线程进入非可执行状态，在这个状态下，cpu不会给线程分配时间片，即线程暂停运行）。函数只有在得到结果之后才会返回。</p>
+<h3 id="阻塞："><a href="#阻塞：" class="headerlink" title="阻塞："></a>阻塞：</h3><p>阻塞调用是指调用结果返回之前，当前线程会被挂起（线程进入非可执行状态，在这个状态下，cpu不会给线程分配时间片，即线程暂停运行）。函数只有在得到结果之后才会返回。</p>
 <p>有人也许会把阻塞调用和同步调用等同起来，实际上他是不同的。对于同步调用来说，很多时候当前线程还是激活的，只是从逻辑上当前函数没有返回,它还会抢占cpu去执行其他逻辑，也会主动检测io是否准备好。</p>
-<h3 id="非阻塞"><a class="markdownIt-Anchor" href="#非阻塞"></a> 非阻塞：</h3>
-<p>非阻塞和阻塞的概念相对应，指在不能立刻得到结果之前，该函数不会阻塞当前线程，而会立刻返回。</p>
+<h3 id="非阻塞："><a href="#非阻塞：" class="headerlink" title="非阻塞："></a>非阻塞：</h3><p>非阻塞和阻塞的概念相对应，指在不能立刻得到结果之前，该函数不会阻塞当前线程，而会立刻返回。</p>
 <p>再简单点理解就是：</p>
 <ol>
 <li>同步，就是我调用一个功能，该功能没有结束前，我死等结果。</li>
@@ -558,7 +554,7 @@
                 
                   <a href="/ostlo/archives/">
                 
-                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-count">18</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -713,7 +709,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#同步"><span class="nav-number">1.</span> <span class="nav-text"> 同步：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异步"><span class="nav-number">2.</span> <span class="nav-text"> 异步：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#阻塞"><span class="nav-number">3.</span> <span class="nav-text"> 阻塞：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#非阻塞"><span class="nav-number">4.</span> <span class="nav-text"> 非阻塞：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#同步："><span class="nav-number">1.</span> <span class="nav-text">同步：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异步："><span class="nav-number">2.</span> <span class="nav-text">异步：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#阻塞："><span class="nav-number">3.</span> <span class="nav-text">阻塞：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#非阻塞："><span class="nav-number">4.</span> <span class="nav-text">非阻塞：</span></a></li></ol></div>
             
 
           </div>

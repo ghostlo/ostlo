@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="什么是守护进程？ 守护进程也称精灵进程（Daemon），是一种运行在后台的一种特殊的进程，它独立于控制终端并且周期性的执 行某种任务或等待处理某些发生的事件。由于在Linux中，每个系统与用户进行交流的界面成为终端，每一个从此终端 开始运行的进程都会依附于这个终端，这个终端被称为这些进程的控制终端，当控制终端被关闭的时候，相应的进程都会自动关闭。但是守护进程却能突破这种限制，它脱离于终端并且在后">
+  <meta name="description" content="什么是守护进程？守护进程也称精灵进程（Daemon），是一种运行在后台的一种特殊的进程，它独立于控制终端并且周期性的执行某种任务或等待处理某些发生的事件。由于在Linux中，每个系统与用户进行交流的界面成为终端，每一个从此终端开始运行的进程都会依附于这个终端，这个终端被称为这些进程的控制终端，当控制终端被关闭的时候，相应的进程都会自动关闭。但是守护进程却能突破这种限制，它脱离于终端并且在后台运行，">
 <meta name="keywords" content="守护进程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="守护进程">
 <meta property="og:url" content="https://ghostlo.github.io/2019/04/08/守护进程/index.html">
 <meta property="og:site_name" content="Ostlo&#39;s Blog">
-<meta property="og:description" content="什么是守护进程？ 守护进程也称精灵进程（Daemon），是一种运行在后台的一种特殊的进程，它独立于控制终端并且周期性的执 行某种任务或等待处理某些发生的事件。由于在Linux中，每个系统与用户进行交流的界面成为终端，每一个从此终端 开始运行的进程都会依附于这个终端，这个终端被称为这些进程的控制终端，当控制终端被关闭的时候，相应的进程都会自动关闭。但是守护进程却能突破这种限制，它脱离于终端并且在后">
+<meta property="og:description" content="什么是守护进程？守护进程也称精灵进程（Daemon），是一种运行在后台的一种特殊的进程，它独立于控制终端并且周期性的执行某种任务或等待处理某些发生的事件。由于在Linux中，每个系统与用户进行交流的界面成为终端，每一个从此终端开始运行的进程都会依附于这个终端，这个终端被称为这些进程的控制终端，当控制终端被关闭的时候，相应的进程都会自动关闭。但是守护进程却能突破这种限制，它脱离于终端并且在后台运行，">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-04-08T08:19:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="守护进程">
-<meta name="twitter:description" content="什么是守护进程？ 守护进程也称精灵进程（Daemon），是一种运行在后台的一种特殊的进程，它独立于控制终端并且周期性的执 行某种任务或等待处理某些发生的事件。由于在Linux中，每个系统与用户进行交流的界面成为终端，每一个从此终端 开始运行的进程都会依附于这个终端，这个终端被称为这些进程的控制终端，当控制终端被关闭的时候，相应的进程都会自动关闭。但是守护进程却能突破这种限制，它脱离于终端并且在后">
+<meta name="twitter:description" content="什么是守护进程？守护进程也称精灵进程（Daemon），是一种运行在后台的一种特殊的进程，它独立于控制终端并且周期性的执行某种任务或等待处理某些发生的事件。由于在Linux中，每个系统与用户进行交流的界面成为终端，每一个从此终端开始运行的进程都会依附于这个终端，这个终端被称为这些进程的控制终端，当控制终端被关闭的时候，相应的进程都会自动关闭。但是守护进程却能突破这种限制，它脱离于终端并且在后台运行，">
 
 
 
@@ -443,43 +443,28 @@
       
 
       
-        <h2 id="什么是守护进程"><a class="markdownIt-Anchor" href="#什么是守护进程"></a> 什么是守护进程？</h2>
-<p>守护进程也称精灵进程（Daemon），是一种运行在后台的一种特殊的进程，它独立于控制终端并且周期性的执<br>
-行某种任务或等待处理某些发生的事件。由于在Linux中，每个系统与用户进行交流的界面成为终端，每一个从此终端<br>
-开始运行的进程都会依附于这个终端，这个终端被称为这些进程的控制终端，当控制终端被关闭的时候，相应的进程都会自动关闭。但是守护进程却能突破这种限制，它脱离于终端并且在后台运行，并且它脱离终端的目的是为了避免进程在运行的过程中的信息在任何终端中显示并且进程也不会被任何终端所产生的终端信息所打断。它从被执行的时候开始运转，知道整个系统关闭才退出（当然可以人为的杀死相应的守护进程，例：kill -9 +守护进程ID）。如果想让某个进程不因为用户或中断或其他变化而影响，那么就必须把这个进程变成一个守护进程。</p>
-<h2 id="怎样查看哪些进程属于守护进程"><a class="markdownIt-Anchor" href="#怎样查看哪些进程属于守护进程"></a> 怎样查看哪些进程属于守护进程？</h2>
-<p>我们可以使用ps axj命令查看系统中的进程，参数a表示不仅列出当前用户的进程,也列出所有其他用户的进程,参数x表示不仅列出有控制终端的进程,也列出所有无控制终端的进程,参数j表示列出与作业控制相关的信息。<br>
-凡是在TPGID一栏写着 -1 的都是没有控制终端的进程,也就是守护进程。在COMMAND⼀一列用[]括起来的名字表示内核线程,这些线程在内核里创建,没有用户空间代码,因此没有程序文件名和命令行, 通常采用以k开头的名字,表示Kernel。udevd负责维护/dev目录下的设备文件,acpid负责电源管理,syslogd负责维护/var/log下的日志⽂文件,可以看出,守护进程通 常采用以d结尾的名字,表示Daemon。<br>
-如何创建一个守护进程？</p>
-<h3 id="方法一"><a class="markdownIt-Anchor" href="#方法一"></a> 方法一：</h3>
-<p>守护进程实现的步骤：</p>
-<h4 id="重设文件权限掩码"><a class="markdownIt-Anchor" href="#重设文件权限掩码"></a> 重设文件权限掩码：</h4>
-<p>文件权限掩码是屏蔽掉文件权限中的对应位。由于使用fork（）函数新创建的子进程继承了父进程的文件权限掩码，这就给该子进程使用文件带了很多的麻烦（比如父进程中的文件没有执行文件的权限，然而在子进程中希望执行相应的文件这个时候就会出问题）。因此在子进程中要把文件的权限掩码设置成为0，即在此时有最大的权限，这样可以大大增强该守护进程的灵活性。设置的方法是：umask（0）。</p>
-<h4 id="创建子进程父进程退出使子进程成为孤儿进程"><a class="markdownIt-Anchor" href="#创建子进程父进程退出使子进程成为孤儿进程"></a> 创建子进程，父进程退出（使子进程成为孤儿进程）：</h4>
-<p>这是编写守护进程的第一步，由于守护进程是脱离终端的，因此完成第一步后就会在shell终端里造成一个程序已经运行完毕的假象。之后的所有工作在子进程中完成，而用户在shell终端里则可以执行其他命令，从而在形式上做到了与控制终端脱离。实现的语句如下：if(fork()&gt;0){exit(0);}是父进程结束，然后子进程继续执行。</p>
-<h4 id="在子进程中创建新的会话脱离控制终端"><a class="markdownIt-Anchor" href="#在子进程中创建新的会话脱离控制终端"></a> 在子进程中创建新的会话（脱离控制终端）：</h4>
-<p>这步是创建守护进程中最重要的一步，虽然实现起来很简单，但是它的意义非常重要，在这里使用的是系统函数setsid（）来创建一个新的会话，并且担任该会话组的组长。在这里有两个概念需要解释一下，进程组合会话期。</p>
+        <h2 id="什么是守护进程？"><a href="#什么是守护进程？" class="headerlink" title="什么是守护进程？"></a>什么是守护进程？</h2><p>守护进程也称精灵进程（Daemon），是一种运行在后台的一种特殊的进程，它独立于控制终端并且周期性的执<br>行某种任务或等待处理某些发生的事件。由于在Linux中，每个系统与用户进行交流的界面成为终端，每一个从此终端<br>开始运行的进程都会依附于这个终端，这个终端被称为这些进程的控制终端，当控制终端被关闭的时候，相应的进程都会自动关闭。但是守护进程却能突破这种限制，它脱离于终端并且在后台运行，并且它脱离终端的目的是为了避免进程在运行的过程中的信息在任何终端中显示并且进程也不会被任何终端所产生的终端信息所打断。它从被执行的时候开始运转，知道整个系统关闭才退出（当然可以人为的杀死相应的守护进程，例：kill -9 +守护进程ID）。如果想让某个进程不因为用户或中断或其他变化而影响，那么就必须把这个进程变成一个守护进程。</p>
+<h2 id="怎样查看哪些进程属于守护进程？"><a href="#怎样查看哪些进程属于守护进程？" class="headerlink" title="怎样查看哪些进程属于守护进程？"></a>怎样查看哪些进程属于守护进程？</h2><p>我们可以使用ps axj命令查看系统中的进程，参数a表示不仅列出当前用户的进程,也列出所有其他用户的进程,参数x表示不仅列出有控制终端的进程,也列出所有无控制终端的进程,参数j表示列出与作业控制相关的信息。<br>凡是在TPGID一栏写着 -1 的都是没有控制终端的进程,也就是守护进程。在COMMAND⼀一列用[]括起来的名字表示内核线程,这些线程在内核里创建,没有用户空间代码,因此没有程序文件名和命令行, 通常采用以k开头的名字,表示Kernel。udevd负责维护/dev目录下的设备文件,acpid负责电源管理,syslogd负责维护/var/log下的日志⽂文件,可以看出,守护进程通 常采用以d结尾的名字,表示Daemon。<br>如何创建一个守护进程？</p>
+<h3 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h3><p>守护进程实现的步骤： </p>
+<h4 id="重设文件权限掩码："><a href="#重设文件权限掩码：" class="headerlink" title="重设文件权限掩码："></a>重设文件权限掩码：</h4><p>文件权限掩码是屏蔽掉文件权限中的对应位。由于使用fork（）函数新创建的子进程继承了父进程的文件权限掩码，这就给该子进程使用文件带了很多的麻烦（比如父进程中的文件没有执行文件的权限，然而在子进程中希望执行相应的文件这个时候就会出问题）。因此在子进程中要把文件的权限掩码设置成为0，即在此时有最大的权限，这样可以大大增强该守护进程的灵活性。设置的方法是：umask（0）。</p>
+<h4 id="创建子进程，父进程退出（使子进程成为孤儿进程）："><a href="#创建子进程，父进程退出（使子进程成为孤儿进程）：" class="headerlink" title="创建子进程，父进程退出（使子进程成为孤儿进程）："></a>创建子进程，父进程退出（使子进程成为孤儿进程）：</h4><p>这是编写守护进程的第一步，由于守护进程是脱离终端的，因此完成第一步后就会在shell终端里造成一个程序已经运行完毕的假象。之后的所有工作在子进程中完成，而用户在shell终端里则可以执行其他命令，从而在形式上做到了与控制终端脱离。实现的语句如下：if(fork()&gt;0){exit(0);}是父进程结束，然后子进程继续执行。</p>
+<h4 id="在子进程中创建新的会话（脱离控制终端）："><a href="#在子进程中创建新的会话（脱离控制终端）：" class="headerlink" title="在子进程中创建新的会话（脱离控制终端）："></a>在子进程中创建新的会话（脱离控制终端）：</h4><p>这步是创建守护进程中最重要的一步，虽然实现起来很简单，但是它的意义非常重要，在这里使用的是系统函数setsid（）来创建一个新的会话，并且担任该会话组的组长。在这里有两个概念需要解释一下，进程组合会话期。</p>
 <p>进程组：是一个或多个进程的集合。进程组有进程组ID来唯一标识。除了进程号（PID）之外，进程组ID也是一个进程的必备属性。每个进程组都有一个组长进程，其组长进程的进程号等于进程组ID。且该进程组ID不会因组长进程的退出而受到影响。</p>
 <p>会话周期：会话期是一个或者多个进程的集合。通常一个会话开始于用户的登录，终止于用户的退出，在此期间该用户运行的所有进程都属于这个会话期。</p>
 <p>setsid（）函数的作用：创建一个新的会话，并且担任该会话组的组长。具体作用包括：让一个进程摆脱原会话的控制，让进程摆脱原进程的控制，让进程摆脱原控制终端的控制。</p>
 <p>创建守护进程要调用setsid（）函数的原因：由于创建守护进程的第一步是调用fork（）函数来创建子进程，再将父进程退出。由于在调用了fork（）函数的时候，子进程拷贝了父进程的会话期、进程组、控制终端等资源、虽然父进程退出了，但是会话期、进程组、控制终端等并没有改变，因此，需要用setsid（）韩式来时该子进程完全独立出来，从而摆脱其他进程的控制。</p>
-<h4 id="改变当前目录为根目录"><a class="markdownIt-Anchor" href="#改变当前目录为根目录"></a> 改变当前目录为根目录：</h4>
-<p>使用fork（）创建的子进程是继承了父进程的当前工作目录，由于在进程运行中，当前目录所在的文件系统是不能卸载的，这对以后使用会造成很多的麻烦。因此通常的做法是让“/”作为守护进程的当前目录，当然也可以指定其他的别的目录来作为守护进程的工作目录。</p>
-<h4 id="关闭不再需要的文件描述符"><a class="markdownIt-Anchor" href="#关闭不再需要的文件描述符"></a> 关闭不再需要的文件描述符：</h4>
-<p>同文件权限码一样，用fork（）函数新建的子进程会从父进程那里继承一些已经打开了的文件。这些文件被打开的文件可能永远不会被守护进程读写，如果不进行关闭的话将会浪费系统的资源，造成进程所在的文件系统无法卸下以及引起预料的错误。按照如下方法关闭它们：</p>
-<p>for(i=0;i 关闭打开的文件描述符close(i);</p>
-<h4 id="守护进程的退出"><a class="markdownIt-Anchor" href="#守护进程的退出"></a> 守护进程的退出：</h4>
-<p>上面建立了守护进程，当用户需要外部停止守护进程运行时，往往需要使用kill命令来停止该守护进程，所以守护进程中需要编码来实现kill发出的signal信号处理，达到进程的正常退出。实现该过程的函数是signal函数：</p>
+<h4 id="改变当前目录为根目录："><a href="#改变当前目录为根目录：" class="headerlink" title="改变当前目录为根目录："></a>改变当前目录为根目录：</h4><p>使用fork（）创建的子进程是继承了父进程的当前工作目录，由于在进程运行中，当前目录所在的文件系统是不能卸载的，这对以后使用会造成很多的麻烦。因此通常的做法是让“/”作为守护进程的当前目录，当然也可以指定其他的别的目录来作为守护进程的工作目录。</p>
+<h4 id="关闭不再需要的文件描述符："><a href="#关闭不再需要的文件描述符：" class="headerlink" title="关闭不再需要的文件描述符："></a>关闭不再需要的文件描述符：</h4><p>同文件权限码一样，用fork（）函数新建的子进程会从父进程那里继承一些已经打开了的文件。这些文件被打开的文件可能永远不会被守护进程读写，如果不进行关闭的话将会浪费系统的资源，造成进程所在的文件系统无法卸下以及引起预料的错误。按照如下方法关闭它们：</p>
+<p>for(i=0;i 关闭打开的文件描述符close(i);</p>
+<h4 id="守护进程的退出："><a href="#守护进程的退出：" class="headerlink" title="守护进程的退出："></a>守护进程的退出：</h4><p>上面建立了守护进程，当用户需要外部停止守护进程运行时，往往需要使用kill命令来停止该守护进程，所以守护进程中需要编码来实现kill发出的signal信号处理，达到进程的正常退出。实现该过程的函数是signal函数：</p>
 <p>signal(SIGCHLD,SIG_IGN);</p>
 <p>实现代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;unistd.h&gt;</span><br><span class="line">#include&lt;sys/types.h&gt;</span><br><span class="line">#include&lt;sys/stat.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">#include&lt;signal.h&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">void mydaemon()</span><br><span class="line">&#123;</span><br><span class="line">	umask(0);//1</span><br><span class="line">	if(fork()&gt;0)&#123;//father  2</span><br><span class="line">		exit(0);</span><br><span class="line">	&#125;</span><br><span class="line">	setsid();//3</span><br><span class="line">	chdir(&quot;/&quot;);//4</span><br><span class="line">	close(0);//5</span><br><span class="line">	close(1);</span><br><span class="line">	close(2);</span><br><span class="line">	signal(SIGCHLD,SIG_IGN);//6</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	mydaemon();</span><br><span class="line">	while(1)</span><br><span class="line">	&#123;</span><br><span class="line">		sleep(1);</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>存在一个名为mydaemon的守护进程。</p>
-<h3 id="方法二"><a class="markdownIt-Anchor" href="#方法二"></a> 方法二：</h3>
-<p>直接调用daemon函数。</p>
+<h3 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h3><p>直接调用daemon函数。</p>
 <p>daemon函数的作用：将此进程精灵化。</p>
 <p>int daemon(int nochair,int noclose);</p>
-<p>nochdir：这个值为0的话，表示将当前进程的工作目录设值为”/”目录。 <br>
-noclose:这个值 为0的话表示将所有的文件描述符都写入”/dev/null”中。”/dev/null”表示黑洞，写入里面的所有信息都被内核丢弃。</p>
+<p>nochdir：这个值为0的话，表示将当前进程的工作目录设值为”/”目录。<br>noclose:这个值 为0的话表示将所有的文件描述符都写入”/dev/null”中。”/dev/null”表示黑洞，写入里面的所有信息都被内核丢弃。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;unistd.h&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	daemon(0,0);</span><br><span class="line">	while(1)</span><br><span class="line">	&#123;</span><br><span class="line">		sleep(1);</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
@@ -599,7 +584,7 @@ noclose:这个值 为0的话表示将所有的文件描述符都写入”/dev/nu
                 
                   <a href="/ostlo/archives/">
                 
-                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-count">18</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -754,7 +739,7 @@ noclose:这个值 为0的话表示将所有的文件描述符都写入”/dev/nu
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是守护进程"><span class="nav-number">1.</span> <span class="nav-text"> 什么是守护进程？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#怎样查看哪些进程属于守护进程"><span class="nav-number">2.</span> <span class="nav-text"> 怎样查看哪些进程属于守护进程？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法一"><span class="nav-number">2.1.</span> <span class="nav-text"> 方法一：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#重设文件权限掩码"><span class="nav-number">2.1.1.</span> <span class="nav-text"> 重设文件权限掩码：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建子进程父进程退出使子进程成为孤儿进程"><span class="nav-number">2.1.2.</span> <span class="nav-text"> 创建子进程，父进程退出（使子进程成为孤儿进程）：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在子进程中创建新的会话脱离控制终端"><span class="nav-number">2.1.3.</span> <span class="nav-text"> 在子进程中创建新的会话（脱离控制终端）：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#改变当前目录为根目录"><span class="nav-number">2.1.4.</span> <span class="nav-text"> 改变当前目录为根目录：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关闭不再需要的文件描述符"><span class="nav-number">2.1.5.</span> <span class="nav-text"> 关闭不再需要的文件描述符：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#守护进程的退出"><span class="nav-number">2.1.6.</span> <span class="nav-text"> 守护进程的退出：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法二"><span class="nav-number">2.2.</span> <span class="nav-text"> 方法二：</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是守护进程？"><span class="nav-number">1.</span> <span class="nav-text">什么是守护进程？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#怎样查看哪些进程属于守护进程？"><span class="nav-number">2.</span> <span class="nav-text">怎样查看哪些进程属于守护进程？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法一："><span class="nav-number">2.1.</span> <span class="nav-text">方法一：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#重设文件权限掩码："><span class="nav-number">2.1.1.</span> <span class="nav-text">重设文件权限掩码：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建子进程，父进程退出（使子进程成为孤儿进程）："><span class="nav-number">2.1.2.</span> <span class="nav-text">创建子进程，父进程退出（使子进程成为孤儿进程）：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在子进程中创建新的会话（脱离控制终端）："><span class="nav-number">2.1.3.</span> <span class="nav-text">在子进程中创建新的会话（脱离控制终端）：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#改变当前目录为根目录："><span class="nav-number">2.1.4.</span> <span class="nav-text">改变当前目录为根目录：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关闭不再需要的文件描述符："><span class="nav-number">2.1.5.</span> <span class="nav-text">关闭不再需要的文件描述符：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#守护进程的退出："><span class="nav-number">2.1.6.</span> <span class="nav-text">守护进程的退出：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法二："><span class="nav-number">2.2.</span> <span class="nav-text">方法二：</span></a></li></ol></li></ol></div>
             
 
           </div>
